@@ -1,0 +1,50 @@
+package `2 Basics`
+
+fun main() {
+    /**
+     * Sonlu sayili liste olusturmaya yarar.
+     * baslangic bitisi veriyoruz aradakileri verir
+     * ya sayilar ya harfler icin kullanilir harfler icin inglizce karakterleri alir default olarak.
+     * Kucukten buyuge liste olusturmak icin .. operatorunu, ya da rangeTo() fonksiyoununu kullanabiliriz.
+     */
+
+    val numbers = 1 .. 100 //[1,100]
+    val numbers2 = 1.rangeTo(100)
+    val alphabet = 'A' .. 'Z'
+
+    /**
+     * buyukten kucuge gitmek icin rangeTo() yerine downTo() operatoru kullanabiliriz.
+     * buyukten kucuge gitmek icin .. kullanamayiz.
+     */
+    val reversedNumber = 100.downTo(1) //val numbers2 = 1.rangeTo(100).reversed seklindede tanimlayabilirz. ama ne gerek var
+
+    /**
+     * until fonksiyonunu kullanarak da range tanimalanabilir. verilen sayiya kadar verir
+     *
+     */
+    val number = 10 until 100  //[10 ile 99 arasi 99 dahil]
+
+    /**
+     * step atlaya atlaya yazar
+     */
+    val stepNumber = 100..200 step 2
+    val stepNumber2 = 300 downTo 200 step 5
+
+        /**
+         * CharRange, IntRange gibi primitive tipleride range tanimi yapilabilir.
+         * bu durumda, first, last step count gibi ek biligiler alinabilir.
+         */
+    val numberList: IntRange = 1 .. 100
+    numberList.first
+    numberList.last
+    numberList.step
+    numberList.count()
+
+    when(10){
+        in numberList ->{
+            println("10 sayisi numberList icerisinde yer alir")
+        }
+        !in number -> {}
+    }
+}
+

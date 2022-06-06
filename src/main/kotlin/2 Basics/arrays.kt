@@ -62,4 +62,6 @@ fun main() {
 
     //!TAVSIYE ayni array i kodun alt kisimlarinda tamamen degistirmeyin
 
+
+
 }
