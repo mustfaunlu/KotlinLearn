@@ -60,4 +60,6 @@ fun main() {
     awesomeArray[2] = "Ali"
     //awesomeArray = arrayOf("foo","goo","coo","doo") // calismaz val bu arrayin baska arraye esitlenmesini engeller.
 
+    //!TAVSIYE ayni array i kodun alt kisimlarinda tamamen degistirmeyin
+
 }
