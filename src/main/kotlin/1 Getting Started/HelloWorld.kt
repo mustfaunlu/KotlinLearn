@@ -8,7 +8,7 @@ fun main() {
 }
 
 
-//comment area
+//single comment area
 
 /*
 multiple comment area
@@ -19,4 +19,4 @@ multiple comment area
  *
  */
 
-//TODO (remember there)  technical debt    code smelling
+//TODO(deb)  technical debt    code smelling
