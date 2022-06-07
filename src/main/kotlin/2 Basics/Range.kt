@@ -46,5 +46,17 @@ fun main() {
         }
         !in number -> {}
     }
+
+    val num = 3
+    when(num){
+        in 0..10 ->{
+            println("0 10 arasinda")
+
+        }
+        !in 0..10 ->{
+            println(" 0 10 arasinda degil")
+
+        }
+    }
 }
 
