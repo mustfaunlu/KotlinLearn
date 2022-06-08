@@ -3,6 +3,7 @@ package `2 Basics`
 //while döngüsü, belirtilen bir koşul doğru olduğu sürece bir kod bloğu boyunca döner:
 
 fun main() {
+    val condition =true
     while (condition) {
         // code block to be executed
     }
@@ -29,10 +30,10 @@ fun main() {
     koşul yanlış olsa bile döngü her zaman en az bir kez yürütülür:
      */
 
-    var i = 0
+    var j = 0
     do {
-        println(i)
-        i++
+        println(j)
+        j++
     }
-    while (i < 5)
+    while (j < 5)
 }
