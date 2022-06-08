@@ -58,5 +58,35 @@ fun main() {
 
         }
     }
+
+
+    /**
+     * for dongusu ile bu araliklari donmek daha rahat olabilir
+     */
+    for (chars in 'a'..'x') {
+        println(chars)
+    }
+
+    for (nums in 5..15) {
+        println(nums)
+    }
+
+    /**
+     * if blogu ile ornek verelim
+     */
+
+    val cars = arrayOf("Volvo", "BMW", "Ford", "Mazda")
+    if ("Volvo" in cars) {
+        println("It exists!")
+    } else {
+        println("It does not exist.")
+    }
+// ==========================================//
+    val nums = arrayOf(2, 4, 6, 8)
+    if (2 in nums) {
+        println("It exists!")
+    } else {
+        println("It does not exist.")
+    }
 }
 
