@@ -1,6 +1,17 @@
 package `2 Basics`.controlflow
 
 fun main() {
+
+    /**
+     * switch case lerin yerine gelmistir.
+     * when(karsilastirilacak ifade)
+     * value -> {}
+     * value -> {}
+     * else -> {}
+     * formatiyla kullanilir.
+     * Yine {} arasina tek satir kod yazilacaksa bu durumda {} leri kullanmayabiliriz.
+     * birden fazla value leri , ve or ile ayirabilirz. Veya anlamina gelir.
+     */
     val day = 66
 
     val result = when (day) {
