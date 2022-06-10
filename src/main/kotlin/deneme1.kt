@@ -5,10 +5,107 @@ fun main() {
    // print("${readln()} ${readln()} ${readln()} ${readln()} ${readln()}")
 
     println(factorial(7))
+    printPyramid()
+
+
+
 }
 
 //faktoriyel algoritmasi recursive func
 fun factorial(num: Int): Int {
     if (num <= 1) return 1
     return num * factorial(num - 1)
+}
+
+//pyramid
+
+fun printPyramid(){
+
+
+
+        for (i in 1..5) {
+            for (j in 1..i) {
+                print("* ")
+            }
+            println()
+        }
+
+
+    for (i in 1..5){
+        for (k in 1..i){
+            print("$k")
+        }
+        println()
+    }
+
+    for (i in 5 downTo 1){
+        for (k in 1..i){
+            print("* ")
+        }
+        println()
+    }
+
+    val last = 'E'
+    var alphabet = 'A'
+
+    for (i in 1..last - 'A' + 1) {
+        for (j in 1..i) {
+            print("$alphabet ")
+        }
+        ++alphabet
+
+        println()
+    }
+println("====================================================")
+    var alp='b'
+    val lastt = 'f'
+    for(i in 1..lastt - 'b' + 1){
+        for (j in 1..i){
+            print("$alp")
+        }
+        ++alp
+
+        println()
+    }
+
+    println("==========================fdg==========================")
+    val rows = 6
+    for (x in 1..rows){
+        for (j in 1..x){
+            print("* ")
+        }
+        println()
+    }
+
+    println("=========================kup==========================")
+
+    for (x in 1..5){
+        for (k in 1..5){
+            print("* ")
+        }
+        println()
+
+    }
+    println()
+
+    println("==========================piramid==========================")
+
+    val rowss = 5
+    var k = 0
+
+    for (i in 1..rowss) {
+        for (space in 1..rowss - i) {
+            print("  ")
+        }
+
+        while (k != 2 * i - 1) {
+            print("* ")
+            ++k
+        }
+
+        println()
+        k = 0
+    }
+
+
 }
