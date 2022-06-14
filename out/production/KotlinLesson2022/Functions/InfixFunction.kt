@@ -10,7 +10,7 @@ fun main() {
      * 4. sadece bir parametre olmalidir. Bu parametre vararg olamaz   true or false true olmaz. tek parametre olmalidir.
      * 5. infix methodun parametresi default deger olamaz
      *
-     *       yapisal olarak; (class icerisinde oldugunu varsayalim)
+     *       yapisal olarak; (class icerisinde oldugunu varsayalim veya extension fuc old. varsayalim)
      *
      *      infix fun infixMethodName (justOneParam : AwesomeParamType) : WhateverType{
      *      ....
@@ -24,6 +24,12 @@ fun main() {
      * and, or, xor gibi onlarca infix method vardir.
      * operatorlerde bahsetmistik
      */
+    isStudent and isMale // infix
+    isStudent.and(isMale) // normal
+
+    val awesomeInstance = AwesomeClass()
+    awesomeInstance downloadImage "www.picture.com" //infix kullanimi
+    awesomeInstance.downloadImage("www.picture.com") // normalde boyle
 
 
 
@@ -42,9 +48,9 @@ class AwesomeClass {
     // asagidaki kullanumda AwesomeClass().downloadImage(imageUrl) kullanimi olusur aslinda. (implicit)
 
     fun logWhenImageDownloaded(imageUrl: String){
-        downloadImage(imageUrl)
+        downloadImage(imageUrl) // infix degil duz cagirim bu
         //downloadImage imageUrl   calismaz.
-        this downloadImage  imageUrl //AwesomeClass() downloadImage imageUrl
+        this downloadImage  imageUrl // bu infixtir.   //AwesomeClass() downloadImage imageUrl     this = AwesomeClass()
     }
 
 
