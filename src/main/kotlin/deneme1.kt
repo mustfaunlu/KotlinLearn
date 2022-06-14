@@ -7,7 +7,9 @@ fun main() {
     println(factorial(7))
     printPyramid()
 
+    val arr = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
 
+    miniMaxSum(arr)
 
 }
 
@@ -108,4 +110,45 @@ println("====================================================")
     }
 
 
+
+    println("==========================hackerrank first challenge==========================")
+
+    val n = readln().toInt()
+    var c = 0
+
+    for (i in 1..n) {
+        for (space in 1..n - i) {
+            print(" ")
+        }
+
+        while (c != i) {
+            print("#")
+            ++c
+        }
+
+        println()
+        c = 0
+    }
+
+    println("==========================hackerrank second challenge==========================")
+
+
+
+
+}
+fun miniMaxSum(arr: Array<Int>) {
+    var min:Long =  arr[0].toLong()
+    var max:Long = 0
+    var total:Long = 0
+    for (x in 0 until arr.size) {
+        val item = arr[x].toLong()
+        total += item
+        if (item < min) {
+            min = item
+        }
+        if (item > max) {
+            max = item
+        }
+    }
+    println("${total - max} ${total - min}")
 }
