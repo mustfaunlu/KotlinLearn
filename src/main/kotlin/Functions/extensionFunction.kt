@@ -1,4 +1,6 @@
-    fun main() {
+package Functions
+
+fun main() {
     /**
      * uzerinde degisiklik yapamadigimiz (readOnly) siniflara, ya da yapmak istemedigmiz siniflara, bu siniflarin
      * icerisinde yazmadan fonksiyon tanimlayabilmemizi saglar. Boylece o sinifa uye bir fonksiyon kazandirabiliriz.

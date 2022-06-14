@@ -1,3 +1,5 @@
+package Functions
+
 /**
  * bir fonksiyon herhangi bir sinifin icerisinde degilde bir dosyanin icerisinde boslukta tanimtalniyorsa top level function adini alir
  * bir fonksiyona fonksiyon diyebilmek icin top level function olmali aksi takdirde methoddur.
