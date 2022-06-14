@@ -21,16 +21,22 @@
 
     val schoolNumber: Int = 2
 
-    schoolNumber.log("s")
+    schoolNumber.log("")
 
     log2(pi)  // normal fun ile
 
     (3 + 0.14).log("")  //infix ve extension ile
-    pi.log() // degisken uzerinden extension
+    pi.log("") // degisken uzerinden extension
 
 }
 
-infix fun Number.log(emptyParam: String){
+
+    /**
+     * Number (reciever) sinifina extension olarak yazilmis log fonksiyonu. Ayni zamanda infix yapilmistir.
+     * this ifadesi, extension yapilan degeri verir. 3 log "4" yaparsaniz,
+     * asagidaki kod size empyParam = "4", this = 3 olarak verilir.
+     */
+    infix fun Number.log(emptyParam: String){
     println(emptyParam + this)
 }
 
