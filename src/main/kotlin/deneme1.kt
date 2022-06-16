@@ -9,8 +9,14 @@ fun main() {
 
     val arr = readLine()!!.trimEnd().split(" ").map{ it.toInt() }.toTypedArray()
 
-    miniMaxSum(arr)
+   miniMaxSum(arr)
 
+    val num = readln().toCharArray()
+    var a = num[0].digitToInt()
+    var b = num[1].digitToInt()
+    var c = num[2].digitToInt()
+    val sum = a + b + c
+    print(sum)
 }
 
 //faktoriyel algoritmasi recursive func
@@ -151,4 +157,7 @@ fun miniMaxSum(arr: Array<Int>) {
         }
     }
     println("${total - max} ${total - min}")
+
+
+
 }

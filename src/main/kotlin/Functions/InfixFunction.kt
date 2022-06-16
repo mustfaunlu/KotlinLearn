@@ -5,7 +5,8 @@ fun main() {
 
     /**
      * Daha okunakli kodlar yazmak icin kullanilir.
-     * . nokta kullanimi kaldirir. true.or(false) yerine true or false yazmak infixtir.
+     * . (nokta) kullanimini kaldirir. true.or(false) yerine true or false yazmak infixtir.
+     *      bir fonksiyonu infix hale getirebilmek icin 5 sart vardir;
      * 1. infix keywordu ile baslar
      * 2. fonksyon bir uye fonksiyon olmalidir. (class a ait olmali)
      * 3. ya da bir extension fonksiyon olmalidir
@@ -17,6 +18,8 @@ fun main() {
      *      infix fun infixMethodName (justOneParam : AwesomeParamType) : WhateverType{
      *      ....
      *      }
+     *
+     *
      */
 
     val isStudent = false
@@ -29,11 +32,20 @@ fun main() {
     isStudent and isMale // infix
     isStudent.and(isMale) // normal
 
-    val awesomeInstance = AwesomeClass()
+    val awesomeInstance = AwesomeClass() //class in nesnesini olusturup asagidaki gibi kullanabilirz.
     awesomeInstance downloadImage "www.picture.com" //infix kullanimi
-    awesomeInstance.downloadImage("www.picture.com") // normalde boyle
+    awesomeInstance.downloadImage("www.picture.com") // normal kullanim
 
+   // infix methodlarin da mantik operatorlerine gore onceligi vardir.
+    val number = 5
+    if(number == 3 && number < 5 || awesomeInstance specialPlus 4 == 5) {
 
+    }
+
+    // matematiksel operatorlerin, tip donusumlerin (type conversion), range kullanimin, infix methodlara karsi islem onceligi vardir.
+    if (number + number - 2 * (awesomeInstance specialPlus 4) == 5) {
+
+    }
 
 }
 
@@ -53,6 +65,7 @@ class AwesomeClass {
         downloadImage(imageUrl) // infix degil duz cagirim bu
         //downloadImage imageUrl   calismaz.
         this downloadImage  imageUrl // bu infixtir.   //AwesomeClass() downloadImage imageUrl     this = AwesomeClass()
+
     }
 
 
