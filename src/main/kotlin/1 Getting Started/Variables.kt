@@ -3,6 +3,8 @@ package `1 Getting Started`
 fun main() {
     val name: String  = "Twitter"  //val(value); dart dilindeki final gibi ikinci kez atama yapilamaz (immutable)
     var surName = "Social Media" //var(variable); degiskendir (mutable)
+    surName = "Traditional Media" // var mutable oldugu icin degistirebilirz.
+    //name = "Facebook"     //val ile atama yapilan degiskenler immutabledir ikinci atamayi yapamayiz.
 
     val age = 23 //explicit type burada gereksizdir kotlin kendisi anlar type ckarimi yapar ide gucunden gelir
     // ozel tip belirtilmedikce deger araligi int icindeyse int olur

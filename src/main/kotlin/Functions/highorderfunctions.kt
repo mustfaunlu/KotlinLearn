@@ -292,4 +292,6 @@ fun News.read(readTitle: (title:String) -> Unit) {
     readTitle("Codemy is Awesome")
 }
 
+//Bir fonksiyonun calisabilmesi icin cagrilmasi gerekiyor. Higher order functionda cagrilmazsa calismaz.
+
 
