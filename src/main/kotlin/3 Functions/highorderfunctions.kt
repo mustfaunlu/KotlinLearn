@@ -1,4 +1,4 @@
-package Functions
+package `3 Functions`
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -129,6 +129,8 @@ fun main() {
         print(title)
     }
 
+
+
     news.read {
         print(it)   //it = title
     }
@@ -138,7 +140,7 @@ fun main() {
         print(title)
     }
 
-    news.read(titleFun) //higher orderi parametre olarak alan extension function infixte yapabiliriz
+    news.read(titleFun)
 
 
     printUserInfo(getName(), higherOrderFunction, getAge())
@@ -283,12 +285,28 @@ fun News.getNewsFromServer(channelType: String, newsType: NewsType, getNews: New
  */
 infix fun News.filterNews(getFilter: (filterType: String, getFilterName: () -> String) -> Unit) {
 
+    val getFilterNameHO = {
+        "String return label"
+    }
+
     getFilter("filterName") {
         "String return label"
     }
+
+
+    val getFilterNameHO2 = fun(): String{
+        return "String return label"
+    }
+
+    fun getFilterNameHO3(): String{
+        return "String return label"
+    }
+    getFilter("filterName", getFilterNameHO)
+    getFilter("filterName", getFilterNameHO2)
+    getFilter("filterName", ::getFilterNameHO3)
 }
 
-fun News.read(readTitle: (title:String) -> Unit) {
+fun News.read(readTitle: (title:String) -> Unit) {   //higher orderi parametre olarak alan extension function infixte yapabiliriz
     readTitle("Codemy is Awesome")
 }
 
