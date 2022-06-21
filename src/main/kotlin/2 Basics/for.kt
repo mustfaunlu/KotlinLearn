@@ -102,4 +102,9 @@ fun main() {
         }
     }
 
+    for (i in 1..6) { }        // closed range: 1, 2, 3, 4, 5, 6
+    for (i in 1 until 6) { }   // half-open range: 1, 2, 3, 4, 5
+    for (x in 1..6 step 2) {  } // step 2: 1, 3, 5
+    for (x in 6 downTo 1) { }  // closed range, backward order: 6, 5, 4, 3, 2, 1
+
 }

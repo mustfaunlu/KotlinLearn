@@ -1,7 +1,7 @@
 package `4 Classes`
 
-class Car constructor(wheelCount: Int, color: String = "Red") { //primary const. constructo yazmamiza gerek yok
-    private val mWheelCount: Int
+class Car constructor(wheelCount: Int, color: String = "Red") { //primary const. constructor yazmamiza gerek yok // visibility modifier veya jvm annotation verilecekse constructor yazmak zorundayiz.
+    private val mWheelCount: Int //parametreleri yukarda const. icindede tanimlayabilirz.
     private val mColor = color
 
 
@@ -24,9 +24,11 @@ class Car constructor(wheelCount: Int, color: String = "Red") { //primary const.
         "1. secondary const. created".printLog()
     }
 
-    constructor(name: String, madeOf: String) : this(4) {
+    constructor(name: String, madeOf: String) : this(4) {  //secondary const. lar olustururken this ile primary const. isaret etmeliyiz.
         "2. secondary const. created".printLog()
     }
+
+
 }
 
 fun main() {
