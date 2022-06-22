@@ -1,3 +1,5 @@
+package workarea
+
 fun main() {
     callMe { print("Bu bir higher order funct.") }
 
