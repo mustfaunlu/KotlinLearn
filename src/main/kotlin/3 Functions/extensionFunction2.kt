@@ -48,9 +48,9 @@ open class Shape {
 /* -------------------------------------------------------------------------------------------------------------------*/
 
 /**
- *      Bir sinifin, yazilmis extension fonksiyonun aynisini (isim ayni, parametre sayisi ve tipleri ayni, ayrica geri donus tipi de ayni olmali),
- *      kendi icinde barindiriyorsa, bu durumda yazilan extension fonksiyon gecersizdir. Sinifin uye fonksiyonu cagirilir.
- * **/
+ *Bir sinifin, yazilmis extension fonksiyonun aynisini (isim ayni, parametre sayisi ve tipleri ayni, ayrica geri donus tipi de ayni olmali),
+ *kendi icinde barindiriyorsa, bu durumda yazilan extension fonksiyon gecersizdir. Sinifin uye fonksiyonu cagirilir.
+  **/
 fun Shape.setNumber(intNumber: Int) { //pratikte ext ederek shape class i icinde old icin shape in private degiskenine bile erisebliriz.
     val result = intNumber * intNumber //fakat bu ext func gecersizdir. yok hukmendidir. classin kendi funksiyonu calisir.
     println(result)
@@ -59,10 +59,10 @@ fun Shape.setNumber(intNumber: Int) { //pratikte ext ederek shape class i icinde
 /* -------------------------------------------------------------------------------------------------------------------*/
 
 /**
- *      Bir sinifa extension fonksiyon yazilabildigi gibi extension property de yazilabilir.
- *      Bunun sebebi aslinda property'lerin get() ve set() methodlarindan olusmasindan dolayidir.
- *      Bu extension property'lerin icerisinde field tanimlanamaz.
- *      Dolayisiyla aslinda gercek anlamda bir degisken extension yapilamaz.
+ * Bir sinifa extension fonksiyon yazilabildigi gibi extension property de yazilabilir.
+ * Bunun sebebi aslinda property'lerin get() ve set() methodlarindan olusmasindan dolayidir.
+ * Bu extension property'lerin icerisinde field tanimlanamaz.
+ * Dolayisiyla aslinda gercek anlamda bir degisken extension yapilamaz.
  *      Bu konu property vs field konusu ile beraber sinif'lar islenirken detayli anlatilacaktir. (onemli!!)
  * **/
 var Shape.type
@@ -74,8 +74,8 @@ var Shape.type
 /* -------------------------------------------------------------------------------------------------------------------*/
 
 /**
- *      Open (Extend edilebilir) bir sinifa, sinifin icinde bir open (override edilebilir) extension fonksiyon yazilirsa,
- *      bu sinifi miras (inherit) alan siniflar, ilgili extension fonksiyonu override edebilirler.
+ *  Open (Extend edilebilir) bir sinifa, sinifin icinde bir open (override edilebilir) extension fonksiyon yazilirsa,
+ *   bu sinifi miras (inherit) alan siniflar, ilgili extension fonksiyonu override edebilirler.
  * **/
 class Rectangle : Shape() {
     override fun Int.extToString() {
@@ -91,7 +91,7 @@ class Triangle : Shape(){
 /* -------------------------------------------------------------------------------------------------------------------*/
 
 /**
- *      NOTES :
- *      Nullable extension function da yazilabilir.
- *      Companion object'lere de extension yazilabilir. Siniflar'da ornegini yapacagiz.
+ *   NOTES :
+ * Nullable extension function da yazilabilir.
+ * Companion object'lere de extension yazilabilir. Siniflar'da ornegini yapacagiz.
  * **/

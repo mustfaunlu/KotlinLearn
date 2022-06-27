@@ -4,11 +4,7 @@ package `3 Functions`
  * bir fonksiyon herhangi bir sinifin icerisinde degilde bir dosyanin icerisinde boslukta tanimlaniyorsa top level function adini alir
  * bir fonksiyona fonksiyon diyebilmek icin top level function olmali aksi takdirde methoddur.
  *
- */
-
-
-
- /**
+ *
  * fonksiyon icinde fonksiyon kotlinde vardir buna local functions denir.
  * sebebi ise yazilan fonksiyona kendi sinifindan bile erisilemez. gizlilik saglatir. reflection ile bile erisemeyiz.
  * local fuctiona sadece yazildigi fonksiyon icinde erisilir.
