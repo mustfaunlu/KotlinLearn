@@ -25,9 +25,9 @@ package `4 Classes`
 abstract class  MCDonalds {
     abstract val fridge: Fridge
     abstract val superVisor: SuperVisor
-    abstract val employeeOne: Employee
-    abstract val employeeTwo: Employee
-    abstract val employeeThree: Employee
+   // abstract val employeeOne: Employee
+   // abstract val employeeTwo: Employee
+    // val employeeThree: Employee
     abstract val menuList:  List<McHamburger>
 
     abstract fun clean(clock: Int)
@@ -38,7 +38,7 @@ abstract class  MCDonalds {
 
 
 fun main() {
-    val mcdonald =
+
 }
 
 class Fridge
