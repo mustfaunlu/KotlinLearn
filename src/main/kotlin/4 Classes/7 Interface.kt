@@ -71,9 +71,9 @@ interface Person : Named {
 //
 //}
 
-class Employee: Person{
+//class Employee: Person{
 
-}
+//}
 
 /**
  * bir interface icerisindeki fonksiyonlardan bodysi olanlar override edilmek zorunda degildir.
@@ -138,12 +138,12 @@ open class E()
  */
 class D : E(), A, B {
     override  fun foo(){
-        super<A>.foo()
-        super<B>.foo()
+        //super<A>.foo()
+        //super<B>.foo()
     }
 
     override fun bar(){
-        super.bar()  //A nin barinin bodysi olmadigi icin super burada B interfacenindir. <> yazmamiz gerekmez.
+        //super.bar()  //A nin barinin bodysi olmadigi icin super burada B interfacenindir. <> yazmamiz gerekmez.
     }
 
 }

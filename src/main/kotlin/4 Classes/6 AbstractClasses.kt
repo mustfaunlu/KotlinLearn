@@ -37,9 +37,9 @@ abstract class  MCDonaldsFranchize {
 
     abstract val fridge: Fridge
     abstract val superVisor: SuperVisor
-    abstract val employeeOne: Employee
-    abstract val employeeTwo: Employee
-    abstract val employeeThree: Employee
+//    abstract val employeeOne: Employee
+//    abstract val employeeTwo: Employee
+//    abstract val employeeThree: Employee
     abstract val menuList:  List<McHamburger>
 
     abstract fun clean(clock: Int)
@@ -66,12 +66,12 @@ class McDonaldsMaltepe : MCDonaldsFranchize(), McDonaldsService { //bir duz clas
         get() = TODO("Not yet implemented")
     override val superVisor: SuperVisor
         get() = TODO("Not yet implemented")
-    override val employeeOne: Employee
-        get() = TODO("Not yet implemented")
-    override val employeeTwo: Employee
-        get() = TODO("Not yet implemented")
-    override val employeeThree: Employee
-        get() = TODO("Not yet implemented")
+//    override val employeeOne: Employee
+//        get() = TODO("Not yet implemented")
+//    override val employeeTwo: Employee
+//        get() = TODO("Not yet implemented")
+//    override val employeeThree: Employee
+//        get() = TODO("Not yet implemented")
     override val menuList: List<McHamburger>
         get() = TODO("Not yet implemented")
 
@@ -95,6 +95,6 @@ class SuperVisor
 class Police
 class McHamburger
 class McCoffee
-class Employee
+//class Employee
 
 
