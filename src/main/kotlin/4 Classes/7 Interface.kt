@@ -22,7 +22,9 @@ package `4 Classes`
 
  7- interface fonksiyonlari bir class icindeki hicbir yapiya ihtiyac duymazlar bir yerde tetiklenmeyi bekleyip baska bir yerde calismayi bekler.
 
- 8- class lar inherit edilirken, interfaceler implement edilir. open koyma mantigi yoktur zaten amac implementtir.
+ 8- class lar inherit edilirken, interfaceler implement edilir. open koyma mantigi bu yuzden yoktur zaten amac implementtir.
+
+ 9- abstract classlar bir kez extends edilirken, interfaceler birden fazla implement edilebilir
 
  */
 
@@ -44,6 +46,8 @@ interface MyInterface {
     }
 
     fun foo2()
+
+    abstract fun bar() // abstract olabilir ama gereksizdir.
 }
 
 /**
@@ -52,9 +56,10 @@ interface MyInterface {
 
 interface Named{
     val fullName: String?
+    //val fullName: String? = "fdafda"   yapamayiz cunku interface state tutmaz.
 }
 
-interface Person : Named {
+interface Person : Named { //interfaceler birbirni implement edebilir inherit gibi : ile yaparlar birden fazla implementler , ile ayrilir.
     val firstName: String
     val lastName: String
 
@@ -63,30 +68,59 @@ interface Person : Named {
 
 }
 
+interface A {
+    fun foo(){
+        print("A")
+    }
+
+    fun bar()
+}
+
+interface B {
+    fun foo(){
+        print("B")
+    }
+    fun bar(){
+        print("Bar")
+    }
+}
+
 /**
  * Eger implement edilen interface, baska bir interfaceden implement ediliyorsa
  * ve bu interrface in uyerleri child interfacede override  edilmis ise.
  * Child interface i implement eden classda bu propertynin override edilme zorunlulugu kalkar.
  *
+ *
+ *
  * Eger bir abstract class bir interface i implment ediyorsa, o interfacesin override edilmesi
  * zorunlu fonksiyonlarini override etmeyebilir. Abstract classlar icin bu opssiyoneldir.
+ * Duz bir class olsaydi
  */
-
-//abstract class Employee : Person {
+//abstract class Employe(
+//    override val firstName: String, zorunlu degil  cunku abs class
+//    override val lastName: String, zorunlu degil
+//    override val fullName: String?,  zorunli degil
+//    val position : Int
 //
-//}
+//): Person
+ class Employe : Person {
+    override val firstName: String
+        get() = TODO("Not yet implemented")
+    override val lastName: String
+        get() = TODO("Not yet implemented")
 
-//class Employee: Person{
+    override val fullName: String? //zorunlu degiliz cunku person icinde override edilmisti.
+        get() = super.fullName
+}
 
-//}
 
 /**
  * bir interface icerisindeki fonksiyonlardan bodysi olanlar override edilmek zorunda degildir.
  * Bodysi olmayan tum fonksyonlar ise class a implement edildiginde override edilmek zorunda.
  *
  * Propertyler de interfacelere tanimlanailirer.
- * Propertylerden de deger atamassi yapilamamis olanlar zorunlu olarak override edilirler,
- * eger property initial degeri aldiysa(get() i ne statik geri donus vermek), override etme zorunlulugu ortadan kalkar.
+ * Propertylerden de deger atamassi yapilmamis olanlar zorunlu olarak override edilirler,
+ * eger property initial degeri aldiysa(get() ine statik geri donus degeri verildiyse), override etme zorunlulugu ortadan kalkar.
  *
  * Interface icerisine tanimli ve override edilme zorunlulugu olan propertyler primary constructor icerisinde de override edilebilirler.
  *
@@ -110,15 +144,15 @@ class Child(override val prop: Int = 29) : MyInterface {
         TODO("Not yet implemented")
     }
 
+    override fun bar() {
+        TODO("Not yet implemented")
+    }
+
 }
 
-interface A {
-    fun foo()
-}
 
-interface B {
-    fun bar()
-}
+
+
 
 /**
  * birden fazla interface bir class a tanimlanabilr. Abstractlar ise bir clasa miras verilir.

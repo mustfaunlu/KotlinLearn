@@ -1,9 +1,10 @@
 package `4 Classes`
 
-class Car constructor(wheelCount: Int, color: String = "Red") { //primary const. constructor yazmamiza gerek yok // visibility modifier veya jvm annotation verilecekse constructor yazmak zorundayiz.
-    private val mWheelCount: Int //parametreleri yukarda const. icindede tanimlayabilirz.
+class Car constructor( wheelCount: Int,  color: String = "Red") { //primary const. constructor yazmamiza gerek yok // visibility modifier veya jvm annotation verilecekse constructor yazmak zorundayiz.
+    private val mWheelCount: Int //parametreleri yukarda const. icindede val var yazarak tanimlayabilirz.
     private val mColor = color
 
+    //wheelCount  boyle erismek icin primary const. icinde val veya var ile tanimlamak lazim
 
     /**
      * initler constructorlarla beraber calisir ama secondary lerden once calisir,
