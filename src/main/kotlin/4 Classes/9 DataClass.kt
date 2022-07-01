@@ -1,6 +1,7 @@
 package `4 Classes`
 
 /**
+ * Value tutmak icin kullanilan classlar.
  * Data class'lar en azindan mutlaka 1 parametre almak zorundadir.
  * Parametreler mutlaka val ya da var ile tanimlamak zorundadir.
  * Open, abstract, sealed, inner class yapilamaz.
@@ -16,17 +17,18 @@ package `4 Classes`
  * Yani data class ozellikleri primary const. icindeki degiskenlerde calisir.
  *
  * componentN fonksiyonlari sebebiyle destructuring declaration olarak data class'lar set edilebiliryor.
+ * componentN fonksiyonlari primary olarak verilen parametre sayisi kadar uretilir.
  *
  * toString gibi fonksiyonlarda primary const. degiskenleri kullanildigi icin val ya da var yazilmak zoru
  *
  * Pair, Triple ozellestirilmis generic data class'lar mevcut.
  */
 
-data class News(
-    val title: String = "Title",
-    val description: String,
-    val hasMedaContent: Boolean,
-    val mediaList: List<Media>
+ data class News(
+    val title: String = "Title", //Component1
+    val description: String, //Component2
+    val hasMedaContent: Boolean, //Component3
+    val mediaList: List<Media> //Component4
 ){
     val relatedNewsList : List<News> = arrayListOf()
 
