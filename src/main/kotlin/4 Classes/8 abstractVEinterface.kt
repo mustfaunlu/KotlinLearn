@@ -15,6 +15,8 @@ package `4 Classes`
 
  6 bir abs class bir interface i implement ediyorsa yine implement icindeki overridelari override etmek zorunda degildir.
 
+ 7 ikisindede open final keywordleri kullanmak anlamsizdir.
+
 
  */
 
@@ -31,6 +33,8 @@ package `4 Classes`
 interfacelerin amaci ise e bilmek anlami katar, istenilen class a yeni ozellik yetenek ekler.
 
  4 interfaceler arayuz belirteci olarakda kullanilir.<> arasina yazilan belirteclerde interfacedir.
+
+ 5 abstract classlar sozlesmedir, interfaceler yetenek setidir.
 
 
  */
