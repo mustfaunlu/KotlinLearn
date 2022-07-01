@@ -158,9 +158,10 @@ class Child(override val prop: Int = 29) : MyInterface {
  * birden fazla interface bir class a tanimlanabilr. Abstractlar ise bir clasa miras verilir.
  * birden fazla interface aralarina virgul ile tanimlanir
  *
- *
- * : isaretinden sonra eklenen yapilarin hangilareini class (inheritance)
- * hangisinin interface(implements)
+ * : isaretinden sonra eklenen yapilarin hangileriini class (inheritance)
+ * hangilerinin interface(implements) oldugunu karitirmamak icin
+ * bu yapilarin sonuna bakmamiz lazim. Sonunda () paranezlerino goruyorsak :'dan sonra
+ * gelen yapi classtir(inheritance) miras alma islemi yapiliyordur. () yoksa intereface dir.
  */
 
 open class E()
@@ -177,12 +178,14 @@ open class E()
  */
 class D : E(), A, B {
     override  fun foo(){
-        //super<A>.foo()
-        //super<B>.foo()
+        //super.foo() birebir ayni foo fonksiyonu old icin ide bunu bilemez asagidaki gibi tanimlamaliyiz.
+        super<A>.foo()
+        super<B>.foo()
     }
 
     override fun bar(){
         //super.bar()  //A nin barinin bodysi olmadigi icin super burada B interfacenindir. <> yazmamiz gerekmez.
+
     }
 
 }
