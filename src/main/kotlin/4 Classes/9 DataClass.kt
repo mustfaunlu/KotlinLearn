@@ -1,12 +1,12 @@
 package `4 Classes`
 
 /**
- * Value tutmak icin kullanilan classlar.
+ * En basit tanim Value tutmak icin kullanilan classlar.
  * Data class'lar en azindan mutlaka 1 parametre almak zorundadir.
  * Parametreler mutlaka val ya da var ile tanimlamak zorundadir.
  * Open, abstract, sealed, inner class yapilamaz.
  * Data Class'lar miras alinamaz. Interface i implement ederler child class olabilirler ama ust class olamazlar.
- * Tum data class'lari default olarakfinal oldugu icin final modifier'i redundant uyarisi verir.
+ * Tum data class'lari default olarak final oldugu icin final modifier'i redundant uyarisi verir.
  *
  * Data class'larda equals, hashCode, toString, copy, componentN fonksiyonlari arka planda default olarak olustururlar.
  * Bunlarin hicbiri duz classlarin arka planinda yoktur. Kendimiz yazabiliriz.
@@ -22,6 +22,10 @@ package `4 Classes`
  * toString gibi fonksiyonlarda primary const. degiskenleri kullanildigi icin val ya da var yazilmak zoru
  *
  * Pair, Triple ozellestirilmis generic data class'lar mevcut.
+ *
+ * BAckendden gelen datalari biz data class yapariz sebepleri;
+ *  gelen datayi loglamak cok kolay oluyor. data class in instance in dan gelen datayi toSrign zaten old icin gorecegiz.
+ *  Fakat duz class ile datayi cekseydik her class icin toString yazmak override etmek gerekecekti.
  */
 
  data class News(
@@ -49,13 +53,14 @@ class NewsData(
 
     val relatedNewsList : List<NewsData> = arrayListOf()
 
-    override fun toString(): String {
-        return "super.toString()"
-    }
+//    override fun toString(): String {
+//        return "super.toString()"
+//    }
 
     fun copy() : NewsData {
         return NewsData(title, description, hasMedaContent, mediaList)
     }
+
 
 }
 
@@ -67,6 +72,7 @@ fun main() {
     val(title3,description3,hasMedaContent3) = newsOne
     val(title1,description1) = newsOne
 
+
     newsOne.mediaList
     mediaList //  bunu yapabilmek icin arka planda componentN fonksiyonlari olmasi gerekli  destrcuting declaration
 
@@ -75,8 +81,10 @@ fun main() {
 
     val newsThree = newsOne.copy(description = "farkli bir desc")
     // data class in birebir aynisi fakat sadece descriptionu farkli halinin verir
-    // duz classda copy olmagidi icin butun bilgilerini bastan verip sifirdan asagidaki gibi olusturacaktik.
-    val newsFour = News(
+
+
+    // asagidaki gibi duz classda copy olmagidi icin butun bilgilerini bastan verip sifirdan asagidaki gibi olusturacaktik.
+    val newsFour = NewsData(
         title = newsOne.title,
         description = "farkli bir desc",
         hasMedaContent= newsOne.hasMedaContent,
@@ -88,6 +96,11 @@ fun main() {
     val newsTwo = NewsData(title = "sdaf", description = "dfakdf", hasMedaContent = false, mediaList = arrayListOf())
 
 
-    println("Data Class toString: $newsOne") // newsOne primary const'daki butun desgiskenleri verir bize. surekli toString override etmek zorunda degiliz. arkaplanda otomatik verir
-    println("Class toString: $newsTwo") //
+
+    println("Data Class toString: $newsOne") // News(title=dfa, description=dakjsf, hasMedaContent=true, mediaList=[]) ciktisini veir
+    // newsOne primary const'daki butun desgiskenleri verir bize. surekli toString override etmek zorunda degiliz. arkaplanda otomatik verir
+
+
+    println("Class toString: $newsTwo") //Class toString: 4 Classes.NewsData@21bcffb5 ciktisi verir
+// duzcalss instance old icin icindeki veriyi okuyamayiz. Okumak icin toString override edip override i custom yazmak gerekecek.
 }
