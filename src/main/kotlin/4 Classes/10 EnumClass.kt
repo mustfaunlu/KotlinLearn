@@ -5,6 +5,8 @@ package `4 Classes`
  * Kullanim amaci ayni veri kumelerinin gruplanabilir olmasini saglar.
  * Opsiyonlarin tamaminin neler oldugunu rahatca gorebilmemizi saglar.
  *
+ * veri tasima cekme icin kullanilmamali statik degerlerin gruplarinda kullanilmali.
+ *
  * abstract, open, inner , sealed olamazlar.
  * yapisi geregi zaten final dirlar. final keyword u kullanmak redundant uyarisi verir.
  *
