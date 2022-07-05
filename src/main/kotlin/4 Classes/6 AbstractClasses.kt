@@ -28,7 +28,7 @@ interface  McDonaldsService {
  bu sebeple singleton pattern abstract classlarla olusabilir.
 
  7- abstract class bir diger abstract class i inherit ediyorsa abstract yapilari override etmek zorunda degildir.
- ama child class abstract degilse mecburen ust abstract classdaki overridelari etmelisin
+ ama child class abstract degilse mecburen ust abstract classdaki overridelari etmelidir
 
 
  8- eger bir abstract class baska bir abstract class tarafindan miras alindiysa ve bu kendisi icerisinde,

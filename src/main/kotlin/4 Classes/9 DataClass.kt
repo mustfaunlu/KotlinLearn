@@ -1,7 +1,7 @@
 package `4 Classes`
 
 /**
- * En basit tanim Value tutmak icin kullanilan classlar.
+ * En basit tanim veri tutmak icin kullanilan classlar.
  * Data class'lar en azindan mutlaka 1 parametre almak zorundadir.
  * Parametreler mutlaka val ya da var ile tanimlamak zorundadir.
  * Open, abstract, sealed, inner class yapilamaz.
@@ -19,7 +19,7 @@ package `4 Classes`
  * componentN fonksiyonlari sebebiyle destructuring declaration olarak data class'lar set edilebiliryor.
  * componentN fonksiyonlari primary olarak verilen parametre sayisi kadar uretilir.
  *
- * toString gibi fonksiyonlarda primary const. degiskenleri kullanildigi icin val ya da var yazilmak zoru
+ * toString gibi fonksiyonlarda primary const. degiskenleri kullanildigi icin val ya da var yazilmak zorunda.
  *
  * Pair, Triple ozellestirilmis generic data class'lar mevcut.
  *
