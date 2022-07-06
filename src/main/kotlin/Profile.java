@@ -16,11 +16,11 @@ public class Profile {
     public olarak tutarsak Profile.profile = Profile.newInstance(); yaparim anlami kalmaz singletonin.
      */
     private Profile() {
-/*
+    /*
     bizim bir class in nesnesini olusturabilmemiz o class in constructorunin durumuna (private public) baglidir.
     hicbir constructor yazilmadiysa default olarak bos constructor yazilir. ama publictir. instance uretir.
     fakat class in constructoruni private yaparsak scope disinda instance olusturamayiz.
- */
+    */
     }
 
     public synchronized static Profile newInstance() {
@@ -32,11 +32,6 @@ public class Profile {
         }
         return profile;  //icerde olusturdugumuz instance i public bir fonksiyonla geri donduruyoruz.
     }
-
-
-
-
-
 
 }
 

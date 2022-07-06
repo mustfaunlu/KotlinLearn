@@ -21,11 +21,14 @@ birsuru alan isgal edilmis olacak. sonuc olarak memory leak(outofmemory) orani a
  *
  *
  *                      **bir class i singleton teknik olarak nasil yapariz(javadaki hali)?
- *                      java dosyasinda acikliyorum
+ *                      1 - constructoru private yap ve baska public constr bulundurma
+ *                      2 - class in kendi degiskenini private olarak icerde olustur.
+ *                      3 - olusturdugun bu nesneyi null check yapip geri donderen public fonksiyon yaz.
+ *                          disardan bu fonksiyonu cagir ve ayni nesneye eris.
  *
  *                      **nerelerde kullaniriz ornek ver???
- * local db instance i singleton tutulur.
- * retrofil instance i singleton tutulur.
+ *                      local db instance i singleton tutulur.
+ *                      retrofil instance i singleton tutulur.
  *
  * static? garbage collector memory temizlerken static keywordlu fieldlara dokunmaz onlari silmez.
  * bu sayede herhangi bir t aninda o class in nesnesine ihtiyac duydugumuzda hali hazirdaki silinemeyen objeyi geri donduruyoruz.
@@ -35,10 +38,15 @@ birsuru alan isgal edilmis olacak. sonuc olarak memory leak(outofmemory) orani a
 
 object ProfileKotlin{
     var nickName: String? = null
+    var counter: Int = 0
 }
 
 fun main() {
     ProfileKotlin.nickName = "Musti"
+    ProfileKotlin.counter = 3
+    ProfileKotlin.counter = 2
+    ProfileKotlin.counter = 1213214
+    println(ProfileKotlin.counter)
 }
 
 
