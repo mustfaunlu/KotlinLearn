@@ -1,24 +1,14 @@
-package workarea
-
 fun main() {
-
-    print("Write how many ml of water the coffee machine has:")
+    print("Write how many ml of water the coffee machine has: ")
     val water = readln().toInt()
-    print("Write how many ml of milk the coffee machine has:")
+    print("Write how many ml of milk the coffee machine has: ")
     val milk = readln().toInt()
     print("Write how many grams of coffee beans the coffee machine has:")
-    val beans = readln().toInt()
-    print("Write how many cups of coffee you will need:")
-    val cups = readln().toInt()
+    val coffeeBeans = readln().toInt()
+    print("Write how many cups of coffee you will need: ")
+    val count = readln().toInt()
 
-    makeCoffee(water,milk, beans)
-
-
-
-
-
-
-
+    makeCoffee(water, milk, coffeeBeans, count)
     // println("""
 
     // Starting to make a coffee
@@ -31,16 +21,30 @@ fun main() {
     // """.trimIndent())
 }
 
-fun makeCoffee (water: Int, milk: Int, beans: Int){
-    if (water >= 200 && milk >= 50 && beans >= 15) {
+fun makeCoffee (water: Int, milk: Int, coffeeBeans: Int, count: Int) {
+    val r1 = water / 200
+    val r2 = milk / 50
+    val r3 = coffeeBeans / 15
 
-    }else{
-        println("I can make only 0 cups of coffee")
+    val cof = minOf(r1, r2, r3)
+    if (count > cof) {
+        println("No, I can make only $cof cups of coffee")
+    } else if (count == cof) {
+        println("Yes, I can make that amount of coffee")
+    } else {
+        println("Yes, I can make that amount of coffee (and even ${cof - count} more than that)")
     }
-}
 
-fun oneCoffee (){
-    val water = 200
-    val milk = 50
-    val beans = 15
+
+
+
+
+//    println("""
+//    For $count cups of coffee you will need:
+//    ${count * water} ml of water
+//    ${count * milk} ml of milk
+//    ${count * coffeeBeans} g of coffee beans
+//    """.trimIndent()
+//    )
+
 }
