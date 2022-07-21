@@ -26,12 +26,14 @@ fun defaultValues () {
 }
 
 fun inputFun() {
-    println("Write action (buy, fill, take): ")
+    print("Write action (buy, fill, take, remaining, exit): ")
     val input = readln()
     when (input) {
         "buy" -> buy()
         "fill" -> fill()
         "take" -> take()
+        "remaining" -> remaining()
+        "exit" -> return
     }
 }
 
@@ -143,3 +145,8 @@ fun take() {
        
     """.trimIndent())
 }
+
+fun remaining(){
+
+}
+
