@@ -47,7 +47,7 @@ fun main() {
      * continue kullanarak ilgili sart saglanirsa, donguye o degeri atlayarak devem edebilirsiniz
      */
     for(value in 1..50){
-        if (value % 2 == 1){ // tek sayi ise sart saglanirsa print etmez devam eder
+        if (value % 2 == 1){ // tek sayi ise sart saglanirsa print etmez for dongusune doner
             continue // sayi tek ise print etmez
         }
         println("$value")
@@ -106,5 +106,8 @@ fun main() {
     for (i in 1 until 6) { }   // half-open range: 1, 2, 3, 4, 5
     for (x in 1..6 step 2) {  } // step 2: 1, 3, 5
     for (x in 6 downTo 1) { }  // closed range, backward order: 6, 5, 4, 3, 2, 1
+
+
+
 
 }

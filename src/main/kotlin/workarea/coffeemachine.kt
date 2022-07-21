@@ -1,4 +1,6 @@
 fun main() {
+
+
     print("Write how many ml of water the coffee machine has: ")
     val water = readln().toInt()
     print("Write how many ml of milk the coffee machine has: ")
@@ -48,3 +50,4 @@ fun makeCoffee (water: Int, milk: Int, coffeeBeans: Int, count: Int) {
 //    )
 
 }
+
