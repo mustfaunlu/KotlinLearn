@@ -1,5 +1,6 @@
 package workarea
 
+import kotlin.system.exitProcess
 
 
 fun main() {
@@ -14,18 +15,20 @@ fun main() {
 
 fun process() {
     while (true){
-        print("Write action (buy, fill, take, remaining, exit): ")
+        print("Write action (buy, fill, take, remaining, exit):")
         val input = readln()
+        if(input == "exit") exitProcess(0)
         when (input) {
             "buy" -> toBuy()
             "fill" -> toFill()
             "take" -> toTake()
             "remaining" -> toRemaining()
-            "exit" -> return
         }
     }
 
 }
+
+
 
     fun toRemaining(){
         println("""
@@ -38,39 +41,34 @@ fun process() {
         """.trimIndent())
     }
 
+fun minResource(waterMin: Int, milkMin: Int, beansMin: Int, cupMin:Int, moneyMin:Int){
+    if (water < waterMin){
+        println("Sorry, not enough water!")
+    } else if (milk < milkMin){
+        println("Sorry, not enough milk!")
+    }else if (beans < beansMin){
+        println("Sorry, not enough coffee beans!")
+    }else if (cup < cupMin){
+        println("Sorry, not enough cup!")
+    } else {
+        println("I have enough resources, making you a coffee!")
+        water -= waterMin
+        milk -= milkMin
+        beans -= beansMin
+        cup -= cupMin
+        money += moneyMin
+    }
+}
     fun toBuy() {
         print("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino: ")
         val cof = readln()
         when(cof){
-
-            "1" -> {
-
-        water -= 250
-        milk -= 0
-        beans -= 16
-        cup -= 1
-        money += 4
-
-    }
-            "2" -> {
-        water -= 350
-        milk -= 75
-        beans -= 20
-        cup -= 1
-                money += 7
-  }
-            "3" -> {
-        water -= 200
-        milk -= 100
-        beans -= 12
-        cup -= 1
-                money += 6
-            }
+            "1" -> minResource(250,0,16,1,4)
+            "2" -> minResource(350,75,20,1,7)
+            "3" -> minResource(200,100,12,1,6)
             "back" -> process()
-
         }
     }
-
     fun toTake(){
         println("I gave you $$money")
         money -= money
