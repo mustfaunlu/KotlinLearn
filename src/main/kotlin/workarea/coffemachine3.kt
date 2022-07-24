@@ -17,12 +17,13 @@ fun process() {
     while (true){
         print("Write action (buy, fill, take, remaining, exit):")
         val input = readln()
-        if(input == "exit") exitProcess(0)
+
         when (input) {
             "buy" -> toBuy()
             "fill" -> toFill()
             "take" -> toTake()
             "remaining" -> toRemaining()
+            "exit" -> break
         }
     }
 
@@ -66,7 +67,7 @@ fun minResource(waterMin: Int, milkMin: Int, beansMin: Int, cupMin:Int, moneyMin
             "1" -> minResource(250,0,16,1,4)
             "2" -> minResource(350,75,20,1,7)
             "3" -> minResource(200,100,12,1,6)
-            "back" -> process()
+            else -> return
         }
     }
     fun toTake(){
