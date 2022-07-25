@@ -21,9 +21,9 @@ birsuru alan isgal edilmis olacak. sonuc olarak memory leak(outofmemory) orani a
  *
  *
  *                      **bir class i singleton teknik olarak nasil yapariz(javadaki hali)?
- *                      1 - constructoru private yap ve baska public constr bulundurma
- *                      2 - class in kendi degiskenini private olarak icerde olustur.
- *                      3 - olusturdugun bu nesneyi null check yapip geri donderen public fonksiyon yaz.
+ *     1 - constructoru private yap ve baska public constr bulundurma
+ *     2 - class in kendi nesnesini private volatile(multithread durumunda tek bir threadin ulasmasi icin) static olarak icerde olustur.
+ *     3 - olusturdugun bu nesneyi null check yapip geri donderen public fonksiyon yaz.
  *                          disardan bu fonksiyonu cagir ve ayni nesneye eris.
  *
  *                      **nerelerde kullaniriz ornek ver???

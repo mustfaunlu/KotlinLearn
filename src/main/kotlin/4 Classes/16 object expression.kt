@@ -16,7 +16,7 @@ val fullName: User = object : Print2, User(23){
         println("Full name = $firstName $surName")
     }
 
-    override fun getUserFullName() {
+    override fun getUserFullName() {  //open old. icin override etmek zorunda degiliz icerisinde harici birsey yapmadigimzi icin gri uyari veriyor.
         super.getUserFullName()
     }
 
