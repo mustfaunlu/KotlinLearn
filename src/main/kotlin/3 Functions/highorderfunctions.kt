@@ -313,3 +313,5 @@ fun News.read(readTitle: (title:String) -> Unit) {   //higher orderi parametre o
 //Bir fonksiyonun calisabilmesi icin cagrilmasi gerekiyor. Higher order functionda cagrilmazsa calismaz.
 
 
+
+

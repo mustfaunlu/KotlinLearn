@@ -13,7 +13,7 @@ public class Profile {
     synchronized in degisken icin olan ismi volatile dir. Ayni anda degiskene tek bir thread erismesini saglar.
     bu degisken private olsa bile reflection ile erisimide engglemek  icin volatile keywordu yazilir.
     eger bir degisken static degilse static func icinde kullanilamaz o yuzden burayada static koyuyoruz
-    public olarak tutarsak Profile.profile = Profile.newInstance(); yaparim anlami kalmaz singletonin.
+    public olarak tutarsak mainde Profile.profile = Profile.newInstance(); yaparim anlami kalmaz singletonin.
      */
     private Profile() {
     /*
