@@ -46,8 +46,9 @@ val fullName: User = object : Print2, User(23){
 }
 
 fun main() {
-    // fullName.onPrint()
-    fullName.getUserFullName()
+    // fullName.onPrint()  degisken tipi Print2 yapsaydik erisirdik.
+    fullName.getUserFullName()  // degisken tipi User old. icin Userin memberlarina erisebiliyourz.
+    //fullName.firstName  object in memberlarina asla disaridan erisemeyiz. Cunku fullName User class inin instance old icin sadece User  memberlarina erisir.
     println("Full name = $fullName")
 
 

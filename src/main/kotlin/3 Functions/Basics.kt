@@ -43,6 +43,7 @@ fun main() {
      * Ide ye hangi parametreye deger atadignizi soylemek icin opsiyonel parametrelerde Named Argument kullanmalliyiz
      * BU DURUMA KOTLINDE FUNCTION OVERLOAD DENIR.
      * !opsiyonel parametreleri genelde sona yaz..
+     * named argumentleri istedigimiz sirada verebiliriz.
      *
      * method overloading ayni isimdeki methodlarin ya parametre sayisi farkli ya da tipleri farkliysa overload etmektir.
      */
