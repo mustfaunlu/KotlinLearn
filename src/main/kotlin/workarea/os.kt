@@ -28,6 +28,7 @@ open class Zar(val job: String, val name: String = "Aslan"){
 }
 
 class ArithmeticOperations(val x: Int, val y: Int){
+
     fun addition() : Int {
         return x + y
     }
@@ -49,4 +50,14 @@ fun main() {
     val k = Kar()
     k.wakeUp()
     makeReddit()
+}
+
+class IceCreamOrder{
+val price : Int
+    constructor(popsicles: Int) {
+       this.price = popsicles * 7
+    }
+    constructor(scoops: Int , toppings: Int){
+        this.price = scoops * 5 + toppings * 2
+    }
 }
