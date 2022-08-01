@@ -43,6 +43,7 @@ fun input(){
     for (i in input.indices) {
         grid[i] = input[i]
     }
+    printer()
 }
 fun printer(){
      println(
@@ -60,46 +61,20 @@ fun takeCoordinate() {
     var x = 0
     var o = 0
     try {
-        do {
+         do {
             val cordinate = readln().replace("\\s".toRegex(), "").toInt()
-            when (cordinate) {
-                11 -> if (grid[0].isLetter()) {
-                     println("This cell is occupied! Choose another one!")
-                } else grid[0] = 'X'
-
-                12 -> if (grid[1].isLetter()) {
-                     println("This cell is occupied! Choose another one!")
-                } else grid[1] = 'X'
-
-                13 -> if (grid[2].isLetter()) {
-                     println("This cell is occupied! Choose another one!")
-                } else grid[2] = 'X'
-
-                21 -> if (grid[3].isLetter()) {
-                     println("This cell is occupied! Choose another one!")
-                } else grid[3] = 'X'
-
-                22 -> if (grid[4].isLetter()) {
-                     println("This cell is occupied! Choose another one!")
-                } else grid[4] = 'X'
-
-                23 -> if (grid[5].isLetter()) {
-                     println("This cell is occupied! Choose another one!")
-                } else grid[5] = 'X'
-
-                31 -> if (grid[6].isLetter()) {
-                     println("This cell is occupied! Choose another one!")
-                } else grid[6] = 'X'
-
-                32 -> if (grid[7].isLetter()) {
-                     println("This cell is occupied! Choose another one!")
-                } else grid[7] = 'X'
-
-                33 -> if (grid[8].isLetter()) {
-                     println("This cell is occupied! Choose another one!")
-                } else grid[8] = 'X'
-
-                else -> println("Coordinates should be from 1 to 3!")
+             if (cordinate !in 11..13 && cordinate !in 21..23 && cordinate !in 31..33) println("Coordinates should be from 1 to 3!")
+            when(cordinate) {
+                11 -> if (grid[0].isLetter()) return println("This cell is occupied! Choose another one!") else grid[0] = 'X'
+                12 -> if (grid[1].isLetter()) return println("This cell is occupied! Choose another one!") else grid[1] = 'X'
+                13 -> if (grid[2].isLetter()) return println("This cell is occupied! Choose another one!") else grid[2] = 'X'
+                21 -> if (grid[3].isLetter()) return println("This cell is occupied! Choose another one!") else grid[3] = 'X'
+                22 -> if (grid[4].isLetter()) return println("This cell is occupied! Choose another one!") else grid[4] = 'X'
+                23 -> if (grid[5].isLetter()) return println("This cell is occupied! Choose another one!") else grid[5] = 'X'
+                31 -> if (grid[6].isLetter()) return println("This cell is occupied! Choose another one!") else grid[6] = 'X'
+                32 -> if (grid[7].isLetter()) return println("This cell is occupied! Choose another one!") else grid[7] = 'X'
+                33 -> if (grid[8].isLetter()) return println("This cell is occupied! Choose another one!") else grid[8] = 'X'
+                //!in 11..13, !in 21..23, !in 31..33 -> println()
             }
             for (i in grid.indices) {
                 if (grid[i] == 'X') x++
