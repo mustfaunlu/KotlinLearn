@@ -1,5 +1,10 @@
 package workarea
 
 fun main() {
-    println("result".substring(0, 1))
+    val firstList = readLine()!!.split(' ').map { it }.toMutableList()
+    val secondList = readLine()!!.split(' ').map { it }.toMutableList()
+    // do not touch the lines above
+    firstList.addAll(secondList)
+    println(firstList.joinToString())
+
 }

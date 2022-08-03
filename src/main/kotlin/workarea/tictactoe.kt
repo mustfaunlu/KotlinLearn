@@ -29,96 +29,135 @@ If the input is correct, update the grid to include the user's move and print th
 To summarize, you need to output the field 2 times: once before the user's move (based on the first line of input) and once after the user has entered valid coordinates (then you need to update the grid to include that move).
  */
 
-val grid = MutableList(9) { ' ' }
 
 fun main() {
-    input()
-    takeCoordinate()
-    //gameState()
-}
-
-
-fun input(){
     val input = readln()
-    for (i in input.indices) {
-        grid[i] = input[i]
-    }
-    printer()
-}
-fun printer(){
-     println(
-        """
+
+    val line1 = mutableListOf(input[0], input[1], input[2])
+    val line2 = mutableListOf(input[3], input[4], input[5])
+    val line3 = mutableListOf(input[6], input[7], input[8])
+
+    val list = mutableListOf(line1, line2, line3)
+
+    println("""
         ---------
-        | ${grid[0]} ${grid[1]} ${grid[2]} |
-        | ${grid[3]} ${grid[4]} ${grid[5]} |
-        | ${grid[6]} ${grid[7]} ${grid[8]} |
+        | ${list[0][0]} ${list[0][1]} ${list[0][2]} |
+        | ${list[1][0]} ${list[1][1]} ${list[1][2]} |
+        | ${list[2][0]} ${list[2][1]} ${list[2][2]} |
         ---------
         """.trimIndent().replace('_', ' ')
     )
-}
-fun takeCoordinate() {
-    var switch = true
-    var x = 0
-    var o = 0
     try {
-         do {
-            val cordinate = readln().replace("\\s".toRegex(), "").toInt()
-             if (cordinate !in 11..13 && cordinate !in 21..23 && cordinate !in 31..33) println("Coordinates should be from 1 to 3!")
-            when(cordinate) {
-                11 -> if (grid[0].isLetter()) return println("This cell is occupied! Choose another one!") else grid[0] = 'X'
-                12 -> if (grid[1].isLetter()) return println("This cell is occupied! Choose another one!") else grid[1] = 'X'
-                13 -> if (grid[2].isLetter()) return println("This cell is occupied! Choose another one!") else grid[2] = 'X'
-                21 -> if (grid[3].isLetter()) return println("This cell is occupied! Choose another one!") else grid[3] = 'X'
-                22 -> if (grid[4].isLetter()) return println("This cell is occupied! Choose another one!") else grid[4] = 'X'
-                23 -> if (grid[5].isLetter()) return println("This cell is occupied! Choose another one!") else grid[5] = 'X'
-                31 -> if (grid[6].isLetter()) return println("This cell is occupied! Choose another one!") else grid[6] = 'X'
-                32 -> if (grid[7].isLetter()) return println("This cell is occupied! Choose another one!") else grid[7] = 'X'
-                33 -> if (grid[8].isLetter()) return println("This cell is occupied! Choose another one!") else grid[8] = 'X'
-                //!in 11..13, !in 21..23, !in 31..33 -> println()
-            }
-            for (i in grid.indices) {
-                if (grid[i] == 'X') x++
-                if (grid[i] == 'O') o++
-            }
-            if (x + o >= 9) {
-                switch = false
-            } else {
-                x = 0
-                o = 0
-            }
-            printer()
-        } while (switch)
-    } catch (e: NumberFormatException) {
-         println("You should enter numbers!")
+        while (true) {
+        val(x, y) = readln().split(" ")
+        val cor1 = x.toInt()
+        val cor2 = y.toInt()
+
+        if (cor1 !in 1..3 || cor2 !in 1..3) {
+            println("Coordinates should be from 1 to 3!")
+        } else if (list[cor1 - 1][cor2 - 1] == 'X' || list[cor1 - 1][cor2 - 1] == 'O') {
+            println("This cell is occupied! Choose another one!")
+        } else
+            list[cor1 - 1][cor2 - 1] = 'X'
+            println(
+                """
+            ---------
+            | ${list[0][0]} ${list[0][1]} ${list[0][2]} |
+            | ${list[1][0]} ${list[1][1]} ${list[1][2]} |
+            | ${list[2][0]} ${list[2][1]} ${list[2][2]} |
+            ---------
+            """.trimIndent().replace('_', ' ')
+            )
+        return
+        }
+    } catch (e: IndexOutOfBoundsException) {
+        println("You should enter numbers!")
     }
 }
 
-fun gameState() {
-    var ex = 0
-    var oh = 0
-    var check = 0
-    for (i in grid.indices) {
-        if (grid[i] == 'X') ex++
-        if (grid[i] == 'O') oh++
-    }
-// --------------horizontal lines -------------
-    if (grid[0] == grid[1] && grid[1] == grid[2]) check++
-    if (grid[3] == grid[4] && grid[4] == grid[5]) check++
-    if (grid[6] == grid[7] && grid[7] == grid[8]) check++
 
-    // --------- vertical lines ----------
-    if (grid[0] == grid[3] && grid[3] == grid[6]) check++
-    if (grid[1] == grid[4] && grid[4] == grid[7]) check++
-    if (grid[2] == grid[5] && grid[5] == grid[8]) check++
 
-    // ---------- diagonal lines -------
-    if (grid[0] == grid[4] && grid[4] == grid[8]) check++
-    if (grid[2] == grid[4] && grid[4] == grid[6]) check++
 
-    if ((ex - oh == 1 || ex - oh == 0) && check == 1) return println("X wins")
-    if ((oh - ex == 1 || oh - ex == 0) && check == 1) return println("O wins")
-    if (check > 1) return println("Impossible")
-    if (check == 0 && (ex == 5 || oh == 5)) return println("Draw")
-    if (ex - oh >= 2 || oh - ex >= 2) return println("Impossible")
-    if (ex < 4 || oh < 4) return println("Game not finished")
-}
+//package tictactoe
+
+//fun main() {
+//    println("Enter cells:")
+//    val symbols = readln()
+//
+//    val line1 = mutableListOf(symbols[0], symbols[1], symbols[2])
+//    val line2 = mutableListOf(symbols[3], symbols[4], symbols[5])
+//    val line3 = mutableListOf(symbols[6], symbols[7], symbols[8])
+//
+//    val list = mutableListOf(
+//        line1,
+//        line2,
+//        line3
+//    )
+//
+//    println(
+//        """
+//        ---------
+//        | ${list[0][0]} ${list[0][1]} ${list[0][2]} |
+//        | ${list[1][0]} ${list[1][1]} ${list[1][2]} |
+//        | ${list[2][0]} ${list[2][1]} ${list[2][2]} |
+//        ---------
+//        """
+//    )
+//
+//    while (true) {
+//        println("Enter the coordinates:")
+//
+//        val (number1, number2) = readln().split(" ")
+//        val coordinate1 = number1.toInt()
+//        val coordinate2 = number2.toInt()
+//
+//        if (coordinate1 !is Int || coordinate2 !is Int) {
+//            println("You should enter numbers!")
+//        } else if (coordinate1 < 1 || coordinate1 > 3 || coordinate2 < 1 || coordinate2 > 3) {
+//            println("Coordinates should be from 1 to 3!")
+//        } else if (list[coordinate1 - 1][coordinate2 - 1] == 'X' || list[coordinate1 - 1][coordinate2 - 1] == 'O') {
+//            println("This cell is occupied! Choose another one!")
+//        } else {
+//            list[coordinate1 - 1][coordinate2 - 1] = 'X'
+//            println(
+//                """
+//            ---------
+//            | ${list[0][0]} ${list[0][1]} ${list[0][2]} |
+//            | ${list[1][0]} ${list[1][1]} ${list[1][2]} |
+//            | ${list[2][0]} ${list[2][1]} ${list[2][2]} |
+//            ---------
+//            """
+//            )
+//            return
+//        }
+//    }
+//}
+//fun gameState() {
+//    var ex = 0
+//    var oh = 0
+//    var check = 0
+//    for (i in grid.indices) {
+//        if (grid[i] == 'X') ex++
+//        if (grid[i] == 'O') oh++
+//    }
+//// --------------horizontal lines -------------
+//    if (grid[0] == grid[1] && grid[1] == grid[2]) check++
+//    if (grid[3] == grid[4] && grid[4] == grid[5]) check++
+//    if (grid[6] == grid[7] && grid[7] == grid[8]) check++
+//
+//    // --------- vertical lines ----------
+//    if (grid[0] == grid[3] && grid[3] == grid[6]) check++
+//    if (grid[1] == grid[4] && grid[4] == grid[7]) check++
+//    if (grid[2] == grid[5] && grid[5] == grid[8]) check++
+//
+//    // ---------- diagonal lines -------
+//    if (grid[0] == grid[4] && grid[4] == grid[8]) check++
+//    if (grid[2] == grid[4] && grid[4] == grid[6]) check++
+//
+//    if ((ex - oh == 1 || ex - oh == 0) && check == 1) return println("X wins")
+//    if ((oh - ex == 1 || oh - ex == 0) && check == 1) return println("O wins")
+//    if (check > 1) return println("Impossible")
+//    if (check == 0 && (ex == 5 || oh == 5)) return println("Draw")
+//    if (ex - oh >= 2 || oh - ex >= 2) return println("Impossible")
+//    if (ex < 4 || oh < 4) return println("Game not finished")
+//}
