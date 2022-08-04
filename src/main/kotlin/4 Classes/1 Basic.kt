@@ -13,6 +13,7 @@ class Car constructor( val wheelCount: Int, val color: String = "Red") { //prima
      * ama devaminda hangi const uygun parametre verildiyse o calisacak.
      *
      * kotlinde butun secondary const. lar mecburen primary i isaret etmelidir. this ile yapiyourz. miras aliyor gibi
+     * primaryde constructor bos verilmisse  secondary constructorlara this yazmaya gerek yoktur.
      */
 
     init {
