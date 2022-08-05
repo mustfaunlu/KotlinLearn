@@ -14,3 +14,14 @@ val firstCharOfName2: Char = '?'
 // escape karakterlerinde '\' seklinde tnaimlariz
 
 // \t tab kadar bosluk \n alt satira inmek icin \b backspace icin \r satir basi
+
+
+
+// 'a' + 1 ?
+val c1 = 'b'
+
+// 'a' + 25 ?
+val c2 = 'z'
+
+// 'E' - 2 ?
+val c3 = 'C'
