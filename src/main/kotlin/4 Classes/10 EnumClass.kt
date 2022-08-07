@@ -185,7 +185,7 @@ fun  getBestTeam(team: Teams): Teams{
     return team
 }
 /**
- * burada parametre olarak Teams enum classini aldik. Ve main icinde Teams.BJK yi verdik.
+ * burada parametre olarak Teams enum classini aldik. Ve workarea.main icinde Teams.BJK yi verdik.
  * bunu yapabilmezi saglayan olay aslinda enum sabiti olan BJK nin arka planda Teams i miras aliyor olmasidir.
  * Burada Teams super type old. icin onu miras alan class larida parametre olarak verebiliyoruz.
 

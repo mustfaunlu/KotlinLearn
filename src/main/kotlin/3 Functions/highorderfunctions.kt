@@ -2,7 +2,7 @@ package `3 Functions`
 import java.util.*
 import kotlin.concurrent.schedule
 
-//fun main(args: Array<String>) {
+//fun workarea.main(args: Array<String>) {
 //    printName("Gökhan")
 //
 //    printTotalName("${printName("Gökhan")}")
@@ -66,7 +66,7 @@ fun main() {
      *
      *      Cagrilirken ;
      *
-     *      fun main(){
+     *      fun workarea.main(){
      *
      *          foo({ message ->
      *              println("Message : $message")

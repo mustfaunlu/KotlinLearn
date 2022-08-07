@@ -3,7 +3,7 @@
 //    return param in vowels
 //}
 //
-//fun main() {
+//fun workarea.main() {
 //    val letter = readLine()!!.first().lowercaseChar()
 //    println(isVowel(letter))
 //}
@@ -13,7 +13,7 @@
 //}
 //
 ///* Do not change code below */
-//fun main() {
+//fun workarea.main() {
 //    val a = readLine()!!.toInt()
 //    println(getLastDigit(a))
 //}

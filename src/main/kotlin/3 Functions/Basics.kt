@@ -7,7 +7,7 @@ package `3 Functions`
  * : operatoru ve geri donus degeri yazilir.
  * fonksiyon body'si aciliir ve kapatilir
  * geri donus degeri verilmeyen fonksiyonlar Unite tipini geri dondurur.
- * Unit = void      fun main(): Unit{ ... } seklinde tanimlanir ama tanimlamaya gerek yoktur.
+ * Unit = void      fun workarea.main(): Unit{ ... } seklinde tanimlanir ama tanimlamaya gerek yoktur.
  * Business logiclerin tekrarli sekilde cagrilmalari ve logiclerin kolay sekilde degistirilmesi icin kullanilir.
  * aksi taktirde tek teke degistirmek zorunda kaliriz logicleri
  */

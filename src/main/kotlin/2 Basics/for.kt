@@ -64,6 +64,7 @@ fun main() {
      * ic ice for donguleri kullnaiyorsak bir ustteki for a degil de iki ustteki uc ustteki for a donmek istiyorsak
      * label kullanabiliriz. bunun icin labelname@ ifadesini ilgili for un onune yazip. return ya da continue yapacagimiz
      * yere ise @labelname seklinde yazmamiz yeterlidir.
+     * labelleri continue ve break operatorleri ile kullanbiliriz
      */
 
     for(value in 1..10){
@@ -90,6 +91,31 @@ fun main() {
                 break@breaklabel
             }
             println("break $value2")
+        }
+    }
+
+    for (i in 1..4) {
+        for (j in 1..4) {
+            if (j == 2) continue // you want to ignore j = 2
+            if (i <= j) break    // you will print the string if i is greater than j
+            println("i = $i, j = $j")
+        }
+        println("Finished to examine i = $i")
+    }
+
+    loop@ for (i in 1..3) {
+        for (j in 1..3) {
+            println("i = $i, j = $j")
+            if (j == 3) break@loop
+        }
+    }
+
+    loop@ for (i in 1..3) {
+        for (j in 1..3) {
+            for (k in 1..3) {
+                if (k == 2) continue@loop
+                println("i = $i, j = $j, k = $k")
+            }
         }
     }
 

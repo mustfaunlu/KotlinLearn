@@ -80,7 +80,7 @@ fun main() {
 
 //package tictactoe
 
-//fun main() {
+//fun workarea.main() {
 //    println("Enter cells:")
 //    val symbols = readln()
 //

@@ -1,4 +1,4 @@
-//fun main() {
+//fun workarea.main() {
 //    val a = readln().toInt()
 //    val b = readln().toInt()
 //    val c = readln().toInt()
@@ -15,7 +15,7 @@
 //
 //    age in 18..59
 //
-//    fun main() {
+//    fun workarea.main() {
 //        val a = readln().toInt()
 //        val b = readln().toInt()
 //        val c = readln().toInt()

@@ -31,7 +31,7 @@ fun main() {
 
 
 
-//fun main() {
+//fun workarea.main() {
 //    var max = 0
 //    while(true){
 //        val scan = readln().toInt()
