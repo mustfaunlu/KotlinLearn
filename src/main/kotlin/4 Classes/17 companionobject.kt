@@ -9,15 +9,19 @@ package `4 Classes`
  * ama comp object ile interface icinde state tutabilmis oluyoruz. Ama yapilmamasi gerekir.
  *
  * companion eslik eden anlamina gelir yani class imiza yardimci olurlar.
- * class in tamamini degilde icindeki belli kismi singleton yapmak icin kullanilir.
+ * class in tamamini degilde icindeki belli kod blogunu singleton yapmak icin kullanilir.
  *
  *
- * companion objectin nesnesi companionu icine yazgidimiz classda yer alir.HomeFragment.TAG seklinde ulasabilir.z
+ * companion objectin nesnesi companionu icine yazgidimiz classda yer alir.HomeFragment.TAG seklinde ulasabiliriz
+ * fakat class icinde object kullaniminda HomeFragment.Deneme.TAG seklinde ulasiriz. arka planda nested class oldugu icin statik ve singleton seklinde yazilir.
+ * fakat object i singleton gibi disarda tanimlarsak arka planda statik class olmaz.
+ *
+ * class icinde object yazilmaz  // companion object yazilir.
  */
 interface HomeFragmentPresenter {
     fun navigate()
 
-    companion object{  //
+    companion object{  //gunah
         val name = "ali"
     }
 }
@@ -32,7 +36,7 @@ class HomeFragment: HomeFragmentPresenter {
     companion object NamedorNameless : HomeFragmentPresenter, BankAccount2(124234, 23213){
         const val TAG : String = "HomeFragment"
 
-        var homeFragment: HomeFragment? = null
+       private var homeFragment: HomeFragment? = null
         fun newInstance() : HomeFragment{
             homeFragment = HomeFragment()
             return homeFragment as HomeFragment
@@ -52,7 +56,7 @@ class HomeFragment: HomeFragmentPresenter {
 }
 
 
-open class BankAccount2(i: Int, i1: Int) {
+open class BankAccount2(i: Int, i1: Int) { // companion object normal bir class i da extends edebilir.
 
 }
 
