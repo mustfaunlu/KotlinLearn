@@ -9,24 +9,20 @@ package `4 Classes`
  */
 
 /**
- * hiyerarsiyi kisitlamak icin kullanilan mukemmel bir ozellik
+ * parametre olarak verilecek hiyerarsiyi kisitlamak icin kullanilan mukemmel bir ozellik
  * olaya buyuk cerceveden bakmaya saglar.
  * parametre olan yerlerde kullanialbilir.
- * constructorlarda fonksiyonlarda higher orderlarda extensinon inline functionlarda
- *
- *
- *
+ * constructorlarda, fonksiyonlarda, higher orderlarda, extensinon, inline, functionlarda
+
+
+ *Bir T arayuzu yazarken kesinlikle classin arayuzu base olarak verilmeli <T: Auto> veya <T: Bycle> gibi
+ base arayuz vermezsek sadece T yazarsak herhangi bir class i da base olarak alabilir bu da mantik hatasina goturebilir.
+
+
  * out verilirse class in kendisi ve childlari , in verilirse class in kendisi ve ust classlari
- *
- *
- * reified keyword u sadece inline functionlarda kullanilir.
- * generic tipler derleme zamaninda hangi tipte oldgunun bilgisinde degildir.
- * run tusuna basildigin hala ide hangi tipte old bilmez.
- * ne zaman kod run time da orasi okunur oyle haberi olur.
- * reified kullanirsak derleme zamaninda tipi bilinir.
- * bunun hangi tip olacagi bilinirse  generic tiplerle ilgili 2 onemli kontrol var
- * 1 generic tipin hangi tipte oldugunu anlamak icerde iki tipide kullaniyor olabilir.
- * bunun icin tipi belli olmali reified bunun belli olmasini saglar.
+
+
+
  */
 
 interface TransportationFunctions {
@@ -134,6 +130,51 @@ fun main() {
     val johnCabrioFActory: TransportFactory<JohnCabrio> = TransportFactory<JohnCabrio>(johnCabrio)
     val beetleFActory: TransportFactory<Beetle> = TransportFactory<Beetle>(beetle)
 
-    val johnFactory3: TransportFactory<John> = TransportFactory<JohnCabrio>(johnCabrio)
+   // val johnFactory2: TransportFactory<John> = TransportFactory<MiniCooper>(miniCooper) //in yazarsak calisir  // john yazdik ust classini bekliyrouz
+    val johnFactory3: TransportFactory<John> = TransportFactory<JohnCabrio>(johnCabrio) //out yazarsak calisir // John  yazdik alt classini bekliyoruz.
     val johnFactory4: TransportFactory<John> = TransportFactory<John>(john)
+
+
+//    val bisanFactory2: TransportFactory<Bisan> = TransportFactory<Bycle>(bycle)
+//    val bisanFactory3: TransportFactory<Bisan> = TransportFactory<BlackBisa>(blackBisan)
+//    val bisanFactory4: TransportFactory<Bisan> = TransportFactory<Bisan>(bisan)
+//
+//    val bisanFactory: TransportFactory<Bisan> = TransportFactory<Bisan>(bisan)
+//    val corelliFactory: TransportFactory<Corelli> = TransportFactory<Corelli>(corelli)
+
+//    val something: Car = Car(2,"red")
+//    val somethingFactory: TransportFactory<Car> = TransportFactory<Car>(something)
+
+
+    calculate<Int>(2,5)
+    calculate<String>(2,5)
 }
+
+inline fun <reified T> calculate(n1: Int, n2: Int): T {
+    return when (T::class.java) {
+        String::class.java -> {
+            (n1 + n2) as T
+        }
+        else -> {
+            (n1 + n2) as T
+        }
+    }
+}
+
+/**
+ * reified keyword u sadece inline functionlarda kullanilir.
+ * generic tipler derleme zamaninda hangi tipte oldgunun bilgisinde degildir.
+ * run tusuna basildigin hala ide hangi tipte old bilmez.
+ * ne zaman kod run time da okunur oyle haberi olur.
+ * reified kullanirsak derleme zamaninda tipi bilinir.
+ * bunun hangi tip olacagi bilinirse  generic tiplerle ilgili 2 onemli kontrol var
+ * 1 generic tipin hangi tipte oldugunu anlamak icerde iki tipide kullaniyor olabilir.
+ * bunun icin tipi belli olmali reified bunun belli olmasini saglar.
+ */
+
+/**
+ * bunu anlamak icin inline i anlamak gerekir.
+ * inline functionlarin body si run time da cagrildigi yere yapistirilir.
+ * bu ornekte aslinda arka planda calculate diye bir function yaratilmaz.
+ * bu yuzden reified ile tipi belli edilirki arka planda bu functionlarin tipi belli olsun
+ */
