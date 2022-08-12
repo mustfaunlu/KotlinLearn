@@ -20,10 +20,16 @@ package `4 Classes`
 
 
  * out verilirse class in kendisi ve childlari , in verilirse class in kendisi ve ust classlari
+ * out ve in keywordleri ihtiyaci ;
 
 
 
  */
+
+// function ornegi
+//fun <T: BaseFragment> log(loginFragment: T) {
+//    (loginFragment as BaseFragment).log()
+//}
 
 interface TransportationFunctions {
     fun run()
@@ -161,6 +167,7 @@ inline fun <reified T> calculate(n1: Int, n2: Int): T {
     }
 }
 
+
 /**
  * reified keyword u sadece inline functionlarda kullanilir.
  * generic tipler derleme zamaninda hangi tipte oldgunun bilgisinde degildir.
@@ -178,3 +185,5 @@ inline fun <reified T> calculate(n1: Int, n2: Int): T {
  * bu ornekte aslinda arka planda calculate diye bir function yaratilmaz.
  * bu yuzden reified ile tipi belli edilirki arka planda bu functionlarin tipi belli olsun
  */
+
+
