@@ -88,7 +88,7 @@ fun mainer() {
      *      Degisken tanimi yapildiktan sonra atama yapilabilir.
      */
     val surname: String
-    surname = "ÖZTÜRK"
+    //surname = "ÖZTÜRK"
 
     /**
      *      Ancak, deger atamasi sonradan yapilacaksa degisken tipi belirtilmelidir.

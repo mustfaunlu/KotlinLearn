@@ -2,7 +2,6 @@ package `2 Basics`
 
 /**
  *      Degiskene deger atamasi yapilirken maksimum performans almak icin dogru degisken tipini kullanmak onemlidir.
- *      Bunun icin degiskenlerin deger araliklarini yukaridan kontrol edebilirsiniz.
  *      Tip cikarimi (Type Inference) sirasinda eger sayi Int ifadeden buyuk degilse tipi default olarak Int set edilir.
  *      Tip cikarimi (Type Inference) sirasinda eger sayi Int ifadeden buyukse tipi default olarak Long set edilir.
  */

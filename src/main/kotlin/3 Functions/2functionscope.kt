@@ -8,7 +8,7 @@ package `3 Functions`
  * fonksiyon icinde fonksiyon kotlinde vardir buna local functions denir.
  * sebebi ise yazilan fonksiyona kendi sinifindan bile erisilemez. gizlilik saglatir. reflection ile bile erisemeyiz.
  * local fuctiona sadece yazildigi fonksiyon icinde erisilir.
- * ekstra gizlilik istenildiginde kullanilabilir. Genelde sdk yazarken kullanilir.
+ * ekstra gizlilik istenildiginde kullanilabilir. Geneld e sdk yazarken kullanilir.
  */
 
 fun main() {

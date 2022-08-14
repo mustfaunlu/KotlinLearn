@@ -7,7 +7,17 @@ fun main() {
             print(' ')
         }
         repeat(2 * i - 1) {
-            print('#')
+            print('*')
+        }
+        println()
+    }
+
+    for (i in 1..n){
+        for (j in 1..n-i) {
+            print(" ")
+        }
+        for (k in 1 until 2*i) {
+            print("#")
         }
         println()
     }

@@ -6,7 +6,7 @@ fun main() {
      * eger degiskene tip verilmez ve direkt null deger atamasi yapilirsa ide tip cikarimi yaparken Nothing? diye isaretler.
      * hangi tipe karsilik geldigini bilemez. Nothing bos bir classdir
      * eger degiskenin null gelip gelmeyecegi bilinmiyorsa nullable yapma cunku performans farki olacak
-     *  bu fark null verilmis tip boxed oluyor ve referanst tipli oluyor primitive olmuyor yani performans farki ort cikiyor.
+     *  bu fark null verilmis tip boxed oluyor yani referans tipli oluyor, primitive olmuyor yani performans farki ort cikiyor.
      */
 
     val name: String? = null

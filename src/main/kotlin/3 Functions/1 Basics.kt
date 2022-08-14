@@ -7,8 +7,8 @@ package `3 Functions`
  * : operatoru ve geri donus degeri yazilir.
  * fonksiyon body'si aciliir ve kapatilir
  * geri donus degeri verilmeyen fonksiyonlar Unite tipini geri dondurur.
- * Unit = void      fun workarea.main(): Unit{ ... } seklinde tanimlanir ama tanimlamaya gerek yoktur.
- * Business logiclerin tekrarli sekilde cagrilmalari ve logiclerin kolay sekilde degistirilmesi icin kullanilir.
+ * Unit = void      fun main(): Unit{ ... } seklinde tanimlanir ama tanimlamaya gerek yoktur.
+ * Business logiclerin(isin yapilma mantigi) tekrarli sekilde cagrilmalari ve logiclerin kolay sekilde degistirilmesi icin kullanilir.
  * aksi taktirde tek teke degistirmek zorunda kaliriz logicleri
  */
 
@@ -57,10 +57,10 @@ fun main() {
 
 
     /**
-     * cok uzun sayida parametreniz olacaksa "variable number of arguments" = vararg tanimlanabilir.
+     * ayni tipte ve cok sayida parametreniz olacaksa "variable number of arguments" = vararg tanimlanabilir.
      * ayni fonksiyon icerisiinde ikikere vararg tanimlanamaz
      *  aslinda vararg bir arraydir.
-     * bu sayede fonksiyon tek bir parametre aliyor gibi gozukurken kendisine cok m iktarda degisken atanabilir.
+     * bu sayede fonksiyon tek bir parametre aliyor gibi gozukurken kendisine cok miktarda degisken atanabilir.
      * bu degiskenlere array e erisir gibi erisebiliriz. [index] ya da .get(index) seklinde..
      * vararg tek yada son parametre olarak yazilirsa, jvm e hazirlanirken javadaki "String..." gibi ayni kod derlenirken
      * ancak vararg  param birden fazla tanimlanirken ortada ya da basta yer alirsa, jvm e hazirlanirken, array'e donusuturur
@@ -120,7 +120,8 @@ fun printss(message: String = "Message") {
 }
 
 fun boo() {
-    printss()
+    printss() //default olarak mesaj parametresi var
+    printss("kjdsahf") //default parametreyi kullanmak istemedim kendim mesaj degeri atadim
 }
 
 // kotlinde disarda tek basina tanimlayabilriz
@@ -144,9 +145,9 @@ open class A {
     open fun foo(i: Int = 10) {}
 }
 
-class B: A(){
-    override fun foo(i: Int){
-    //override fun foo(i: Int = 5){ no default value allowed hatasi verir }
+class B : A() {
+    override fun foo(i: Int) {
+        //override fun foo(i: Int = 5){ no default value allowed hatasi verir }
 
 
     }

@@ -29,7 +29,7 @@ package `4 Classes`
  * bu sebeplerden oturu biz extension functionlarda degiskeni bile extend edebiliyoruz.
  * cunku getter ve setteri extend ediyoruz.
  * ext variable yazarken deger atamasi yapilamaz. cunku backing field yoktur. sadece get ve seti extend etmis oluyoruz.
- * (extensionFunction2.kt dosyasinin 68. satiri.)
+ * (4 extensionFunction2.kt dosyasinin 68. satiri.)
  *
  * sonuc olarak aslinda val balance = 0 degiskeni tanimladigimizda bu sadece get ve set metodudur.
  * gercek bir balance degiskeni olusturmuyoruz getBalance ve setBalance functiionu yaratiyoruz arka planda. backing fieldi ise her zaman privatedir.
