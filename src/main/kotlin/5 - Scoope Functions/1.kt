@@ -3,12 +3,13 @@ package `5 - Scoope Functions`
 import java.math.BigDecimal
 
 /**
- * a
- * scoopelar icinde it ya da this kullan nesne adini yazma
+ *
+ * scopelar icinde it ya da this kullan nesne adini yazma
  *
  * run let with
  *
  * also apply
+ *
  *
  * let; genellikle nullable olan nesnesi olusturmus degiskenler uzerinde nullcheck icin kullanilir.
  * with; halihazirda yine bir nesne var bu nesne nullable degilse let yerine with kullanilir.
@@ -29,9 +30,13 @@ import java.math.BigDecimal
 
 fun main() {
     var backAccount: BackAccount? = null
+
+
+
     backAccount = BackAccount(
         23452.32.toBigDecimal(),"Mustafa"
     )
+
 
     if (backAccount != null && backAccount.accountName != null) {
         println(backAccount.accountName)
