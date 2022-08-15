@@ -16,10 +16,10 @@ open class Shape {
 /* -------------------------------------------------------------------------------------------------------------------*/
 
     /**
-     *      Bir sinifin icinde, farkli bir sinifa ait extension fonksiyon yazilirsa, bu sinifin icinde ayni isimde normal
-     *      bir fonksiyon olsa bile, extension fonksiyonun icerisinde, ayni isme sahip fonksiyon cagrilirsa, bu extension
-     *      fonksiyona isaret eder demektir. Sinifin ayni isimdeki uye fonksiyonunu extension fonksiyon icersinde cagirmak icin
-     *      this@sinifismi.uyefonksiyon() seklinde cagirim yapilmalidir.
+     *      X sinifi icinde, Y sinifa ait extension fonksiyon yazilirsa, X sinifi icinde ayni isimde uye
+     *       fonksiyonu olsa bile, extension fonksiyonun icerisinde, ayni isme sahip uye fonksiyon cagrilirsa, bu extension
+     *      fonksiyona isaret eder. X Sinifinin ayni isimdeki uye fonksiyonunu extension fonksiyon icersinde cagirmak icin
+     *      this@X .uyefonksiyon() seklinde cagirim yapilmalidir.
      * **/
     open fun Int.extToString() {
         println("")
@@ -43,13 +43,15 @@ open class Shape {
     fun extToString() {
         println("Keko class printi")
     }
+
 }
 
 /* -------------------------------------------------------------------------------------------------------------------*/
 
 /**
- *Bir sinifin, yazilmis extension fonksiyonun aynisini (isim ayni, parametre sayisi ve tipleri ayni, ayrica geri donus tipi de ayni olmali),
- *kendi icinde barindiriyorsa, bu durumda yazilan extension fonksiyon gecersizdir. Sinifin uye fonksiyonu cagirilir.
+ *Bir sinif, kendinden turetilmis disarda yazilmis extension fonksiyonun
+ aynisini (isim ayni, parametre sayisi ve tipleri ayni, ayrica geri donus tipi de ayni olmali),
+ kendi icinde barindiriyorsa, bu durumda yazilan extension fonksiyon gecersizdir asla calismaz. Daima Sinifin uye fonksiyonu cagirilir.
   **/
 fun Shape.setNumber(intNumber: Int) { //pratikte ext ederek shape class i icinde old icin shape in private degiskenine bile erisebliriz.
     val result = intNumber * intNumber //fakat bu ext func gecersizdir. yok hukmendidir. classin kendi funksiyonu calisir.
@@ -95,3 +97,5 @@ class Triangle : Shape(){
  * Nullable extension function da yazilabilir.
  * Companion object'lere de extension yazilabilir. Siniflar'da ornegini yapacagiz.
  * **/
+
+

@@ -45,6 +45,10 @@ class HomeFragment: HomeFragmentPresenter {
         override fun navigate() {
             TODO("Not yet implemented")
         }
+
+
+
+
     }
 
     override fun navigate() {
@@ -54,6 +58,9 @@ class HomeFragment: HomeFragmentPresenter {
     HomeFragmentPresenter.name // interface icinde state tutmus olduk ama GUNAHHH
     }
 }
+
+
+
 
 
 open class BankAccount2(i: Int, i1: Int) { // companion object normal bir class i da extends edebilir.
@@ -70,6 +77,8 @@ fun main() {
     homeFragment4.color = "Purple"
     val homeFragment5 = HomeFragment.newInstance()
     homeFragment5.color = "Grey"
+
+
 
     println("homeFragment color : ${homeFragment.color}")
     println("homeFragment2 color : ${homeFragment2.color}")

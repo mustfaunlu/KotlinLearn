@@ -1,4 +1,5 @@
 package `3 Functions`
+
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -27,20 +28,19 @@ fun main() {
     val surnmae = "unlu"
     val fullName = "$name $surnmae"
 
-    fun deneme(fullName: String) : String{
-        return "Merhaba $fullName"
-    }
-    fun deneme2(fullName: String) : String{
+    fun deneme(fullName: String): String {
         return "Merhaba $fullName"
     }
 
-    val welcomeMessage = deneme(fullName) //fonksiyonlar bir degiskene atanabiliyor. yada fonksiyona geru gibys degeri olarak verilebilir.
+    fun deneme2(fullName: String): String {
+        return "Merhaba $fullName"
+    }
+
+    val welcomeMessage =
+        deneme(fullName) //fonksiyonlar bir degiskene atanabiliyor. yada fonksiyona geru gibys degeri olarak verilebilir.
     deneme(deneme2(fullName)) // fonksiyonlar baska bir fonksiyona parametre olarak verilebilir.
 
     //buraya kadar first class citizen function mevzusu normal kotlindeki functionarin ozellikleridir.
-
-
-
 
 
     //higher orderin interface  gore artisi nedir.??
@@ -66,7 +66,7 @@ fun main() {
      *
      *      Cagrilirken ;
      *
-     *      fun workarea.main(){
+     *      fun main(){
      *
      *          foo({ message ->
      *              println("Message : $message")
@@ -75,13 +75,12 @@ fun main() {
      */
 
 
-
-/* -------------------------------------------------------------------------------------------------------------------*/
+    /* -------------------------------------------------------------------------------------------------------------------*/
 
     /**
      *      Higher Order Function'lari tanimlamanin 3 yolu vardir.
      */
-
+                                                     /** 1  */
     // Bir degiskene atayarak Higher Order Function tanimlayabilirsiniz.
     // Bu durumda suslu parantezler yanina higher order function'in aldigi parametreler lambda okundan once aralarina virgul
     // koyularak yazilir. Higher Order Function tek parametre aliyorsa, bu parametreleri yazmak zorunda degilsinizdir.
@@ -90,7 +89,7 @@ fun main() {
         "surName : $surName"
     }
 
-
+                                                    /** 2  */
     // Ismi olmayan "anonymous function" tanimlamalari da Higher Order Function olarak, normal bir fonksiyona parametre
     // olarak verilebilir.
     val anonymousFunction = fun(surName: String): String {
@@ -102,27 +101,25 @@ fun main() {
     val anonymousFunction2 = fun(surName: String): String = "surName : $surName"
 
 
-
-
+                                                    /** 3  */
     // Higher Order Function'la ayni parametre sayisina sahip ve bu parametrelerin hepsinin tipleri Higher Order Function'in
     // parametre tipleri ile ayni ise, bu normal fonksiyon da Higher Order Function olarak normal bir fonksiyona parametre
     // olarak verilebilir. Bunu yapmak icin sadece basina :: isareti koymak yeterlidir.
 
-    fun logPrint(message: String, count: Int): String{
+    fun logPrint(message: String, count: Int): String {
         return "Log: $message"
     }
 
-    fun foo(higherOrderFunction: (message: String, count: Int) -> String){
-        higherOrderFunction("Codemy")
+    fun foo(higherOrderFunction: (message: String, count: Int) -> String) {
+        higherOrderFunction("Codemy",2)
     }
     logPrint("hersey yolunda", 24)
     foo(::logPrint)
 
 
-
     val news = News()
     news.read(::println)
-    news.read({title ->
+    news.read({ title ->
         print("asdsgf")
     })
     news.read { title ->
@@ -136,7 +133,7 @@ fun main() {
     }
 
 
-    val titleFun = fun(title:String): Unit {
+    val titleFun = fun(title: String): Unit {
         print(title)
     }
 
@@ -158,7 +155,7 @@ fun main() {
         println("$buttonName tıklandı..")
     })
 
-/* -------------------------------------------------------------------------------------------------------------------*/
+    /* -------------------------------------------------------------------------------------------------------------------*/
 
     /**
      *      Eger bir fonksiyon parametreleri icerisinde bir Higher Order Function son parametre olarak tanimlandiysa, bu durumda
@@ -174,7 +171,7 @@ fun main() {
         println(this.toString())
     } // Higher Order Function, fonksiyon parametrelerinin disinda tanimlanmistir.
 
-/* -------------------------------------------------------------------------------------------------------------------*/
+    /* -------------------------------------------------------------------------------------------------------------------*/
 
     /**
      *      Higher Order Function birde fazla parametre iceriyorsa, aralarina virgul koyarak lambda isareti ile tanimlamak zorunlu.
@@ -263,15 +260,19 @@ fun News.getNewsFromServer(channelType: String, newsType: NewsType, getNews: New
         "KanalD" -> {
             getNews(newsType, 1)
         }
+
         "ShowTv" -> {
             getNews(newsType, 2)
         }
+
         "Tv8" -> {
             getNews(newsType, 3)
         }
+
         "FoxTv" -> {
             getNews(newsType, 3)
         }
+
         "CNN" -> {
             getNews(newsType, 3)
         }
@@ -294,11 +295,11 @@ infix fun News.filterNews(getFilter: (filterType: String, getFilterName: () -> S
     }
 
 
-    val getFilterNameHO2 = fun(): String{
+    val getFilterNameHO2 = fun(): String {
         return "String return label"
     }
 
-    fun getFilterNameHO3(): String{
+    fun getFilterNameHO3(): String {
         return "String return label"
     }
     getFilter("filterName", getFilterNameHO)
@@ -306,7 +307,7 @@ infix fun News.filterNews(getFilter: (filterType: String, getFilterName: () -> S
     getFilter("filterName", ::getFilterNameHO3)
 }
 
-fun News.read(readTitle: (title:String) -> Unit) {   //higher orderi parametre olarak alan extension function infixte yapabiliriz
+fun News.read(readTitle: (title: String) -> Unit) {   //higher orderi parametre olarak alan extension function infixte yapabiliriz
     readTitle("Codemy is Awesome")
 }
 
