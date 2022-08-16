@@ -4,7 +4,7 @@ class Car constructor( val wheelCount: Int, val color: String = "Red") { //prima
     private val mWheelCount: Int //parametreleri yukarda const. icindede val var yazarak tanimlayabilirz.
     private val mColor = color
 
-    //wheelCount  boyle erismek icin primary const. icinde val veya var ile tanimlamak lazim
+    //wheelCount  boyle erismek icin primary const. icinde val veya var ile  lazim
 
     /**
      * initler constructorlarla beraber calisir ama secondary lerden once calisir,

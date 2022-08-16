@@ -1,7 +1,5 @@
 package `4 Classes`
 
-import java.awt.Color
-
 /**
  * her child class varsa o child class ana classdan daha fazla ozellige sahiptir.(her zaman degil)
  * ust classlar child classlardan her zaman memory olarak ddaha performanslidir.

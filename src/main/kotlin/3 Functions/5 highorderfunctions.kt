@@ -302,9 +302,9 @@ infix fun News.filterNews(getFilter: (filterType: String, getFilterName: () -> S
     fun getFilterNameHO3(): String {
         return "String return label"
     }
-    getFilter("filterName", getFilterNameHO)
-    getFilter("filterName", getFilterNameHO2)
-    getFilter("filterName", ::getFilterNameHO3)
+    getFilter("filterName", getFilterNameHO) //1. yontem
+    getFilter("filterName", getFilterNameHO2) //2. yontem
+    getFilter("filterName", ::getFilterNameHO3) //3. yontem
 }
 
 fun News.read(readTitle: (title: String) -> Unit) {   //higher orderi parametre olarak alan extension function infixte yapabiliriz
