@@ -31,12 +31,11 @@ interface  McDonaldsService {
  ama child class abstract degilse mecburen ust abstract classdaki overridelari etmelidir
 
 
- 8- eger bir abstract class baska bir abstract class tarafindan miras alindiysa ve bu kendisi icerisinde,
- zaten ust clasindaki herhangi bir override edilmesi zorunlu olan degiskeni veya functionu,
- kendi icinde override ederse bu durumda bu class i yani child olaan abs classi,
- miras alan duz bir classta, bu functionun yine override zorunlulugu ortadan kalkar.
- cunku override edilen bir function open olur body alir.
- childlarin birinden sonra hic override edilmesi istenmiyorsa final koyariz. override edilmez
+
+ 8 - x adli abstract bir class i miras alan, y adli abstract class zorunlu olmadigi halde x classinin butun abstract yapilarini
+ override ederse ; y classini miras alan duz bir class artik bu abstract yapilari override etmek zorunda degildir. Cunku override
+ edilmis bir yapi open statusunu cekilir, body almis olur.
+
 
  */
 abstract class  MCDonaldsFranchize {
@@ -64,17 +63,16 @@ abstract class McDonaldsExpress : MCDonaldsFranchize(){  //bir abs diger abs cla
     abstract  fun sellCoffee(): McCoffee //bazi mcdonaldslar kahvede satiyor expresse kendi abst func ile kahvesatisinida ekliyoruz.
                                         // open olarak class icinde yazmaktansa yeni bir child olusturup icinde tanimlamak onemli
                                             //10 franxhizeda kahve yokken birinde varsa bunu base abstracta yazmak yerine boyle yapilmali
-    override fun clean(clock: Int) {
+     override fun clean(clock: Int) {
         println("Clean time: $clock")
     }
 
-    override val fridge: Fridge   // abstract propertyleride override edebiliriz.
+     override val fridge: Fridge   // abstract propertyleride override edebiliriz.
         get() = TODO("Not yet implemented")
 }
 
 
-
-class McDonaldsMaltepe : MCDonaldsFranchize(), McDonaldsService { //bir duz class abs class i inherit alabilir ama ust classdaki butun abstract yapilari override etmek zorundadir.
+ class McDonaldsMaltepe : MCDonaldsFranchize(), McDonaldsService { //bir duz class abs class i inherit alabilir ama ust classdaki butun abstract yapilari override etmek zorundadir.
     override val fridge: Fridge
         get() = TODO("Not yet implemented")
     override val superVisor: SuperVisor
@@ -88,21 +86,25 @@ class McDonaldsMaltepe : MCDonaldsFranchize(), McDonaldsService { //bir duz clas
     override val menuList: List<McHamburger>
         get() = TODO("Not yet implemented")
 
+
     override fun clean(clock: Int) {
         TODO("Not yet implemented")
     }
 
-    override fun motoCarrier() {
-        TODO("Not yet implemented")
-    }
+     override fun motoCarrier() {
+         TODO("Not yet implemented")
+     }
 
-}
+
+ }
 
 class McDonaldsMaltepeExpress : McDonaldsExpress(){
     override fun sellCoffee(): McCoffee {
         TODO("Not yet implemented")
     }
 
+//    override val fridge: Fridge  //8. madde ornegi 2. child classda override old icin 3. child classta opsiyoneldir.
+//        get() = super.fridge
     override val superVisor: SuperVisor
         get() = TODO("Not yet implemented")
     override val employeeOne: Employee

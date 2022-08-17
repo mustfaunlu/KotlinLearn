@@ -1,7 +1,7 @@
 package `4 Classes`
 
 /**
- * her child class varsa o child class ana classdan daha fazla ozellige sahiptir.(her zaman degil)
+ * bir child class varsa o child class ana classdan daha fazla ozellige sahiptir.(her zaman degil)
  * ust classlar child classlardan her zaman memory olarak ddaha performanslidir.
  * hic kullanilmayan bir fonksiyonu ust classa vermek yerine miras alan child class a veririsin ve performansini etkilemezsin hemde okunakligi artar
  * bazen ust classin yetkinliklerini child classlar ile ihtiyaca uygun olarak degistirmek isteyebiliriz.
