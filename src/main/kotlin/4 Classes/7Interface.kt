@@ -16,9 +16,10 @@ package `4 Classes`
  abstract class a open function tanimlamak yerine interface ile yapilmalidir.
  bu functionu interface verip class a implement edersin daha temiz kod yazmis olursun.
 
- 6- open bir fonksyionu abstract icine yaziyorsak abstract icindeki bir bilgiye ihtiyac duyoyorsa tanimlariz.
- yani superi cagirarak is yapiyorsa tanimlanir.
- fakat hicbirseye ihtiyac duymuyorsa abstract yerine interface tanimlamaliyiz.
+ 6- open bir fonksyionu abstract icine , abstract icindeki bir membera ihtiyac duyoyorsa tanimlariz.
+ yani abstract class in fonksiyonu abstract classdaki herhangi bir yapiyi kullanarak override edildigi chield classda superin cagrilmasiyla
+ bir is yapiyordur. fakat hicbirseye ihtiyac duymuyorsa abstract yerine interface tanimlamaliyiz. Zaten interfacelerin icine yazdigimiz
+ fonksiyonlarin genelde bodysi olmaz.
 
  7- interface fonksiyonlari bir class icindeki hicbir yapiya ihtiyac duymazlar bir yerde tetiklenmeyi bekleyip baska bir yerde calismayi bekler.
 

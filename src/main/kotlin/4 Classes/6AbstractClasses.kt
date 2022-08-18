@@ -72,7 +72,7 @@ abstract class McDonaldsExpress : MCDonaldsFranchize(){  //bir abs diger abs cla
 }
 
 
- class McDonaldsMaltepe : MCDonaldsFranchize(), McDonaldsService { //bir duz class abs class i inherit alabilir ama ust classdaki butun abstract yapilari override etmek zorundadir.
+  class McDonaldsMaltepe : MCDonaldsFranchize(), McDonaldsService { //bir duz class abs class i inherit alabilir ama ust classdaki butun abstract yapilari override etmek zorundadir.
     override val fridge: Fridge
         get() = TODO("Not yet implemented")
     override val superVisor: SuperVisor
@@ -91,12 +91,12 @@ abstract class McDonaldsExpress : MCDonaldsFranchize(){  //bir abs diger abs cla
         TODO("Not yet implemented")
     }
 
-     override fun motoCarrier() {
-         TODO("Not yet implemented")
-     }
+      override fun motoCarrier() {
+          TODO("Not yet implemented")
+      }
 
 
- }
+  }
 
 class McDonaldsMaltepeExpress : McDonaldsExpress(){
     override fun sellCoffee(): McCoffee {

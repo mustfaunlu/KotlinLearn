@@ -74,4 +74,4 @@ outTmp/
 /test.output
 /kotlin-native/dist
 kotlin-ide/
-src/main/kotlin/workarea*
+src/main/kotlin/workarea
