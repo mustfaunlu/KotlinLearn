@@ -67,7 +67,7 @@ class NewsData(
 class  Media
 
 fun main() {
-    val newsOne = News(title = "dfa", description = "dakjsf", hasMedaContent = true, mediaList = arrayListOf())
+    val newsOne = News( "dfa", description = "dakjsf",  true, mediaList = arrayListOf())
     val(title,description,hasMedaContent,mediaList) = newsOne
     val(title3,description3,hasMedaContent3) = newsOne
     val(title1,description1) = newsOne

@@ -75,7 +75,11 @@ interface A {
     }
 
     fun bar()
+
+
 }
+
+
 
 interface B {
     fun foo(){
@@ -95,7 +99,7 @@ interface B {
  *
  * Eger bir abstract class bir interface i implment ediyorsa, o interfacesin override edilmesi
  * zorunlu fonksiyonlarini override etmeyebilir. Abstract classlar icin bu opssiyoneldir.
- * Duz bir class olsaydi
+ *
  */
 //abstract class Employe(
 //    override val firstName: String, zorunlu degil  cunku abs class
@@ -170,11 +174,11 @@ open class E()
  * 2 farkli interface in ayni fonksiyonlari olmasi durumunda,
  * bu fonksiyonlarin override edilmesi sirasinda ayni fonksiyonu 2 kere yazarak override edemeyiz.
  *
- * Eger implement ettigmiz interfacelerin ayni isimde fonksiyonlari bulunuyorsa, tek bir fonksiyon
+ * Eger implement ettigmiz farkli interfacelerin, birebir ayni (isimde parametrede geri donuste) fonksiyonlari bulunuyorsa, tek bir fonksiyon
  * override islemi yapilir. Bunun icersinden  hangisiniin bodysine erismek istiyorsak
  * o interface in ismini <> isarelteri arasina yazmamiz gerekyor.
  *
- * Eger implement edilen 2 interfacedede ayni fonksiyonlar var ise bu durumda bodyleri olsada
+ * Eger implement edilen 2 interfacedede birebir ayni (isimde parametrede geri donuste)fonksiyonlar var ise bu durumda bodyleri olsada
  * override edilmeleri zorunludur.
  */
 class D : E(), A, B {

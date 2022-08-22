@@ -11,9 +11,9 @@ package `4 Classes`
 
  4 bu zorunluluk olmamasina ragmen override edilirlerse o abs veya int kullanacak duz  veya child classda override zorunlulugu ort. yine kalkar.
 
- 5 hem int hem abs lar super type olarak gecer. Bir interface ve abstracti parametre tipi olarak kullanabiliriz.
+ 5 hem interfaceler hem abstractlar super type olarak gecer. Bir interface ve abstracti parametre tipi olarak kullanabiliriz.
 
- 6 bir abs class bir interface i implement ediyorsa yine implement icindeki overridelari override etmek zorunda degildir.
+ 6 bir abs class bir interface i implement ediyorsa yine  icindeki overridelari override etmek zorunda degildir.
 
  7 ikisindede open final keywordleri kullanmak anlamsizdir.
 
