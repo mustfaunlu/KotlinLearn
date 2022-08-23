@@ -80,13 +80,7 @@ fun main() {
         }
     }
 
-    //with
 
-    with(backAccount) {
-        if (backAccount != null && backAccount.accountName != null) {
-            println(backAccount.accountName)
-        }
-    }
 }
 
 data class BackAccount (
