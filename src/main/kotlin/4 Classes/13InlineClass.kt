@@ -33,9 +33,8 @@ value class BankAccount4(val balance: Int): Print{
  * tek bir degisken kabul ediliyor
  *
  * inline classlar ile init block u kullanabiliriz
- * inline classlarin belirtilen const java kodunda private olarak bulunurlar.
- * Bundan dolayi istesekde nesne olusturamayiz. Bunu yapabiliyor gibi gorunmemizin sebebi,
- * gercekte o nesnenin hic yaratilmiyor olusu sebebiyle.
+ * inline classlarin belirtilen constructorlari java kodunda private olarak bulunurlar.
+ Bundan dolayi istesekde nesne olusturamayiz. Bunu yapabiliyor gibi gorunmemizin sebebi, gercekte o nesnenin hic yaratilmiyor olusu sebebiyle.
  * Bizim nesne olustutukn gorgugumuz sey aslinda const. icindeki degiskenin kendisi.
  *
  * Inline classlar icinde propery tanimlanmasina izin verilir. Ancak bu properylerin backing fieldi ollmaz
@@ -58,9 +57,9 @@ fun <T> id(x: T): T = x
 
 
 fun main() {
-    val balance3: BankAccount3 = BankAccount3(25000) //reference (class nesnesi)
+    val balance3: BankAccount3 = BankAccount3(25000) //reference (duz class nesnesi)
 
-    val balance4: BankAccount4 = BankAccount4(25000) /// primitive tip gibi davranir
+    val balance4: BankAccount4 = BankAccount4(25000) /// primitive tip gibi davranir (value class nesnesi)
     val balance5: Int = 2500 //balance4 ile ayni tipte
 
 
@@ -68,7 +67,7 @@ fun main() {
 
     asInline(f)  // unboxed primitive type olur  used as Foo2 itself
     asGeneric(f) // boxed reference type  used as generic type T
-    asInterface(f) // boxed reference type used as type I
+    asInterface(f ) // boxed reference type used as type I
     asNullable(f) // boxed reference type used as Foo2? which is different from Foo2
     //yani sadece normal fonksiyona verirsek primitive type ozelligini korumus oluruz. aksi taktirde boxed olacak reference type donusece
 
