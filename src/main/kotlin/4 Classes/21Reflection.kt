@@ -68,7 +68,7 @@ fun main() {
     val imageUrlFieldName = walPaper.javaClass.declaredFields[0].name
     val imageUrlField2 = walPaper.javaClass.getDeclaredField(imageUrlFieldName)
     imageUrlField2.isAccessible = true
-    val imageUrlString2 = imageUrlField.get(walPaper)
+    val imageUrlString2 = imageUrlField2.get(walPaper)
     println(imageUrlString2)
 
 

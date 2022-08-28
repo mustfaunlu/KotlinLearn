@@ -17,6 +17,8 @@ package `4 Classes`
  * fakat object i singleton gibi disarda tanimlarsak arka planda statik class olmaz.
  *
  * class icinde object yazilmaz  // companion object yazilir.
+ *
+ * https://khan.github.io/kotlin-for-python-developers/#objects-and-companion-objects
  */
 interface HomeFragmentPresenter {
     fun navigate()
@@ -77,6 +79,9 @@ fun main() {
     homeFragment4.color = "Purple"
     val homeFragment5 = HomeFragment.newInstance()
     homeFragment5.color = "Grey"
+
+    HomeFragment.TAG
+
 
 
 

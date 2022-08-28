@@ -9,8 +9,10 @@ open class User(val age: Int){
 }
 
 /**
- * arka planda asagidaki kullanim bir class icinde olur.
- * bir tip belirtmeden direk object i bir degiskene atarsak arka planda isimsi bir class olusturmus oluruz.
+ * arka planda object kullanim bir class icinde olur.
+ *
+ *
+ * bir tip belirtmeden direk object i bir degiskene atarsak arka planda isimsiz  Any den miras alan bir class olusturmus oluruz.
  * Buna teknik makalelerde kullan at class denir. Bu javadaki structure kavramina denk gelir.
  *
  * Ayrica harici dosya icerisinde direk bir degiskenede atayabiliriz class icindede kullanabiliriz.
