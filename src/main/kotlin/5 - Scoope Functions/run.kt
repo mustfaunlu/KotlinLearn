@@ -1,16 +1,46 @@
 package `5 - Scoope Functions`
 
 /***
- * run ; with let birlesimi gibidir. elimizde bir degisken var ama bu degisken nullable degil.
+ * contextObject.run {..(this) lambda ..} return lambda result
+
+ * run ; with ve let birlesimi gibidir. elimizde bir degisken var ama bu degisken nullable degil.
 belli scope icinde belli fonksiyonlari calistirmak icin olusturulur.
+ * run, lambda'nız hem nesne initialize hem de dönüş değerinin hesaplanmasını içerdiğinde kullanışlıdır.
+    val service = MultiportService("https://example.kotlinlang.org", 80)
 
-contextobject.run {.. lambda ..}
-with() in extension hali gibidir. With e gore farkli ozelliklere sahiptir.
-Lambda içinde, context nesnesi örtük alıcı(implicit receiver) olarak temsil edilir.
-run() fonksiyonu, lambda'nın sonucunu döndürür.
+    val result = service.run {
+        port = 8080
+        query(prepareRequest() + " to port $port")
+    }
 
-with() yerine run() kullanmanın bir başka avantajı,
-context nesnesinin boş olabileceği durumları işlemek için güvenli arama operatörünü(.? veya .!!) kullanabilmenizdir.
+    // the same code written with let() function:
+    val letResult = service.let {
+        it.port = 8080
+        it.query(it.prepareRequest() + " to port ${it.port}")  //let ile yazdigimda it yazmam gerekir.
+    }
+
+ * with() in extension hali gibidir. With e gore farkli ozelliklere sahiptir.
+ * Lambda içinde, context nesnesi örtük alıcı(implicit receiver) this olarak temsil edilir.
+ * run() fonksiyonu, lambda'nın sonucunu döndürür.
+ *
+
+ * with() yerine run() kullanmanın bir başka avantajı,
+ * context nesnesinin boş olabileceği durumları işlemek için güvenli arama operatörünü(.? veya .!!) kullanabilmenizdir.
+ *
+ * Bir alıcı nesnesinde run çağırmanın yanı sıra, onu extension olmayan bir fonksiyon olarak kullanabilirsiniz.
+Extension olmayan run, bir expression(hexNumberRegex) gerekli olduğu durumlarda birkaç statementdan oluşan bir bloğu yürütmenize olanak tanır.
+
+    val hexNumberRegex = run {
+        val digits = "0-9"
+        val hexDigits = "A-Fa-f"
+        val sign = "+-"
+
+        Regex("[ $sign]?[ $digits$hexDigits]+")
+    }
+
+    for (match in hexNumberRegex.findAll("+123 -FFFF !%*& 88 XYZ")) {
+        println(match.value)
+    }
  */
 
 fun main() {

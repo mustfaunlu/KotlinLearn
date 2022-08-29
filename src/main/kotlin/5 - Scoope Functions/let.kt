@@ -1,6 +1,8 @@
 package `5 - Scoope Functions`
 
 /**
+ *  contextcObject.let{(it)...} return lambda result
+
  * let() en sık kullanılan scope fonksiyon olabilir. run() fonksiyonuna çok benzer,
  ancak bağlam nesnesini(context object) örtük(implicit) bir alıcı(receiver) olarak temsil etmek yerine,
  lambda parametresi(argumani) olarak temsil edilir yani "it" olarak.
