@@ -1,10 +1,59 @@
 package `5 - Scoope Functions`
 
 /**
- * let() en sık kullanılan kapsam işlevi olabilir. run() işlevine çok benzer,
- ancak bağlam nesnesini örtük bir alıcı olarak temsil etmek yerine,
- lambda parametresi olarak temsil edilir yani "it" olarak.
- run() yerine let() kullanmak için önceki listeyi yeniden yazalım
+ * let() en sık kullanılan scope fonksiyon olabilir. run() fonksiyonuna çok benzer,
+ ancak bağlam nesnesini(context object) örtük(implicit) bir alıcı(receiver) olarak temsil etmek yerine,
+ lambda parametresi(argumani) olarak temsil edilir yani "it" olarak.
+
+ * Bağlam nesnesi bir argüman (it) olarak kullanılabilir. Dönüş değeri lambda sonucudur. Extensiondir.
+ * let, cagri zincirlerinin sonuclarinda bir veya daha fazla fonksiyonu cagirmak icin kullanilabilir.
+ * Örneğin, aşağıdaki kod, bir koleksiyondaki iki işlemin sonuçlarını yazdırır: ilk olarak map ile yazalim ;
+
+
+    val numbers = mutableListOf("one", "two", "three", "four", "five")
+    val resultList = numbers.map { it.length }.filter { it > 3 }
+    println(resultList)
+
+
+ * ayni ornegi let ile yazalim;
+
+
+    val numbers = mutableListOf("one", "two", "three", "four", "five")
+    numbers.map { it.length }.filter { it > 3 }.let {
+    println(it)
+    // eger istenirse daha fazla fonksiyon cagrilabilir.
+    ...
+        ...
+            ...
+    }
+
+ * eger yukaridaki ornek gibi kod blogu tek bir fonksiyon iceriyorsa lambda yerine method referansini (::) kullanabiliriz.
+
+    val numbers = mutableListOf("one", "two", "three", "four", "five")
+    numbers.map { it.length }.filter { it > 3 }.let(::println)
+
+ * let genellikle yalnizce null olmayan degerlerle bir kod blogu yurutmek icin kullanilir. Null olmayan bir nesne
+uzerinde islemler gerceklestirmek icin, once guvenli cagri operatorunu (?.) kullan sonrada let lambdasi icinde
+islemleri yap.
+
+    val str: String? = "Hello"
+    //processNonNullString(str)       // compilation error: str can be null
+    val length = str?.let {
+        println("let() called on $it")
+        processNonNullString(it)      // OK: 'it' is not null inside '?.let { }'
+        it.length
+    }
+
+ *let kullanmanın başka bir durumuda, kod okunabilirliğini geliştirmek için
+ sınırlı bir scopeda local değişkenleri kullanmaktir. Bağlam nesnesine(context object) yeni bir değişken tanımlamak için,
+ varsayılan değişken olan 'it' yerine kullanılabilmesi için adını ozel olarak belirleyin.
+
+    val numbers = listOf("one", "two", "three", "four")
+    val modifiedFirstItem = numbers.first().let { firstItem ->   //it yerine firsItem yaptik
+        println("The first item of the list is '$firstItem'")
+        if (firstItem.length >= 5) firstItem else "!" + firstItem + "!"
+    }.uppercase()
+    println("First item after modifications: '$modifiedFirstItem'")
  */
 
 fun main() {
@@ -21,6 +70,32 @@ fun main() {
         .let { "'$it'" }
         .uppercase()
     println(newTitle2)
+
+
+    //Baska bir ornek person nesnesi ile.
+    Person("Alice", 20, "Amsterdam").let {
+        println(it)
+        it.moveTo("London")
+        it.incrementAge()
+        println(it)
+    }
+
+    //Eger let kullanmasaydik asagidaki gibi yazacaktik.
+    val alice = Person("Alice", 20, "Amsterdam")
+    println(alice)
+    alice.moveTo("London")
+    alice.incrementAge()
+    println(alice)
+}
+
+class Person(name: String, age: Int, location: String) {
+    fun moveTo(address: String) {
+        TODO("Not yet implemented")
+    }
+
+    fun incrementAge() {
+        TODO("Not yet implemented")
+    }
 }
 
 //https://typealias.com/start/kotlin-scopes-and-scope-functions/
