@@ -56,6 +56,30 @@ islemleri yap.
         if (firstItem.length >= 5) firstItem else "!" + firstItem + "!"
     }.uppercase()
     println("First item after modifications: '$modifiedFirstItem'")
+
+ * Güvenli arama operatörü, genellikle scope fonksiyonlarla birlikte kullanılır. Aslında, birçok Kotlin geliştiricisi,
+nesne null olmadığında küçük bir kod bloğunu çalıştırmak için güvenli arama operatörüyle let()'i kullanır.
+
+bunu yazmak yerine;
+    if (payment != null) {
+        orderCoffee(payment)
+    }
+
+bunu yazar;
+    payment?.let { orderCoffee(it) }
+
+
+ *let ile safecall yaptiktan sonra elvis operatorunu kullanabiliriz. Daha efektifi olur.
+
+bunu yazmak yerine;
+    if (payment != null) {
+        orderCoffee(payment)
+    } else {
+        println("I can't order coffee today")
+    }
+
+bunu yazar;
+    payment?.let { orderCoffee(it) } ?: println("I can't order coffee today")
  */
 
 fun main() {

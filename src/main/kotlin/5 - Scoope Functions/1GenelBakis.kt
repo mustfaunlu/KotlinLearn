@@ -43,6 +43,7 @@ then run() or apply() would probably be a good fit. Otherwise, let() or also() g
 
  * Null olamayan nesnelerde : let
  * Local scope icinde bir degiskenin  expression olarak(it) cagrilmasi : let
+ * The safe-call operator is often used with scope functions. In fact, many Kotlin developers use let() with the safe-call operator to run a small block of code whenever the object is not null.
  * Nesne konfigurasyonu ve property deger atamalarinin yapilmasi: apply
  * Nesne konfigurasyonu ve sonucun hesaplanmasi, belli scope icinde belli functionlarin calistirilmasi: run
  * bir expressionun gerekli oldugu calisan durumlarda : extension olmayan run
