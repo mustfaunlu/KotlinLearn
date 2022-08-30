@@ -45,7 +45,7 @@ how to represent the context object inside the lambda.
     If you need to use functions or properties on the object but not the object itself,
 then run() or apply() would probably be a good fit. Otherwise, let() or also() generally would be a good way to go.
 
- * Null olamayan nesnelerde : let
+ * Null olamacak nesnelerde : let
  * Local scope icinde bir degiskenin  expression olarak(it) cagrilmasi : let
  * The safe-call operator is often used with scope functions. In fact, many Kotlin developers use let() with the safe-call operator to run a small block of code whenever the object is not null.
  * Nesne konfigurasyonu ve property deger atamalarinin yapilmasi: apply
@@ -64,7 +64,7 @@ Geçerli bağlam nesnesi(context Object) ve this veya it değeri hakkında kafa 
 
  * Her bir scope fonksiyon arasinda iki temel fark vardir;
  1- Context objecte basvurma yolu(referansi)(it veya this)
- 2- Donus degeri (Scope function ne return ediyor. Context objectin tipini yoksa Unit mi)
+ 2- Donus degeri (Scope function ne return ediyor. Context objectin tipini yoksa lambdanin sonucu mu)
 
 `* Bir scope fonksiyonun lambdası içinde, bağlam nesnesi gerçek adı yerine kısa bir referansla kullanılabilir.
 Her scope fonksiyon,bağlam nesnesine(context object) erişmek için iki yoldan birini kullanır:

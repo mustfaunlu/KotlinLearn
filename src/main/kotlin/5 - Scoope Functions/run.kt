@@ -4,7 +4,8 @@ package `5 - Scoope Functions`
  * contextObject.run {..(this) lambda ..} return lambda result
 
  * run ; with ve let birlesimi gibidir. elimizde bir degisken var ama bu degisken nullable degil.
-belli scope icinde belli fonksiyonlari calistirmak icin olusturulur.
+belli scope icinde belli business logicler yazilmis bu logiclerden sonra ayrica bazi fonksiyonlari calistirmak icin olusturulur.
+
  * run, lambda'nız hem nesne initialize hem de dönüş değerinin hesaplanmasını içerdiğinde kullanışlıdır.
     val service = MultiportService("https://example.kotlinlang.org", 80)
 

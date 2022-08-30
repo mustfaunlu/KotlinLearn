@@ -36,7 +36,7 @@ package `5 - Scoope Functions`
 
  * let genellikle yalnizce null olmayan degerlerle bir kod blogu yurutmek icin kullanilir. Null olmayan bir nesne
 uzerinde islemler gerceklestirmek icin, once guvenli cagri operatorunu (?.) kullan sonrada let lambdasi icinde
-islemleri yap.
+islemleri yap. Yani yine nullable obje uzerindeki islemlerde with kullanmak yerine let kullanilir.
 
     val str: String? = "Hello"
     //processNonNullString(str)       // compilation error: str can be null
@@ -48,7 +48,7 @@ islemleri yap.
 
  *let kullanmanın başka bir durumuda, kod okunabilirliğini geliştirmek için
  sınırlı bir scopeda local değişkenleri kullanmaktir. Bağlam nesnesine(context object) yeni bir değişken tanımlamak için,
- varsayılan değişken olan 'it' yerine kullanılabilmesi için adını ozel olarak belirleyin.
+ varsayılan değişken olan 'it' yerine kullanılabilmesi için adını ozel olarak belirleyin. Okumakta zorlanmamak icin
 
     val numbers = listOf("one", "two", "three", "four")
     val modifiedFirstItem = numbers.first().let { firstItem ->   //it yerine firsItem yaptik
@@ -80,6 +80,9 @@ bunu yazmak yerine;
 
 bunu yazar;
     payment?.let { orderCoffee(it) } ?: println("I can't order coffee today")
+
+
+
  */
 
 fun main() {

@@ -29,6 +29,7 @@ package `5 - Scoope Functions`
         }
         println(firstAndLast)
 
+     * nullable olmayan bir obje uzerinde business logic icin kullanilir.
     * bir nesneye ait fonksiyonlari veya propertyleri gruplayarak cagirmaya yarar. ornegi asagida.
  */
 class Adress(var street1: String, var street2: String, var city: String, var state: String, var postalCode: String)
