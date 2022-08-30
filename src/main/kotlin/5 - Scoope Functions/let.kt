@@ -83,6 +83,13 @@ bunu yazar;
  */
 
 fun main() {
+
+//    public inline fun <T, R> T.let(block: (T) -> R): R {
+//        contract {
+//            callsInPlace(block, InvocationKind.EXACTLY_ONCE)
+//        }
+//        return block(this)
+//    }
     val title = "The Robots from Planet X3"
     val newTitle = title
         .removePrefix("The ")

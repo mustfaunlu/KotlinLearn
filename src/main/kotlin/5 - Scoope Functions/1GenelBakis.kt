@@ -7,6 +7,10 @@ import java.math.BigDecimal
  cagirdigimizda gecici bir scope olusturur. Bu scope icinde nesneye adi olmadan erisebiliriz. Bes adettir;
  run, let, with, also, apply.
 
+ * scope fonksiyonlar inline fonksiyon old. icin arka planda yazilirken gercekte olusturulmayacak,
+sadece bodysi(scope) cagrildigi yere yapistirilacaktir.
+
+
  * Temel olarak bu fonksiyonlar ayni isi yaparlar yani bir nesne uzerinde bir kod blogu yuruturler.
  * Farklı olan, bu nesnenin blok içinde nasıl kullanılabilir hale geldiği ve
 tüm fonksiyonun sonucunun ne donderdigidir.
