@@ -79,15 +79,15 @@ bir lambda alıcısı (this) veya bir lambda argümanı (it).
             age = 20                       // same as this.age = 20
             city = "London"
         }
-    Ama bu kullanim karisiklik olabilir diye onerilmez.
+
  *
  *
   == IT ==
  * let ve also context objecti bir arguman olarak alirlar.
  * Arguman ismi net belirtilmemisse nesneye implicit(ortulu) default ismimle (it) erisilir.
- * Ancak, nesne fonksiyonlarini veya propertylerini çağırırken, nesneyi it yazarak,  this gibi dolaylı olarak kullanamazsınız.
- * Nesne cogunlukla scope icinde fonksiyon cagrilarinda arguman olarak kullaniliyorsa it kullanmak daha iyidir.
- * kod blogunda birden cok degisken varsa it kullanmak yine daha iyidir.
+ * Ancak, nesne fonksiyonlarini veya propertylerini çağırırken, nesneyi it yazarak kullanirsin,  this gibi dolaylı olarak yazmadan kullanamazsınız.
+ * Nesne cogunlukla scope icinde fonksiyon cagrilarinda arguman olarak kullaniliyorsa it kullanilir.
+ * kod blogunda birden cok degisken varsa it kullanilir.
  * Scope icindeki context objectin referansini it yerine ozel bir isim  yapabiliriz;
             fun getRandomInt(): Int {
                     return Random.nextInt(100).also { value ->       //it yerine value yazilmis buraya hicbirsey yazmadan
