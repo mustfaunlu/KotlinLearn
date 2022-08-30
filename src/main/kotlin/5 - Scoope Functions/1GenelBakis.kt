@@ -34,6 +34,13 @@ tüm fonksiyonun sonucunun ne donderdigidir.
     also            it                          context Object          yes
     ================================================================================
 
+    If you need the lambda result, narrow your options down to either let(), with() or run().
+    If you need the context object, narrow your options down to either also() or apply().
+    After that, choose between the remaining two options based on your preference for
+how to represent the context object inside the lambda.
+    If you need to use functions or properties on the object but not the object itself,
+then run() or apply() would probably be a good fit. Otherwise, let() or also() generally would be a good way to go.
+
  * Null olamayan nesnelerde : let
  * Local scope icinde bir degiskenin  expression olarak(it) cagrilmasi : let
  * Nesne konfigurasyonu ve property deger atamalarinin yapilmasi: apply

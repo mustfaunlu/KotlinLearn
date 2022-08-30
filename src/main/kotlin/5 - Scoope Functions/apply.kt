@@ -1,5 +1,7 @@
 package `5 - Scoope Functions`
 
+
+
 /**
  * contextObject.apply {(this)..lambda..} return contextObject
  * apply; nesnesi yeni olusturulan nesnenin propertylerinin ilk deger atamalarinin yapilmasinda kullanilir. Nesneyi ozellestirmek
@@ -18,3 +20,4 @@ gerekli fonksiyonlari tanimlayabiliriz. Apply kisaca aldigi contextObjecti kulla
  * Alıcıyı dönüş değeri olarak alarak, daha karmaşık işlemler için uygulamayı
  kolayca çağrı zincirlerine dahil edebilirsiniz.
  */
+
