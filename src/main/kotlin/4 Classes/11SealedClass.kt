@@ -11,12 +11,12 @@ package `4 Classes`
  * Sealed classlar Abstract class old icin final olamazlar.
  *
  * Sealed classlarin nesnesi olusturaulamaz.
- * contructorlari protected ve private olarak bulunur.
+ * contructorlari protected veya private olarak bulunur.
  *
  * sealed claslari miras alan subClasslar final old icin miras alinamazlar. Sdk icin onemli.
  *
  * Sealed class in subclasslarinin neler old compiletime'da bilinmektedir. Bundan dolayi when ve if yapisi
- * els caselerinin yazimina ihtiyac duymazlar.
+ * else caselerinin yazimina ihtiyac duymazlar.
  *
  * Sealed classlari extends alan subclass lar eskiden ayni dosya uzerinde bulunma zorunlulugu. vardi.
  Bu zorunluluk esnetilerek ayni package icerisinde olmaya kadar genisletildi
