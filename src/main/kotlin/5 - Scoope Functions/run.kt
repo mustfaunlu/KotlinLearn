@@ -3,7 +3,7 @@ package `5 - Scoope Functions`
 /***
  * contextObject.run {..(this) lambda ..} return lambda result
 
- * run ; with ve let birlesimi gibidir. elimizde bir degisken var ama bu degisken nullable degil.
+ * run ; with ve let birlesimi gibidir.
 belli scope icinde belli business logicler yazilmis bu logiclerden sonra ayrica bazi fonksiyonlari calistirmak icin olusturulur.
 
  * run, lambda'nız hem nesne initialize hem de dönüş değerinin hesaplanmasını içerdiğinde kullanışlıdır.
@@ -26,7 +26,7 @@ belli scope icinde belli business logicler yazilmis bu logiclerden sonra ayrica 
  *
 
  * with() yerine run() kullanmanın bir başka avantajı,
- * context nesnesinin boş olabileceği durumları işlemek için güvenli arama operatörünü(.? veya .!!) kullanabilmenizdir.
+ * context nesnesinin null olabileceği durumları işlemek için güvenli arama operatörünü(.? veya .!!) kullanabilmenizdir.
  *
  * Bir alıcı nesnesinde run çağırmanın yanı sıra, onu extension olmayan bir fonksiyon olarak kullanabilirsiniz.
 Extension olmayan run, bir expression(hexNumberRegex) gerekli olduğu durumlarda birkaç statementdan oluşan bir bloğu yürütmenize olanak tanır.

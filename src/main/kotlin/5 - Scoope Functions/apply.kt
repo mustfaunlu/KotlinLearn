@@ -17,7 +17,7 @@ gerekli fonksiyonlari tanimlayabiliriz. Apply kisaca aldigi contextObjecti kulla
         }
         println(adam)
 
- * Alıcıyı dönüş değeri olarak alarak, daha karmaşık işlemler için uygulamayı
+ * Context objecti dönüş değeri olarak aldigi icin, daha karmaşık işlemler için apply i
  kolayca çağrı zincirlerine dahil edebilirsiniz.
  */
 
