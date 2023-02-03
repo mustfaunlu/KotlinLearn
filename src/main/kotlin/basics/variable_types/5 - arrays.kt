@@ -30,12 +30,16 @@ fun main() {
         3.14 * it
     }
 
+    //["0", "1", "4", "9", "16"] değerlerine sahip bir Array<String> oluşturur.
+    val asc = Array(5) { i -> (i * i).toString() }
+    asc.forEach { println(it) }
+
 
     /**
      * ByteArray, ShortArray, IntArray, LongArray, DoubleArray, FloatArray tnaimlanabilir.
      * primitive array tanimlamalarida yapilabilir.
      * Bu tarz tanimlamalarda ilgili index degerine atama icin set(index, value) ya da [index] = value kullanilir.
-     * Bu tarz tanimlamalarda iligili index degerindeki degisken degereine get(index) ya da [index] seklinde kullanilir.
+     * Bu tarz tanimlamalarda iligili index degerindeki degisken degereine get(index) ya da [index] seklinde erisilir.
 
      */
 
@@ -58,10 +62,14 @@ fun main() {
 
     val awesomeArray = arrayOfNulls<String>(4)
     awesomeArray[2] = "Ali"
-    //awesomeArray = arrayOf("foo","goo","coo","doo") // calismaz val bu arrayin baska arraye esitlenmesini engeller.
+    //awesomeArray = arrayOf("foo","goo","coo","doo") // calismaz val bu arrayin baska arraye esitlenmesini engeller. index degerine karismaz.
 
     //!TAVSIYE ayni array i kodun alt kisimlarinda tamamen degistirmeyin
 
 
+    /**
+     * index degeri = size - 1 dir  yani 4 elemanli bir arrayin 3 indexi vardir cunku index 0 dan baslar
+     * array size disina cikarsaniz 4 elemanli bir arraydan [4]. indexi isterseniz indexOutOfBoundException hatasi alirsiniz
+     */
 
 }

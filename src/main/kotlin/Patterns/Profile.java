@@ -1,9 +1,11 @@
+package Patterns;
+
 /**
  1 singleton icin ilk sart disardan nesnesi olusmasin. Bu yuzden constructoru private yapiyoruz. (birden fazla const olmasin ve default const private olsun)
  2 disardan erisilemeyen icerde private profile instance olusturduk.
  3 instance i  geri donduren public fonksiyon yazdik.
  4 bu fonksiyona disardan erisirsek nesneye erismis olacagiz. (getter gibi.)
- 5 fonksiyonu static yaparsak disardan erisebiliriz. Profile.newInstance() seklinde erisiriz.
+ 5 fonksiyonu static yaparsak disardan erisebiliriz. Patterns.Profile.newInstance() seklinde erisiriz.
  */
 
 public class Profile {
@@ -13,7 +15,7 @@ public class Profile {
     synchronized in degisken icin olan ismi volatile dir. Ayni anda degiskene tek bir thread erismesini saglar.
     bu degisken private olsa bile reflection ile erisimide engglemek  icin volatile keywordu yazilir.
     eger bir degisken static degilse static func icinde kullanilamaz o yuzden burayada static koyuyoruz
-    public olarak tutarsak mainde Profile.profile = Profile.newInstance(); yaparim anlami kalmaz singletonin.
+    public olarak tutarsak mainde Patterns.Profile.profile = Patterns.Profile.newInstance(); yaparim anlami kalmaz singletonin.
      */
     private Profile() {
     /*

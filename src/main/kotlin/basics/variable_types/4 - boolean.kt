@@ -1,11 +1,15 @@
 package basics.variable_types
 
+//Boolean typelar kotlinde sadece true ve false degerlerini alir.
 val isStudent: Boolean = true
 val isTeacher: Boolean = false
 
-//genelde basina is koyulur.
+//Boolean degerlerde numberlar gibi nullable olursa boxed olur.
+//Ve nullable bool degerler 3. bir secenek null alabilir bu yuzde null kontrolu yapmamiz gerekir.
 
-// &&, || , and, or, xor gibi operatorler ile beraber kullanilabilir.
+//best practice olarak basina is kelimesi koyulur.
+
+// &&, || , and, or, xor, !, not() gibi operatorler ile beraber kullanilabilir.
 
 // if(isStudent || isTeacher){}  or operatorude kullanabiliriz infix fonksiyondur.
 
