@@ -10,25 +10,31 @@ fun main() {
 
     val numbers = 1 .. 100 //[1,100]
     val numbers2 = 1.rangeTo(100)
-    val alphabet = 'A' .. 'Z'
+
+    val alphabet = 'A' .. 'Z' //A'dan Z'ye kadar buyuk harfler
+    val alphabetLower = 'a' .. 'z' //a'dan z'ye kadar kucuk harfler
 
     /**
      * buyukten kucuge gitmek icin rangeTo() yerine downTo() operatoru kullanabiliriz.
      * buyukten kucuge gitmek icin .. kullanamayiz.
      */
-    val reversedNumber = 100.downTo(1) //val numbers2 = 1.rangeTo(100).reversed seklindede tanimlayabilirz. ama ne gerek var
+    val reversedNumber = 100.downTo(1)
+    //val reversedNumber = 100.rangeTo(1) olmaz!.
+    val numbers22 = 1.rangeTo(100).reversed() //seklindede tanimlayabilirz. ama ne gerek var
 
     /**
      * until fonksiyonunu kullanarak da range tanimalanabilir. verilen sayiya kadar verir
      *
      */
     val number = 10 until 100  //[10 ile 99 arasi 99 dahil]
+    //val number = 10 ..< 100 kotlin 1.7.20 ile until operatoru gelmistir suan experimentalapi stable olacak
+
 
     /**
      * step atlaya atlaya yazar
      */
-    val stepNumber = 100..200 step 2
-    val stepNumber2 = 300 downTo 200 step 5
+    val stepNumber = 100..200 step 2 //100 den 200 e kadar 2'ser 2'ser
+    val stepNumber2 = 300 downTo 200 step 5 //300 den 200 e dogru 5'er 5'er
 
         /**
          * CharRange, IntRange gibi primitive tipleride range tanimi yapilabilir.
@@ -53,7 +59,7 @@ fun main() {
             println("0 10 arasinda")
 
         }
-        !in 0..10 ->{
+        !in 11..12 ->{
             println(" 0 10 arasinda degil")
 
         }

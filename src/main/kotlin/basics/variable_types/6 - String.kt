@@ -2,10 +2,12 @@ package basics.variable_types
 
 /**
  * Charlardan olusan bir dizidir aslinda.
+ * Cift tirnak icinde tanimlanrlar. " "
+ *
  *
  */
 
-val name:String = "Kekod"
+val name:String = "Aila"
 
 
 
@@ -36,10 +38,10 @@ val numbersValue: String = "value" + (4+2)   // soru olabilir !!
 
 val rawPineTree = """
          * 
- $      ***
+        ***
        *****
          ||
-""".trimIndent()
+""".trimIndent() //trimIndent sol taraftaki bosluklari tiraslar.
 
 
 /**
