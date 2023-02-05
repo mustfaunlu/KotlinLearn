@@ -15,32 +15,39 @@ fun main() {
     print("Ogrenci misin?")
     val answer = readln()
 
-    //state kullanimi
-    if (answer.contains("Evet", ignoreCase = true)){  //ignoreCase => buyuk kucuk harfe dikkat etsin true, etmesin false
+    //STATE KULLANIM
+    if (answer.contains("Evet", ignoreCase = false)){  //ignoreCase buyuk kucuk harfe dikkat etsin true, etmesin false
         println("ogrenci")
     } else {
         println("ogrenci  degil")
     }
 
-    // expression kullanimi. {} icerisindeki son satir, deger olarak degiskene atanir.
-    var result: String = if (answer == "Evet"){
+    // EXPRESSION KULLANIM
+    // {} icerisindeki son satir, deger olarak degiskene atanir.
+    var result = if (answer == "Evet"){
         "ogrenci"
     } else {
         "ogrenci degil" // bu satir result a atanir.
     }
-    println(result) // ogrenci degil
+    println(result) // ogrenci degil cunku son satiri deger olarak atadi
 
     /**
-     * Kotlin de if elselerin Expression kullanimindan oturu ternary ooperatoru yoktur
+     * Kotlin de if elselerin Expression kullanimindan oturu ternary operatoru yoktur
      * Ternary yerine asagidaki gibi kullanim yapabliriz.
      */
     val isStudent = false
-    val isStudent2 = if (isStudent) {"true"} else {"false"}
+    val isStudent2 = if (isStudent) {"yes"} else {"no"}
 
     /**
      * else if lerden olusan bloklarda kullanabilirz. farkli kosullari bu bloklarda kullanabilirz
      * her zaman iki secenegimiz olmaz 4 5 6 secenek varsa else if leri if case ekleyebiliriz
      * harf notu hesaplamasi orneginde kullanabiliriz en bariz ornek
+     *
+     * else if ile alt alta if if if yazmak arasindaki fark nedir?
+     * else if de dogru kontrol bulununca  alttaki caseler calistirilmaz
+     * ama alt alta if if if caseleri yazilirsa hepsi calisacaktir.
+     * Else if li bir case yaziyorsak farkli bir seyi kontrol etmeyiz ayni seyi kontrol ederiz.
+     * birbirinden farkli durumlari kontrol eden caselerde Alt alta if ile kontrol etmeliyiz.
      */
 
     // true && true = true
@@ -64,15 +71,7 @@ fun main() {
     }
 
     /**
-     * else if ile alt alta if if if yazmak arasindaki fark nedir?
-     * else if de dogru kontrol bulununca  alttaki caseler calistirilmaz
-     * ama alt alta if if if caseleri yazilirsa hepsi calisacaktir.
-     * Else if li bir case yaziyorsak farkli bir seyi kontrol etmeyiz ayni seyi kontrol ederiz.
-     * birbirinden farkli durumlari kontrol eden caselerde Alt alta if ile kontrol etmeliyiz.
-     */
-
-    /**
-     * bazi durumlarda if else yazmaktansa, if casini yazip return ya da throw gibi kodun devam etmesini bozabiliriz
+     * bazi durumlarda if else yazmaktansa, if caseini yazip return ya da throw gibi kodun devam etmesini bozabiliriz
      * kod calisirken bu if case ine girmezse devam eden kod blogu calisir
      * bu da pratikte else case i demek olur. Bu sekkilde kodu biraz daha temiz gosterecektir.
      */
