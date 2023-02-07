@@ -3,18 +3,22 @@ package basics.control_flows
 fun main() {
 
     /**
-     * switch case lerin yerine gelmistir.
-     * when(karsilastirilacak ifade)
-     * value -> {}
-     * value -> {}
-     * else -> {}
-     * formatiyla kullanilir.
+     * switch case lerin yerine kotlinde when yapisi kullanilir..
+      when(karsilastirilacak ifade) {
+        value1, value2 -> {}
+        value3 or value4 -> {}
+        value -> {}
+        else -> {}
+      }
+      formatiyla kullanilir.
      * Yine {} arasina tek satir kod yazilacaksa bu durumda {} leri kullanmayabiliriz.
      * birden fazla value leri , ve or ile ayirabilirz. Veya anlamina gelir.
+     *
+     * when caseleride if caseleri gibi expression olarak kullanilip sonucu bir degiskene atilabilir.
      */
     val day = 66
 
-    val result = when (day) {
+    val result = when (day) {  //expression kullanim result degiskenine when case sonucu atanir.
         1 or 9 -> "Monday"
         2, 66 -> "Tuesday"
         3 -> "Wednesday"
@@ -65,8 +69,8 @@ fun main() {
     val number = 3
     when (number){
         in 0..10 -> println("ff") // 0 10 arasindaysa
-        in 0..10 -> println("bb") // 11 20 arasindaysa
-        !in 0..10 -> println("cc") // 11 20 arasinda degilse
+        in 11..20 -> println("bb") // 11 20 arasindaysa
+        !in 0..10 -> println("cc") // 0 10 arasinda degilse
     }
 
 }

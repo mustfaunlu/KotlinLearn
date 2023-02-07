@@ -5,7 +5,9 @@ package basics.loops
  *
  */
 fun main() {
-    repeat(10) {it:Int-> print("\n$it. Daha cok blog yazmam lazim")}
+    repeat(10) {
+        print("\n$it. Daha cok blog yazmam lazim")
+    }
 }
 
 

@@ -29,12 +29,12 @@ fun main() {
         println("value = $value")
     }
 
-    for (index in nums.indices){    // sadece index verir value manuel aliriz indices ozelligi arrayin Intrangeni alir
+    for (index in nums.indices){    // sadece index verir value manuel aliriz indices ozelligi arrayin Intrangeni alir. bu ornekte 0..4 range'ni verir
         print("\n$index. index degeri : manual alinan valuesi : ${nums[index]}") // valueyi nums[index] ile manuel aldik
 
     }
 
-    for ((index, value) in nums.withIndex()){ // hem index hem value verir
+    for ((index, value) in nums.withIndex()){ // hem index hem value verir     (i,v) destructuring declaration
         print("\n$index. index degerinin valuesi: $value ")
 
         /**
@@ -44,10 +44,10 @@ fun main() {
 
     /**
      * break kullanarak ilgili sart saglanirsa, donguden cikabilirsiniz.
-     * continue kullanarak ilgili sart saglanirsa, donguye o degeri atlayarak devem edebilirsiniz
+     * continue kullanarak ilgili sart saglanirsa, donguye o degeri atlayarak devam edebilirsiniz
      */
     for(value in 1..50){
-        if (value % 2 == 1){ // tek sayi ise sart saglanirsa print etmez for dongusune doner
+        if (value % 2 == 1){ // tek sayi olma sarti saglanirsa print etmez for dongusune doner
             continue // sayi tek ise print etmez
         }
         println("$value")
@@ -55,7 +55,7 @@ fun main() {
 
     for (value in 1.. 50){
         if (value % 2 == 0){
-            break  // sart saglanirsa donguden cikar
+            break  // if icindeki sart saglanirsa donguden cikar
         }
         println(value)
     }
@@ -133,6 +133,19 @@ fun main() {
     for (x in 1..6 step 2) {  } // step 2: 1, 3, 5
     for (x in 6 downTo 1) { }  // closed range, backward order: 6, 5, 4, 3, 2, 1
 
+
+    for (i in 1..4) {
+        repeat(4 - i ) {
+            print(" ")
+        }
+        repeat(i) {
+            print(" *")
+        }
+        println()
+        if (i == 4) {
+            println("   ||")
+        }
+    }
 
 
 
