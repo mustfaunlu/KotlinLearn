@@ -10,7 +10,7 @@ fun main() {
      * 1. infix keywordu ile baslar
      * 2. fonksyon bir uye fonksiyon olmalidir. (class a ait olmali)
      * 3. ya da bir extension fonksiyon olmalidir
-     * 4. sadece bir parametre olmalidir. Bu parametre vararg olamaz   true or false true olmaz. tek parametre olmalidir.
+     * 4. sadece bir parametre olmalidir. Bu parametre vararg olamaz.
      * 5. infix methodun parametresi default deger olamaz
      *
      *       yapisal olarak; (class icerisinde oldugunu varsayalim veya extension fuc old. varsayalim)
@@ -47,6 +47,13 @@ fun main() {
 
     }
 
+    1 topla 2  // this(Int) = 1   x = 2
+}
+
+// infix fonksiyonlarin extensionlar ile birlikte kullanimi
+//topla adinda infix fonksiyon yazip 2 sayiyi topluyoruz
+infix fun Int.topla(x: Int): Int {
+    return this.plus(x) //buradaki this Int'i niteliyor
 }
 
 class AwesomeClass {
@@ -76,3 +83,6 @@ class AwesomeClass {
 fun logWhenImageDownloaded(imageUrl: String){
     //this downloadImage imageUrl     calismaz. class disinda this isaret edecek bir sey bulamaz.
 }
+
+
+
