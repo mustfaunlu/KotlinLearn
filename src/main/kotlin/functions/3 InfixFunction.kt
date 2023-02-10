@@ -13,11 +13,16 @@ fun main() {
      * 4. sadece bir parametre olmalidir. Bu parametre vararg olamaz.
      * 5. infix methodun parametresi default deger olamaz
      *
-     *       yapisal olarak; (class icerisinde oldugunu varsayalim veya extension fuc old. varsayalim)
+     *       yapisal olarak; (class icerisinde oldugunu varsayalim)
      *
      *      infix fun infixMethodName (justOneParam : AwesomeParamType) : WhateverType{
      *      ....
      *      }
+     *
+     *      //extension fonksiyonlar ile yazilma sekli.
+     *      infix fun ReceiverClass.infixMethodName (justOneParam : AwesomeParamType) : WhateverType{
+     *            ....
+     *            }
      *
      *
      */
@@ -82,6 +87,10 @@ class AwesomeClass {
 
 fun logWhenImageDownloaded(imageUrl: String){
     //this downloadImage imageUrl     calismaz. class disinda this isaret edecek bir sey bulamaz.
+
+    //class nesnesini vererek kullanabiliriz.
+    AwesomeClass() downloadImage imageUrl
+    AwesomeClass().downloadImage(imageUrl)
 }
 
 

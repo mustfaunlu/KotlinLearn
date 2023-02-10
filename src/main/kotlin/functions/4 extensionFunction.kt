@@ -2,21 +2,24 @@ package functions
 
 fun main() {
     /**
-     * uzerinde degisiklik yapamadigimiz (readOnly) siniflara, ya da yapmak istemedigmiz siniflara, bu siniflarin
+     * uzerinde degisiklik yapamadigimiz (readOnly) siniflara, interfacelere ya da yapmak istemedigmiz siniflara, bu siniflarin
      * icerisinde yazmadan fonksiyon tanimlayabilmemizi saglar. Boylece o sinifa uye bir fonksiyon kazandirabiliriz.
      * Bunu yaparken unutmamaniz gereken; yazdiginiz extension fonksiyon aslinda o sinifin gercek bir fonksiyonu olmayacaktir.
      *
-     * Reciver diye adlandiracagimiz bir sinifa gerek duyar. Extension yazacagimiz sinifi ifade eder.
+     * Reciver diye adlandiracagimiz bir sinifa gerek duyar. Receiver extension yazacagimiz sinifi ifade eder.
      *
      * yapisal olarak;
      *
      *      fun String.extPrint(handsomeValue : HandsomeOne) : Unit {
      *
-     *      //hangi sinifi buyutmek istiyorsak onu yazip . koyuyoruz.
+     *      //hangi sinifi genisletmek istiyorsak onu yazip . koyuyoruz.
      *      (String.extPrint) gibi Stringi genisletmek istemisiz.
      *              ...
      *
      *      }
+     *
+     * Extension fonksiyonlar bir sinif icinde yazilirsa sinifin disindan cagirimi yapilamaz.
+     * Sinif disindan cagirmak isyorsak kt dosyasi icinde yazilacaktir.
      *
      * elimizde cok buyuk class lar var ise bunlari ext ile bolerek gunu kurtarmak amacli extension yazilabilir. Ama ana problemi boyle cozemeyiz.
      */
@@ -29,11 +32,14 @@ fun main() {
     println(schoolNumber)
 
     //yukaridaki kullanimlarin yerine normal bir log2 fonksiyonu yazilabilir ve asagidaki gibi kullanilabilir
+    fun log2(number: Number){
+        println(number)
+    }
     log2(pi)
     log2(schoolNumber)
 
 
-    //extension fonksiyonlar ister direkt valueler uzerinden cagirilabilir.
+    //extension fonksiyonlar  direkt valueler uzerinden cagirilabilir.
     1341.log("")
     (3 + 0.14).log("")
     18121321321.log("")
@@ -59,9 +65,7 @@ fun main() {
     println(emptyParam + this)
 }
 
-fun log2(number: Number){
-    println(number)
-}
+
 
 
 /**
@@ -70,7 +74,7 @@ fun log2(number: Number){
 infix fun String.extPlus(otherString: String): Int = this.toInt() + otherString.toInt()
 
 // extension fonksiyonlar sari renkte gozukurler.
-// infix fonksiyonlar extension fonksiyonlarla kullanilabilir demistik.
+// infix fonksiyonlar,  tek parametreli extension fonksiyonlarla kullanilabilir demistik.
 // extPlus infix extension oldugu icin . (nokta) kullanimina ihtiyac duymaz.
 
 val result: Int = "3".extPlus("5") //8
