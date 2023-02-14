@@ -3,50 +3,11 @@ package functions
 import java.util.*
 import kotlin.concurrent.schedule
 
-//fun workarea.workarea.workarea.main(args: Array<String>) {
-//    printName("Gökhan")
-//
-//    printTotalName("${printName("Gökhan")}")
-//    printTotalName("String")
-//    printTotalName({
-//        return  "Ad : $name"
-//    })
-//}
-//
-//
-//fun printName(name: String): String{
-//    return  "Ad : $name"
-//}
-//
-//fun printTotalName(totalName: String){
-//    println(totalName)
-//}
-
 fun main() {
-
-    val name = "mustafa"
-    val surnmae = "unlu"
-    val fullName = "$name $surnmae"
-
-    fun deneme(fullName: String): String {
-        return "Merhaba $fullName"
-    }
-
-    fun deneme2(fullName: String): String {
-        return "Merhaba $fullName"
-    }
-
-    val welcomeMessage =
-        deneme(fullName) //fonksiyonlar bir degiskene atanabiliyor. yada fonksiyona geru gibys degeri olarak verilebilir.
-    deneme(deneme2(fullName)) // fonksiyonlar baska bir fonksiyona parametre olarak verilebilir.
-
-    //buraya kadar first class citizen function mevzusu normal kotlindeki functionarin ozellikleridir.
-
-
     //higher orderin interface  gore artisi nedir.??
 
     /**
-     *      Fonksiyon'lar Kotlin'de "First Class Citizen"dır. Yani degiskenlere deger olarak atanabilir, baska fonksiyonlara
+     *      Fonksiyon'lar Kotlin'de "First Class"dır. Yani degiskenlere deger olarak atanabilir, baska fonksiyonlara
      *      parametre olarak verilebilir ya da bir fonksiyonunn geri donus degeri olabilir demektir.
      *
      *      Higher Order Function'lar basitce bir fonksiyona parametre olarak verilen fonksiyonlardır. Parametre olarak
@@ -66,7 +27,7 @@ fun main() {
      *
      *      Cagrilirken ;
      *
-     *      fun workarea.workarea.main(){
+     *      fun main(){
      *
      *          foo({ message ->
      *              println("Message : $message")
@@ -81,30 +42,30 @@ fun main() {
      *      Higher Order Function'lari tanimlamanin 3 yolu vardir.
      */
                                                      /** 1  */
-    // Bir degiskene atayarak Higher Order Function tanimlayabilirsiniz.
-    // Bu durumda suslu parantezler yanina higher order function'in aldigi parametreler lambda okundan once aralarina virgul
-    // koyularak yazilir. Higher Order Function tek parametre aliyorsa, bu parametreleri yazmak zorunda degilsinizdir.
-    // Bu durumda higher order function size "it" kelimesi ile higher order function'in parametresi tipinde bir degisken verecektir.
+    /* Bir degiskene atayarak Higher Order Function tanimlayabilirsiniz.
+        Bu durumda suslu parantezler yanina higher order function'in aldigi parametreler lambda okundan once aralarina virgul
+        koyularak yazilir. Higher Order Function tek parametre aliyorsa, bu parametreleri yazmak zorunda degilsinizdir.
+        Bu durumda higher order function size "it" kelimesi ile higher order function'in parametresi tipinde bir degisken verecektir.*/
     val higherOrderFunction = { surName: String ->
         "surName : $surName"
     }
 
                                                     /** 2  */
-    // Ismi olmayan "anonymous function" tanimlamalari da Higher Order Function olarak, normal bir fonksiyona parametre
-    // olarak verilebilir.
+    /* Ismi olmayan "anonymous function" tanimlamalari da Higher Order Function olarak, normal bir fonksiyona parametre
+     olarak verilebilir. */
     val anonymousFunction = fun(surName: String): String {
         return "surName : $surName"
     }
 
-    // Anonymous Function'in expression kullanimini da yine Higher Order Function olarak normal bir fonksiyona parametre
-    // olarak verilebilir.
+    /* Anonymous Function'in expression kullanimini da yine Higher Order Function olarak normal bir fonksiyona parametre
+    olarak verilebilir.*/
     val anonymousFunction2 = fun(surName: String): String = "surName : $surName"
 
 
                                                     /** 3  */
-    // Higher Order Function'la ayni parametre sayisina sahip ve bu parametrelerin hepsinin tipleri Higher Order Function'in
-    // parametre tipleri ile ayni ise, bu normal fonksiyon da Higher Order Function olarak normal bir fonksiyona parametre
-    // olarak verilebilir. Bunu yapmak icin sadece basina :: isareti koymak yeterlidir.
+    /* Higher Order Function'la ayni parametre sayisina sahip ve bu parametrelerin hepsinin tipleri Higher Order Function'in
+     parametre tipleri ile ayni ise, bu normal fonksiyon da Higher Order Function olarak normal bir fonksiyona parametre
+     olarak verilebilir. Bunu yapmak icin sadece basina :: isareti koymak yeterlidir.*/
 
     fun logPrint(message: String, count: Int): String {
         return "Log: $message"
