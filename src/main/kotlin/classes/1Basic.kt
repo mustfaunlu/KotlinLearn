@@ -17,12 +17,17 @@ class Car constructor( val wheelCount: Int, color: String = "Red") {
      */
 
     init {
+        /*
+        aslinda init'i primary constructorin parantezleriymis gibi
+        degerlendirebiliriz. Mesela asagidaki secondary constructorlar
+        kendi bodylerine sahip primary icinde bu body initde yaziliyor diyebiliriz.
+         */
         mWheelCount = wheelCount
         "primary const. created".printLog()
         "WheelCount: $mWheelCount, Color: $mColor.printLog()"
     }
 
-    constructor(name: String) : this(4) {             //parametreleri farkli olan secondary const. lar boyle olusturulur.
+    constructor(name: String) : this(4) {   //parametreleri farkli olan secondary const. lar boyle olusturulur.
         "1. secondary const. created".printLog()
     }
 
@@ -34,10 +39,10 @@ class Car constructor( val wheelCount: Int, color: String = "Red") {
 }
 
 fun main() {
-    val car0 = Car(4) //car0 nesnesini Car classindan olusturduk
-    val car1 = Car(4, "blue")
-    val car2 = Car("blue", "Metal")
-    val car3 = Car("Ferrari")
+    val car0 = Car(4) // primary const.daki opsiyonel color parametresini kullanmadan nesne olusturduk.
+    val car1 = Car(4, "blue") // primary const kullanilarak olusturulan nesne
+    val car2 = Car("blue", "Metal") //2. secondary const. kullanilarak olusturulan nesne.
+    val car3 = Car("Ferrari") //1. secondary const kullanilarak nesnes olusturuldu
 
 }
 
@@ -45,4 +50,11 @@ fun String.printLog(){
     println(this)
     println("--------------------")
 }
+
+/**
+ * class body'si bos ise asagidaki gibi class tanimi yapilabilir
+ * asagidaki class'inda primary const. vardir. implicit bir sekildedir.
+ *
+ */
+class Empty
 

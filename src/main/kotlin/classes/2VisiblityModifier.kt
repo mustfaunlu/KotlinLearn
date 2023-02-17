@@ -9,13 +9,15 @@ package classes
  * internal sadece kendi modulu icinde childlarda kutuphane icinde erisilebilir. Modul disinda erisilemez.
  * encapsulation nedir? bir class in uye degisken private tutup bu degiskene erisilecek fonksiyonlari publicde tutmaktir.
  * javada internal yok ve kotlin protected kullanimi farkli; yaptigimiz top level tanimlamalara protected kullanmayiz cunku miras alinamaz child classi hicbir zaman olamayacak
- * top level ; dosyanin herhangi bir yerinde degisken function tanimlayabiliriz. illa mainde olmaya gerek yok.
+ * top level ; dosyanin herhangi bir yerinde degisken function,variable,class, interface, object tanimlayabiliriz. illa mainde olmaya gerek yok.
  */
 
 //protected val m = "mu"  toplevel tanimlamalarda protected kullanamayiz.
+val m = "mu" //top level tanimlama butun projeden erisilebilir
+private val z = "zu" // sadece bu dosya icinde heryerden erisilir top-level
 
  open class Foo(){
-    private val name = "musti" // sadece kendi class icinde erisilir
+    private val name = "must" // sadece kendi class icinde erisilir
 
     public var surName = "unl" // heryerde erisilebilir
 
@@ -31,22 +33,24 @@ package classes
         return name
     }
 
-    private var shortLine = 0
-    private var longLine = 0
+
+     private var shortLine = 0
+     private var longLine = 0
 
     fun calculateArea(shortLine: Int, longLine: Int): Int {
         this.shortLine = shortLine
         this.longLine = longLine
-        return shortLine * longLine
+        return this.shortLine * this.longLine
     }
 
  }
 
-class Boo private  constructor(): Foo(){
+class Boo private constructor(): Foo(){  //primary const. private yapabiliriz. constructor keywordunu kullanmamiz gereklidir.
     init {
         surName
         //name private old icin erisemeyiz.
         age
+        email
     }
 }
 
