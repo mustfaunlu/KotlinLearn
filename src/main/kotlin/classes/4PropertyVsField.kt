@@ -1,7 +1,7 @@
 package classes
 
 /**
- * kotlinde fieldlar yoktur property vardir
+ * kotlinde field yoktur property vardir
  * property dedigimiz sey aslinda bir degiskenin get ve set fonksiyonlaridir.
  * biz javada bir degisken yazdigmizda getter ve setterini degiskenle beraber tanimlariz. asil degisken javadakidir. getter ve setterida propertysidir.
  * kotlinde hicbir zaman field degisken tanimlamayiz degisken gibi tanimladigmiz sey aslinda propertydir.
@@ -35,6 +35,8 @@ package classes
  * gercek bir balance degiskeni olusturmuyoruz getBalance ve setBalance functiionu yaratiyoruz arka planda. backing fieldi ise her zaman privatedir.
  * eger balance degiskenini private yaparsak get ve set functionu asla olusmaz. Boylece encapsulationun babasi olur.
  * Bu yuzdendir ki ext functionu bir variable a da kullanabiliriz. cunku variable aslinda get ve set functionudur.
+ * Bu yuzdendir ki interface icinde bir variable tanimlaniyor gibi gorunuyor fakat o degisken aslinda bir get methodudur.
+ * Interface icindeki variable'a deger atamasi yapamayiz. Cunku backing fieldi yoktur.
  *
  */
 
@@ -51,4 +53,10 @@ fun main() {
 
     bankAccount.balance = 500_000
     println(bankAccount.balance)
+}
+
+interface BankAccountInterface{
+    var balance: Int // aslinda get methodudur. backing fieldi yoktur. direkt atama yapamayiz.
+      //  get() = 1_000_000
+
 }

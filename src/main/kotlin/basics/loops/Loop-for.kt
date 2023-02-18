@@ -147,6 +147,16 @@ fun main() {
         }
     }
 
+    for (i in 0..4) {
+        for (j in i..4) {
+            print(" ")
+        }
+        for (k in 0..i){
+            print(" *")
+        }
+        println()
+
+    }
 
 
 }
