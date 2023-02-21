@@ -9,7 +9,7 @@ package classes
 
  3- interfaceleri anlami geregi final yapamazsiniz. open yazilmasi da gereksizdir.(redundant)
 
- 4- abstractlar; sozlesmeyken kesinlikle(override) sahip olmasi gerenkenleri soyler, default olarak yapilmasi gerekli olanlar
+ 4- abstractlar; sozlesmeyken kesinlikle(override) sahip olmasi gerenkenleri soyler, default olarak yapilmasi gerekli/zorunlu olanlar
  interfaceler; ise herhangi bir classin interface e sahip olmasi demek yeteneklerini artiryor demektir. harici beceri seti kazandirir
 
  5- Eger bir class a harici beceri seti kazandirmak isteniyorsa interface e yazmak gerekiyor.
@@ -25,7 +25,7 @@ package classes
 
  8- class lar inherit edilirken, interfaceler implement edilir. open koyma mantigi bu yuzden yoktur zaten amac implementtir.
 
- 9- abstract classlar bir kez extends edilirken, interfaceler birden fazla implement edilebilir
+ 9- Bir class; bir abstract/open classi extend ederken, birden fazla interface  implement edilebilir
 
  */
 
