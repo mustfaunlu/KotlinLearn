@@ -6,7 +6,7 @@ package classes
  * Parametreler mutlaka val ya da var ile tanimlamak zorundadir.
  * Open, abstract, sealed, inner class yapilamaz.
  * Data Class'lar miras alinamaz. Interface i implement ederler child class olabilirler ama ust class olamazlar.
- * Tum data class'lari default olarak final oldugu icin final modifier'i redundant uyarisi verir.
+ * Tum data class'lar default olarak final oldugu icin final modifier'i redundant uyarisi verir.
  *
  * Data class'larda equals, hashCode, toString, copy, componentN fonksiyonlari arka planda default olarak olustururlar.
  * Bunlarin hicbiri duz classlarin arka planinda yoktur. Kendimiz yazabiliriz.
@@ -21,10 +21,10 @@ package classes
  *
  * toString gibi fonksiyonlarda primary const. degiskenleri kullanildigi icin val ya da var yazilmak zorunda.
  *
- * Pair, Triple ozellestirilmis generic data class'lar mevcut.
+ * Pair, Triple ozellestirilmis generic data class'larda dil icinde mevcut.
  *
  * BAckendden gelen datalari biz data class yapariz sebepleri;
- *  gelen datayi loglamak cok kolay oluyor. data class in instance in dan gelen datayi toSrign zaten old icin gorecegiz.
+ *  gelen datayi loglamak cok kolay oluyor. data class in instance in dan gelen datayi toString ozellestirilmis old icin gorecegiz.
  *  Fakat duz class ile datayi cekseydik her class icin toString yazmak override etmek gerekecekti.
  */
 
@@ -34,11 +34,11 @@ package classes
     val hasMedaContent: Boolean, //Component3
     val mediaList: List<Media> //Component4
 ){
-    val relatedNewsList : List<News> = arrayListOf()
+    val relatedNewsList : List<News> = arrayListOf() //data class ozellikleri bu degiskende calismaz. cunku primary const. disinda tanimlanmis
 
 //    override fun toString(): String {
 //        return "super.toString()"
-//    }    kendimiz custom toString override edebilliriz. boylece butun bilgilerimiz tek fonksiyonla aciga cikmaz.
+//    }    kendimiz custom toString override edebilliriz. boylece butun bilgilerimiz ozellestirilmis toString fonksiyonu ile aciga cikmaz.
     fun log(){
         println("Title: $title, description : $description")
     }
@@ -74,7 +74,7 @@ fun main() {
 
 
     newsOne.mediaList
-    mediaList //  bunu yapabilmek icin arka planda componentN fonksiyonlari olmasi gerekli  destrcuting declaration
+    mediaList //  bunu yapabilmek icin arka planda componentN fonksiyonlari olmasi gerekli  destructring declaration
 
     newsOne.toString()
     newsOne.hashCode()
@@ -102,5 +102,5 @@ fun main() {
 
 
     println("Class toString: $newsTwo") //Class toString: 4 Classes.NewsData@21bcffb5 ciktisi verir
-// duzcalss instance old icin icindeki veriyi okuyamayiz. Okumak icin toString override edip override i custom yazmak gerekecek.
+// duzclass instance'i old icin icindeki veriyi okuyamayiz. Okumak icin toString override edip override i custom yazmak gerekecek.
 }

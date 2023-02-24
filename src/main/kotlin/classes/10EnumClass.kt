@@ -11,7 +11,7 @@ package classes
  * yapisi geregi zaten final dirlar. final keyword u kullanmak redundant uyarisi verir.
  *
  * ozunde class olduklari icin, constructor kullanbilirler ve bu constructor icersinde veri tutabilirler.
- * java karsiliginda bu enum sabitleri static final classlar seklinde tutulurlar.
+ * java karsiliginda bu enum sabitleri enum icinde static final classlar seklinde tutulurlar.
 bu sayede kullanirken bu sabitlerin nesnesini olusturmak zorunda kalmayiz.
  *
  * enum classlarinin nesnesi olusturulamaz.
