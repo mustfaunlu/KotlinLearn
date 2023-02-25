@@ -10,15 +10,15 @@ package classes
  * Sealed classlar abstract classlardir . Abstract olduklari icin open olmazlar.
  * Sealed classlar Abstract class old icin final olamazlar.
  *
- * Sealed classlarin nesnesi olusturaulamaz.
- * contructorlari protected veya private olarak bulunur.
+ * Sealed classlarin nesnesi olusturulamaz.
+ * contructorlari default olarak protected tutulur. privateda olabilir. Public ve internal olamaz.
  *
  * sealed claslari miras alan subClasslar final old icin miras alinamazlar. Sdk icin onemli.
  *
  * Sealed class in subclasslarinin neler old compiletime'da bilinmektedir. Bundan dolayi when ve if yapisi
- * else caselerinin yazimina ihtiyac duymazlar.
+else caselerinin yazimina ihtiyac duymazlar.
  *
- * Sealed classlari extends alan subclass lar eskiden ayni dosya uzerinde bulunma zorunlulugu. vardi.
+ * Sealed classlari extends alan subclass lar eskiden ayni dosya uzerinde bulunma zorunlulugu vardi.
  Bu zorunluluk esnetilerek ayni package icerisinde olmaya kadar genisletildi
  Ancak ayni packade disina cikip, bir sub class a sealed class i miras olarak vermek isterseniz buna izin verilemeyecek.
  ozellikle sdk yazarken bu kisitlama onemlidir.
@@ -29,11 +29,11 @@ package classes
 
  */
 
-sealed class Response
+sealed class Response // suslu parantezsizde olabilir.
 class Success : Response(){} // classlar kendi baslarina farkli interfaceleri implement edebilirler. class ozelliklerini kullanabilirler.
 class Error : Response(){} // yani bu yapilari kendi icinde ayristirabiliriz. Enumda ise butun enum sabitleri etkileniyordu.
 
-sealed class  Response2 {
+sealed class  Response2 { //parantezli hali.
     class Success2 : Response2(){}
     class Error2 : Response2(){}
 }
@@ -56,13 +56,13 @@ sealed class  PaymentOption {
     object Transfer
 }
 
-enum class PaymentOption2 {  // bu sekilde kullanmak gerekir.
+enum class PaymentOption2 {  // sealed icine objectler yerine bu sekilde kullanmak gerekir.
     Cash, Card, Transfer
 }
 
 
 fun main() {
-    //val response = Response()
+    //val response = Response() // sealed classlarin nesnesi olusturulamaz.
     val success = Success()
     val error = Error()
 
