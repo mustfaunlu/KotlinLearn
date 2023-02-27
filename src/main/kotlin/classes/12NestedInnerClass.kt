@@ -1,13 +1,13 @@
 package classes
 
 /**
- * Nested Classlar outer(dis) class in uye propertylerine ya da fonksiyonlarina erisemezler.
+ * Nested Classlar; outer(dis) class in uye propertylerine ya da fonksiyonlarina erisemezler.
  * Nested classlar static olarak saklanirlar.  Bundan dolayi da outer class uzerinden nested class a
  erismek icin Outer.NestedClass() seklinde erisebiliriz.
- * Nested class in icerisine ise bir nested ya da inner fark etmeksizin class ekeleyebiliriz.
+ * Nested class in icerisine ise bir nested ya da inner fark etmeksizin class ekleyebiliriz.
  *
  * Inner class a baktigimizda ise static olarak tutulmazlar.. Bundan dolayi erismek icin
- Outer().InnerClass() seklinde outer class in intance indan erisiriz.
+ Outer().InnerClass() seklinde outer class in instance'ndan erisiriz.
  * Inner class in icine yeni bir nested class eklenemez. Ancak yine inner class eklenebilir.
  */
 

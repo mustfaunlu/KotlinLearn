@@ -37,7 +37,7 @@ value class BankAccount4(val balance: Int): Print{
  Bundan dolayi istesekde nesne olusturamayiz. Bunu yapabiliyor gibi gorunmemizin sebebi, gercekte o nesnenin hic yaratilmiyor olusu sebebiyle.
  * Bizim nesne olustutukn gorgugumuz sey aslinda const. icindeki degiskenin kendisi.
  *
- * Inline classlar icinde propery tanimlanmasina izin verilir. Ancak bu properylerin backing fieldi ollmaz
+ * Inline classlar icinde property tanimlanmasina izin verilir. Ancak bu properylerin backing fieldi ollmaz
  * herhangi bir interface implement ederler ama baska bir clasi miras alamaz ve miras alinamazlar default olarak finaldirlar.
  *
  * open sealed ve abstract keyword kullanilamaz. final kullanmak gereksizdir. reduant uyarisi verir.
