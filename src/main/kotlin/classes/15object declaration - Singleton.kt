@@ -20,9 +20,9 @@ birsuru alan isgal edilmis olacak. sonuc olarak memory leak(outofmemory exceptio
  *
  *                      **bir class i singleton teknik olarak nasil yapariz(javadaki hali)?
  *     1 - constructoru private yap ve baska public constructor bulundurma
- *     2 - class in kendi nesnesini private volatile(multithread durumunda tek bir threadin ulasmasi icin) static olarak icerde olustur.
- *     3 - olusturdugun bu nesneyi null check yapip geri donderen public fonksiyon yaz.(getter)
- *                          disardan bu fonksiyonu cagir ve ayni nesneye eris.
+ *     2 - class icinde class'in referansini verecegimiz private volatile static degisken olustur.
+ *     3 - olusturdugun bu degiskeni null check yapip geri donderen public synchronized static fonksiyon yaz.
+ *     4-  disardan bu fonksiyonu Class.getInstance() seklinde cagir ve her cagirimda ayni nesneye eris.
  *
  *                      **nerelerde kullaniriz ornek ver???
  *                      local db instance i singleton tutulur.
@@ -30,6 +30,19 @@ birsuru alan isgal edilmis olacak. sonuc olarak memory leak(outofmemory exceptio
  *
  * static? garbage collector memory temizlerken static keywordlu fieldlara dokunmaz onlari silmez.
  * bu sayede herhangi bir t aninda o class in nesnesine ihtiyac duydugumuzda hali hazirdaki silinemeyen objeyi geri donduruyoruz.
+ *
+ */
+
+/**
+ * Kotlinde singleton yapmak icin object declaration kullanilir.
+ * object keywordu yanina isim yazilir suslu parantezler icine gerekli memberlar yazilir.
+ * Bu durumda singleton bir class olusturmus oluruz.
+ * Object declaration, object expression olamaz, bir variable'a atanamaz.
+ * Object declaration thread safedir. Istenir companion object ile thread detaylari eklenebilir.
+ * Object declaration, super type(inteface/class) extend edebilir.
+ * Object declaraion fonksiyon icinde local olarak yazilamaz. Object icinde object yazilabilir.
+ * Object declaration, inner olmayan(non-inner) class icinde yazilabilir.
+ * ObjectName.memberName seklinde erisim saglanabilir.
  *
  */
 
