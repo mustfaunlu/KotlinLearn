@@ -1,45 +1,47 @@
 package classes
 
 /**
- * arka planda statik final class olarak tutulur.
+ * Companion objectler arka planda statik final class olarak tutulur.
  * bu statik class icinde constructori finaldir. yani bir instance olusturulmaz.
  *
  * interface icinde comp object tanimlanabilir.
- * interface icinde state tutamiyorduk tutuyor gibi oluyoruz ama property old icin init edemiyoruz.
- * ama comp object ile interface icinde state tutabilmis oluyoruz. Ama yapilmamasi gerekir.
+ * ama companion object ile interface icinde state tutabilmis oluyoruz. Ama yapilmamasi gerekir.
  *
  * companion eslik eden anlamina gelir yani class imiza yardimci olurlar.
  * class in tamamini degilde icindeki belli kod blogunu singleton yapmak icin kullanilir.
+ * Bu sayede class'in belli bir kismina Classismi.companionMember seklinde ulasabiliriz.
+ * Diger classlarin icindende  Classismi.companionMember seklinde ulasabiliriz.
  *
+ * Arka planda companion objectin nesnesi companionu icine yazgidimiz classin icinde yer alir.
+ * HomeFragment.TAG seklinde ulasabiliriz
+ * fakat class icinde object declaration kullaniminda HomeFragment.Deneme.TAG seklinde ulasiriz.
+ * arka planda bu yapi nested class olarak yazildigi icin statik ve singleton seklinde yazilir.
  *
- * companion objectin nesnesi companionu icine yazgidimiz classda yer alir.HomeFragment.TAG seklinde ulasabiliriz
- * fakat class icinde object kullaniminda HomeFragment.Deneme.TAG seklinde ulasiriz. arka planda nested class oldugu icin statik ve singleton seklinde yazilir.
- * fakat object i singleton gibi disarda tanimlarsak arka planda statik class olmaz.
+ * class icinde object declaration yazilmaz, companion object yazilir.
  *
- * class icinde object yazilmaz  // companion object yazilir.
- *
- * https://khan.github.io/kotlin-for-python-developers/#objects-and-companion-objects
  */
 interface HomeFragmentPresenter {
     fun navigate()
 
-    companion object{  //gunah
+    companion object {  // hatali kullanim ; interface icinde companion object ile state tutmak oop acisinda hatalidir. Interface icinde state tutmamaliyiz.
         val name = "ali"
     }
 }
+
 abstract class BaseFragment() {
-// companion object abstract class i da extend edebilir.}
-    //hecky olarak companion object ile multiinheritance yapilabilir.
+// companion object abstract class i da extend edebilir.
+//companion object ile multiinheritance yapilabilir ama oop acisindan hatali.
 }
-class HomeFragment: HomeFragmentPresenter {
+
+class HomeFragment : HomeFragmentPresenter {
     //const val TAG : String = "HomeFragment"
     var color = "Red"
 
-    companion object NamedorNameless : HomeFragmentPresenter, BankAccount2(124234, 23213){
-        const val TAG : String = "HomeFragment"
+    companion object NamedorNameless : HomeFragmentPresenter, BaseFragment() {
+        const val TAG: String = "HomeFragment"
 
-       private var homeFragment: HomeFragment? = null
-        fun newInstance() : HomeFragment{
+        private var homeFragment: HomeFragment? = null
+        fun newInstance(): HomeFragment {
             homeFragment = HomeFragment()
             return homeFragment as HomeFragment
         }
@@ -49,20 +51,16 @@ class HomeFragment: HomeFragmentPresenter {
         }
 
 
-
-
     }
 
     override fun navigate() {
         TODO("Not yet implemented")
     }
-    fun ss() {
-    HomeFragmentPresenter.name // interface icinde state tutmus olduk ama GUNAHHH
+
+    fun dontDoThis() {
+        HomeFragmentPresenter.name // interface icinde state tutmus olduk ama hatali kullanimdir.
     }
 }
-
-
-
 
 
 open class BankAccount2(i: Int, i1: Int) { // companion object normal bir class i da extends edebilir.
@@ -70,7 +68,8 @@ open class BankAccount2(i: Int, i1: Int) { // companion object normal bir class 
 }
 
 fun main() {
-    val homeFragment = HomeFragment.newInstance() //instance(classismi.) olmadan ulastigi icin arka planda statik oldugunu anlariz.
+    val homeFragment =
+        HomeFragment.newInstance() //instance(classismi.) olmadan ulastigi icin arka planda statik oldugunu anlariz.
     homeFragment.color = "Blue"
     val homeFragment2 = HomeFragment.newInstance()
     homeFragment2.color = "Yellow"
@@ -91,3 +90,33 @@ fun main() {
     println("homeFragment4 color : ${homeFragment4.color}")
     println("homeFragment5 color : ${homeFragment5.color}")
 }
+
+
+/**
+Android'de, companion object özellikle bir sınıftaki sabitler,
+sınıf seviyesinde fonksiyonlar ve varsayılan değerler gibi öğeleri
+tanımlamak için kullanılır. Örneğin, bir Fragment sınıfı içinde
+companion object ile bir newInstance() fonksiyonu tanımlanabilir.
+Bu fonksiyon, fragment'i oluşturmak için kullanılır ve bu sayede
+Fragment'in standart bir constructor'ına ihtiyaç duyulmadan,
+argümanlarla birlikte oluşturulabilir. Örnek kod şöyle görünebilir:
+
+class MyFragment : Fragment() {
+
+    companion object {
+        fun newInstance(param1: String, param2: String) =
+            MyFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
+            }
+    }
+
+// ...
+
+}
+ val fragment = MyFragment.newInstance("a","b") seklinde kullanilir.
+ */
+
+

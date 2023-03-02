@@ -40,8 +40,10 @@ birsuru alan isgal edilmis olacak. sonuc olarak memory leak(outofmemory exceptio
  * Object declaration, object expression olamaz, bir variable'a atanamaz.
  * Object declaration thread safedir. Istenir companion object ile thread detaylari eklenebilir.
  * Object declaration, super type(inteface/class) extend edebilir.
- * Object declaraion fonksiyon icinde local olarak yazilamaz. Object icinde object yazilabilir.
- * Object declaration, inner olmayan(non-inner) class icinde yazilabilir.
+ * Object declaraion fonksiyon icinde local olarak yazilamaz.
+ * Object icinde object yazilabilir. Icerideki object arka planda static class olarak yazilir dikkatli olmak gerekli.
+ * Object declaration, inner olmayan(non-inner) class icinde yazilabilir. Ama arka planda static class olarak tutulur.
+ Arka planda class icinde class yazmis oluruz. Genelde class icinde yazilmaz illa class icinde yazilacaksa bunun yerine companion object yazilir.
  * ObjectName.memberName seklinde erisim saglanabilir.
  *
  */
