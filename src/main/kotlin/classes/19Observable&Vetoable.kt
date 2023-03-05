@@ -5,28 +5,28 @@ import kotlin.properties.Delegates
 /**
  *                                          OBSERVABLE
  *
- * live datalar ile calisirken observable pattern isimize yarayacak
- * harici kotlin icindede Delegates.observable seklinde yer alir.
+ * Livedatalar ile calisirken observable patterni bilmek arka planda olanlari anlamamizi saglayacaktir.
+ * var x: String by Delegates.observable { old, new -> println("old: $old, new: $new") } seklinde syntaxi var.
+ * Higher orderi unit doner.
+ *
  * bir degiskenin her an degeri degistiginde haber almak istiyorsak  observable pattern kullanilir.
  * oldValue ve newValue sini bize gosterir.
  * ornek olarak doviz degerlerini surekli akis halinde tutuyoruz newValue oldValue den yuksekse yesil dusukse kirmizi oluyor.
  *
  *
- * android tarafindaki livedata larda arka planda observable pattern kullanir fakat orda eski value alamayiz surekli yeni gelir
+ * android tarafindaki Livedatalarda arka planda observable pattern kullanir
+ fakat orda eski value alamayiz surekli yeni gelir. Ui guncel dataya gore guncellenir.
  *
  *
  * bazen is gorusmelerinde sorulabilir
  * bir degiskenin degeri set edilirken degerlerinin bir interface veye highorder ile disari bildirilmesi.
  *
  *
- *
  *                                              VETOABLE
- * higher orderi boolean doner. observable ise unit doner.
- * observable olay sadece gozlemlemek, vetoable ise gozlemlerken icine business rule da eklenir.
+ * var x: Int by Delegates.vetoable{ higher orderi boolean doner }
  * vetoable son satiri true ise newValue atanir. eger false donuyorsa oldValue kalir. newValue atanmaz veto edilir.
+ * observable olay sadece gozlemlemek, vetoable ise gozlemlerken icine business rule da eklenir.
  *
- *
-
  */
 fun main() {
     val deneme = User85 {oldValue, newValue -> println("old: $oldValue, new: $newValue") }  // custom observable cagirdik
