@@ -2,59 +2,56 @@ package classes
 
 /*
  *                                 DELEGATION
+  Kotlin'de delegation, bir sınıfın bazı işlevlerini başka bir sınıfa aktarmanın bir yoludur.
+Bu sayede, sınıfın davranışını değiştirmeden yeni işlevler ekleyebilir veya mevcut işlevlerin
+uygulanışını değiştirebilirsiniz.
 
- Delegasyon paterninin implementasyon inheritance'ına iyi bir alternatif olduğu
-kanıtlanmıştır ve Kotlin bunu sıfır boilerplate kodu gerektiren yerel olarak desteklemektedir.
- Bir Derived sınıfı, tüm public üyelerini belirli bir nesneye delege ederek bir
-Base interface'ini implemente edebilir:
+  Delegation yapmak için, by anahtar kelimesi kullanılır. Örneğin, aşağıdaki örnekte, SomeClass
+sınıfı, MyInterface interface'ini implement eder ve MyInterface interface'ndeki işlevleri MyInterfaceImpl
+sınıfına delegeler:
+
  */
-interface Base {
-    fun print()
+
+interface MyInterfac {
+    fun doSomething()
 }
 
-class BaseImpl(val x: Int) : Base {
-    override fun print() {
-        print(x)
+class MyInterfacImpl : MyInterfac {
+    override fun doSomething() {
+        println("Doing something in MyInterfaceImpl")
     }
 }
 
-class Derived(b: Base) : Base by b
+class SomeClass(delegate: MyInterfac) : MyInterfac by delegate
 
 fun main2() {
-    val b = BaseImpl(10)
-    Derived(b).print() //10
+    val delegate = MyInterfacImpl()
+    val someObject = SomeClass(delegate)
+    someObject.doSomething() // prints "Doing something in MyInterfaceImpl"
 }
 
 /*
-    Derived için süper tip listesindeki by-clause, b'nin Derived nesnelerinde dahili olarak
-saklanacağını ve derleyicinin Base'in b'ye iletilen tüm metodlarını oluşturacağını gösterir.
+Yukarıdaki örnekte, SomeClass sınıfı MyInterface arayüzünü delegate parametresi ile alır.
+SomeClass sınıfı aynı zamanda MyInterface arayüzünü de uygular ve by delegate ifadesi ile
+MyInterface arayüzündeki işlevleri delegate nesnesine delegeler.
 
+Bu sayede, SomeClass nesnesi MyInterfaceImpl nesnesindeki doSomething() işlevini çağırdığında,
+MyInterfaceImpl nesnesi üzerindeki doSomething() işlevi çalışır ve Doing something in MyInterfaceImpl
+çıktısı verilir.
 
-            --- Delegasyon tarafından implement edilen bir interface üyesini override etme ---
-    Override'lar beklediğiniz gibi çalışır: derleyici, delege nesnesindekiler yerine sizin override
- implementasyonlarınızı kullanır. Derived2'a override fun printMessage() { print("abc") } eklemek isterseniz,
- printMessage çağrıldığında program 10 yerine abc yazdıracaktır:
+Delegation (devir) deseni kullanarak, bir sınıfın yerine getirmesi gereken bir arayüzü uygulamak için
+kod tekrarını önleyebilir ve kodun yeniden kullanılabilirliğini artırabiliriz. Ayrıca, bir sınıfın
+sorumluluklarını farklı sınıflar arasında bölerek daha düzenli ve okunaklı bir kod yazabiliriz.
+
+Bu örnekte, SomeClass sınıfı doğrudan MyInterface'i uygulayabilir ve işlevleri kendisi geçersiz kılabilir.
+Ancak, MyInterfaceImp sınıfı ile delegation kullanarak, SomeClass sınıfı, MyInterface işlevlerini MyInterfaceImp
+sınıfına devreder ve kendisi sadece gerekli olan işlevleri çağırdığında işlevselliği gerçekleştirir. Bu şekilde,
+SomeClass sınıfı daha az kod içerir ve daha temiz ve okunaklı hale gelir. Ayrıca, MyInterfaceImp sınıfı farklı
+sınıflarda yeniden kullanılabilir, böylece kod tekrarı önlenir ve uygulamanın bakımı kolaylaştırılır.
+
  */
 
-interface Base2 {
-    fun printMessage()
-    fun printMessageLine()
-}
 
-class BaseImpl2(val x: Int) : Base2 {
-    override fun printMessage() { print(x) }
-    override fun printMessageLine() { println(x) }
-}
-
-class Derived2(b: Base2) : Base2 by b {
-    override fun printMessage() { print("abc") }
-}
-
-fun main3() {
-    val b = BaseImpl2(10)
-    Derived2(b).printMessage() //abc
-    Derived2(b).printMessageLine() //10
-}
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
