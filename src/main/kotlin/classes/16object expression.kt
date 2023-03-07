@@ -86,12 +86,35 @@ fun main() {
 // }
 
 
-
-
-    "Mustafa".print("Unlu")
-    "Mustafa" print "Unlu"
+    val instanceofC = C()
+    instanceofC.printX()
 }
 
-infix fun String.print(secondText: String){
-    println(this + secondText)
+/*
+Eğer anonim object bir local veya private bir bildirim olarak (fonksiyon veya property) kullanılırsa,
+nesnenin tüm üyeleri bu fonksiyon veya property'e erişilebilir hale gelir. Ancak, bu fonksiyon veya
+property, public veya private bir inline olarak belirtilmişse, gerçek türü şu şekilde olacaktır:
+
+Anonim nesnenin bildirilmiş bir üst türü yoksa, gerçek türü Any'dir.
+Eğer sadece bir bildirilmiş üst tür varsa, anonim nesnenin bildirilmiş üst türüdür.
+Birden fazla bildirilmiş üst tür varsa, açıkça bildirilen türdür.
+Bu durumlarda, anonim nesneye eklenen üyelere erişilemez. Ancak, eğer ezilmiş üyeler gerçek türde belirtilmişse erişilebilirdirler.
+ */
+open class C {
+    private var xx =  object {
+          fun onPrint() {
+            println("x")
+        }
+    }
+
+
+    private var getObject= object { //public yaparsak printX icinde erisemeyiz kotlin izin vermez cunku tipi any'e cast eder.
+        val x: String = "x"
+    }
+
+    fun printX() {
+        println(getObject.x)
+        println(xx.onPrint())
+    }
 }
+

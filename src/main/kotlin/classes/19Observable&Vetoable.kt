@@ -5,9 +5,9 @@ import kotlin.properties.Delegates
 /**
  *                                          OBSERVABLE
  *
- * Livedatalar ile calisirken observable patterni bilmek arka planda olanlari anlamamizi saglayacaktir.
- * var x: String by Delegates.observable { old, new -> println("old: $old, new: $new") } seklinde syntaxi var.
- * Higher orderi unit doner.
+ * Livedata'lar ile calisirken observable patterni bilmek arka planda olanlari anlamamizi saglayacaktir.
+ * var x: String by Delegates.observable(initialValue) { _, oldValue, newValue -> println("old: $old, new: $new") } seklinde syntaxi var.
+ * initialValue x'e atanacak ilk degerdir. Lambdasi unit doner.
  *
  * bir degiskenin her an degeri degistiginde haber almak istiyorsak  observable pattern kullanilir.
  * oldValue ve newValue sini bize gosterir.
@@ -23,9 +23,13 @@ import kotlin.properties.Delegates
  *
  *
  *                                              VETOABLE
- * var x: Int by Delegates.vetoable{ higher orderi boolean doner }
- * vetoable son satiri true ise newValue atanir. eger false donuyorsa oldValue kalir. newValue atanmaz veto edilir.
- * observable olay sadece gozlemlemek, vetoable ise gozlemlerken icine business rule da eklenir.
+ * var x: Int by Delegates.vetoable{ lambdasi boolean doner }
+ * vetoable son satiri(lambda sonucu) true ise newValue atanir. eger false donuyorsa oldValue kalir. newValue atanmaz veto edilir.
+ *
+ *
+ *
+ * observable'da olay sadece gozlemlemek, vetoable'da ise gozlemlerken icine business rule da eklenir.
+ * observable'da newValue direkt atanir. vetoable'da ise newValue atanmadan once bir kontrol yapilir.True ise atanir false ise newValue atanmaz.
  *
  */
 fun main() {
