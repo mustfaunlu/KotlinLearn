@@ -21,12 +21,14 @@ fun main() {
      */
     grade.compareTo(100) //-1
     grade.compareTo(11) //0
+    grade.compareTo(1) //1
     grade.equals(1) //false
     !grade.equals(2) //true
 
 
     var a = 20
     val b = 5
+
     //once islemi yap sonra cikan sonucu soldaki degiskene ata
     a += b     //a = 25
     a -= b     //a = 20

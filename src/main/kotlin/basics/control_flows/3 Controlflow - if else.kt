@@ -60,6 +60,8 @@ fun main() {
     // false || true = true
     // false || false = false
 
+    // a && b || c && d  okunusunda  a ve b nin sonucuna bakilir sonra burdan cikan sonuc ile c nin sonucu hesaplanir . C den hesaplanan sonucla d nin sonucu hesaplanir.
+
     /**
      * .equals,  ==  ile karsilastirma yaparken once tipler karsilastirilir tipler uymuyorsa hata verir
      */

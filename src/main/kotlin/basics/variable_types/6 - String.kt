@@ -8,8 +8,21 @@ package basics.variable_types
  */
 
 val name:String = "Aila"
+val lengthOfName = name.length // 4  name uzunlugunu verir
 
 
+
+/**
+ * Stringlerde index kullanilabilir.
+ * Stringlerde indexler 0 dan baslar.
+ * Stringlerde indexlerin sonuna ulasmak icin name.length - 1  yapmaliyiz.
+ * Stringlerde indexlerin sonuna ulasmak icin ayrica name.indices.last yapabiliriz.
+ * Stringlerde indexlerin ilk elemanina ulasmak icin name.indices.first yapmaliyiz.
+ * Stringlerde indexlerin ilk elemanina ulasmak icin ayrica name.first() yapabiliriz.
+ * Stringlerde indexlerin son elemanina ulasmak icin ayrica name.last() yapabiliriz.
+ * Stringler char arrayleri olduklari icin indexlerle erisebiliriz. name[0] gibi ulasaibliriz. name[0] = 'A' gibi atama yapabiliriz
+ *
+ */
 
 val firstCharOfname = name[name.indices.first]
 
@@ -54,4 +67,7 @@ val rawPineTree2 = """
  /    ******
         ||
 """.trimMargin("/")
+
+
+
 
