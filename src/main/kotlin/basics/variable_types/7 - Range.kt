@@ -10,6 +10,7 @@ fun main() {
 
     val numbers = 1 .. 100 //[1,100]
     val numbers2 = 1.rangeTo(100)
+    numbers.maxOrNull()
 
     val alphabet = 'A' .. 'Z' //A'dan Z'ye kadar buyuk harfler
     val alphabetLower = 'a' .. 'z' //a'dan z'ye kadar kucuk harfler
@@ -44,6 +45,9 @@ fun main() {
     numberList.first
     numberList.last
     numberList.step
+    numberList.maxOrNull()
+    numberList.minOrNull()
+
     numberList.count()
 
     when(10){
@@ -94,5 +98,9 @@ fun main() {
     } else {
         println("It does not exist.")
     }
+
+    val range1 = (1..10).filter { it % 2 == 0 }
+    println(range1) // [2, 4, 6, 8, 10]
+
 }
 

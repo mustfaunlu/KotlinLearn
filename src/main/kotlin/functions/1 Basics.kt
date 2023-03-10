@@ -10,18 +10,24 @@ package functions
  * Unit = void      fun main(): Unit{ ... } seklinde tanimlanir ama tanimlamaya gerek yoktur.
  * Business logiclerin(isin yapilma mantigi) tekrarli sekilde cagrilmalari ve logiclerin kolay
  sekilde degistirilmesi icin kullanilir. aksi taktirde tek tek degistirmek zorunda kaliriz logicleri.
+
  */
 
 fun main() {
-    //Fonksiyon cagirilirken ismi ve parametreleri kullanilir.
+    // Fonksiyon cagirilirken ismi ve parametreleri kullanilir.
     // Eger bir geri donusu varsa bir degiskene atabilir.
-    //first class citizen = bir degiskene deger olarak atanabilime bir degiskeni deger alabilme tek basina dosya uzerine yazilabilme
+    // first class citizen = bir degiskene deger olarak atanabilime bir degiskeni deger alabilme tek basina kt dosyasinda icinde yazilabilme
     // first class citizen olan methodlara fucntion deriz.
     // javada ise class disinda tek basina func yazilamaz methoddur o.
 
     fun kareAl(number: Int): Int { //fonksiyon tanimi
         //maybe some codes
         return number * number
+    }
+
+    fun order(str: String, num: Int): (Int, String) -> Unit {
+
+        return { a, b -> println(a) }
     }
 
     kareAl(2) // fonksiyon cagirimi

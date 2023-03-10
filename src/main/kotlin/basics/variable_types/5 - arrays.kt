@@ -7,6 +7,7 @@ package basics.variable_types
  * arrayOf<any>(farkli tip degereler) seklinde tanimlanabilir.
  * arrayOfNulls<Type>(size) seklinde ise verilen boyut kadar null deger iceren dizi tanimlanabilir.
  * index 0 dan baslar.
+ * Arraylere plus ile ekleme yaptigimizda yeni bir array olusturur. Orjinal array degismez.
  */
 
 fun main() {
@@ -15,6 +16,8 @@ fun main() {
     val firstCharOfNames = arrayOf('a', 'b', 'C', '1')
     val mixedArray = arrayOf<Any>(12,"ahmet", 'v', true) // Any mumkun oldukca kullanmamak lazim belli tip vermeliyiz
     val arrayOfNulls = arrayOfNulls<String>(4) // dosyadan okunacak olabilir,serverdan gelecektir. Type bilinmiyor olabilir.
+
+
 
     /**
      *  Array<Type>(size){higher order function} seklinde de tanimlanabilir
@@ -34,7 +37,6 @@ fun main() {
     val asc = Array(5) { i -> (i * i).toString() }
     asc.forEach { println(it) }
 
-
     /**
      * ByteArray, ShortArray, IntArray, LongArray, DoubleArray, FloatArray tnaimlanabilir.
      * primitive array tanimlamalarida yapilabilir.
@@ -48,6 +50,9 @@ fun main() {
     firstCharOfCountries.set(1,'I') // atama islemi
     firstCharOfCountries.set(3,'A') // atama islemi
     firstCharOfCountries[2] = 'b' // atama islemi
+
+    //set atama yapar arraye eklem yapmaz ekleme yapmak icin plus operatoru kullanilir. ama plusda yeni bir array olusturur.
+
 
     println("firstCharOfCourse index 2 :" + firstCharOfCountries.get(2)) // okuma islemi
     println("firstCharOfCourse index 2 :" + firstCharOfCountries[2]) // okuma islemi
