@@ -57,6 +57,7 @@ fun main() {
         return "surName : $surName"
     }
 
+
     /* Anonymous Function'in expression kullanimini da yine Higher Order Function olarak normal bir fonksiyona parametre
     olarak verilebilir.*/
     val anonymousFunction2 = fun(surName: String): String = "surName : $surName"

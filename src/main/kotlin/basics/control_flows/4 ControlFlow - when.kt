@@ -61,12 +61,16 @@ fun main() {
     // is !is ile bir clas in referansi olunup olunmadigi kontrolu yapilabilir
     val phoneNumber = 531213451343L
     when (phoneNumber) {
-        is Long -> println("Long")
+        is Long -> {
+            println("Long")
+            println("Long")
+            println("Long")
+        }
         !is Long ->println("Int")
     }
 
     //range leri in !in seklinde kontroulu yapilabilir.
-    val number = 3
+    val number = 2
     when (number){
         in 0..10 -> println("ff") // 0 10 arasindaysa
         in 11..20 -> println("bb") // 11 20 arasindaysa

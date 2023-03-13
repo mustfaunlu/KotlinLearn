@@ -32,7 +32,7 @@ fun main() {
     do {
         // code block to be executed
     }
-    while (condition);
+    while (condition)
 
     /*
     Aşağıdaki örnekte bir do/while döngüsü kullanılmaktadır.
