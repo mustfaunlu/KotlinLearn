@@ -1,13 +1,38 @@
 package classes
 
-//primary const.da constructor keywordunu yazmamiza gerek yok
-//visibility modifier veya jvm annotation verilecekse constructor yazmak zorundayiz.
-class Car constructor( val wheelCount: Int, color: String = "Red") {
+/**
+ * Classlar class keywordu ile olusturulur.
+ * Classlarin body'si olmak zorunda degildir.
+ * Classlarin body'si olmadigi durumlarda class tanimi; class className seklinde olur.
+ * Classlarin body'si varsa class tanimi; class ClassName { class body } seklinde olur.
+ * Classlarin kotlinde 2 tip constructoru vardir. Primary, Secondary
+ *
+ */
+
+class Emp  //bos class
+
+class EmptyClassWithBody {
+    //class body
+}
+
+class ClassWithPrimaryConstructor constructor(val name: String) { //explicit primary constructor
+    //class body
+}
+
+class ClassWithSecondaryConstructor(val name: String) { //primary constructor
+    //class body
+    constructor(name: String, age: Int) : this(name) { //secondary constructor
+        //secondary constructor body
+    }
+}
+
+//visibility modifier veya jvm veya hilt/dagger annotation verilecekse constructor keywordu yazmak zorundayiz.
+class Car @JvmOverloads constructor( val wheelCount: Int, color: String = "Red") {
     private val mWheelCount: Int //parametreleri yukarda const. icindede val var yazarak tanimlayabilirz.
     private val mColor = color
 
     /**
-     * initler constructorlarla beraber calisir ama secondary lerden once calisir,
+     * initler primary constructorlarla ayni anda calisir ama secondary lerden once calisir,
      * bekledigi parametreleri verirsem hep init calisacak.
      * Harici primaryde bulunmayan baska parametre veriyorsam yine init calisir
      * ama devaminda hangi const uygun parametre verildiyse o calisacak.
@@ -20,7 +45,7 @@ class Car constructor( val wheelCount: Int, color: String = "Red") {
         /*
         aslinda init'i primary constructorin parantezleriymis gibi
         degerlendirebiliriz. Mesela asagidaki secondary constructorlar
-        kendi bodylerine sahip primary icinde bu body initde yaziliyor diyebiliriz.
+        kendi bodylerine sahip primary icinde bu body init'de yaziliyor diyebiliriz.
          */
         mWheelCount = wheelCount
         "primary const. created".printLog()
@@ -29,6 +54,7 @@ class Car constructor( val wheelCount: Int, color: String = "Red") {
 
     constructor(name: String) : this(4) {   //parametreleri farkli olan secondary const. lar boyle olusturulur.
         "1. secondary const. created".printLog()
+
     }
 
     constructor(name: String, madeOf: String) : this(4) {  //secondary const. lar olustururken this ile primary const. isaret etmeliyiz.
@@ -44,17 +70,13 @@ fun main() {
     val car2 = Car("blue", "Metal") //2. secondary const. kullanilarak olusturulan nesne.
     val car3 = Car("Ferrari") //1. secondary const kullanilarak nesnes olusturuldu
 
+    // objenin propertylerine erismek icin . operatoru kullanilir.
+    car0.wheelCount
+
 }
 
 fun String.printLog(){
     println(this)
     println("--------------------")
 }
-
-/**
- * class body'si bos ise asagidaki gibi class tanimi yapilabilir
- * asagidaki class'inda primary const. vardir. implicit bir sekildedir.
- *
- */
-class Empty
 

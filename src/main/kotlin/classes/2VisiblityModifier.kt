@@ -2,7 +2,7 @@ package classes
 
 /**
  * asagidaki hersey junior is gorusmesi sorularidir.!! top level? visibility modifier lar? java kotlin fark? encapsulation?
- * kotlinde visibility modifierlar ; protected private public internal 4 farkli cesit vardir.
+ * kotlinde visibility modifierlar ; protected private public internal 4 farkli cesit vardir;
  * private kendi class i disinda erisemeyiz
  * public heryerden erisilir
  * protected kendi classinda ve  miras alan classlar kullanabilir. Haricinde kullanilamaz.
