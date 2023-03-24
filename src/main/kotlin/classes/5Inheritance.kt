@@ -35,7 +35,7 @@ package classes
 
 // open bir func. varken class in final olmasi sacma bir kullanim olacaktir. open func. bir espirisi kalmaz.
 
-open class Shape(val name: String){
+open class Shape(val name: String) {
     var mColor: String = ""
     open var mEdgeCount: Int = 0
 
@@ -63,6 +63,7 @@ open class Shape(val name: String){
 }
 
 class Rectangle(name: String) : Shape(name){   //miras alinan class in herhangi bir constructoru verilmelidir name gibi
+
 
     override fun drawShape(){
 

@@ -27,7 +27,7 @@ class ClassWithSecondaryConstructor(val name: String) { //primary constructor
 }
 
 //visibility modifier veya jvm veya hilt/dagger annotation verilecekse constructor keywordu yazmak zorundayiz.
-class Car @JvmOverloads constructor( val wheelCount: Int, color: String = "Red") {
+class Car @JvmOverloads constructor(  val wheelCount: Int, color: String = "Red") {
     private val mWheelCount: Int //parametreleri yukarda const. icindede val var yazarak tanimlayabilirz.
     private val mColor = color
 
@@ -79,4 +79,3 @@ fun String.printLog(){
     println(this)
     println("--------------------")
 }
-
