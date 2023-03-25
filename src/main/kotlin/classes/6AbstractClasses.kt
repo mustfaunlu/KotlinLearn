@@ -24,8 +24,8 @@ interface  McDonaldsService {
  Bir abstract classda kullanilacak open bir fonksiyonu yeni bir class inherit ederek openi onun icine koymak mantiklidir.
 
 
- 5- abstract olarak yazilmis class a yeni eklenen tum abstract yapilar,
- tum child abs olmayan classlarda override edilmek zorundadir.
+ 5- abstract olarak yazilmis class a yeni eklenen tum abstract yapilar(fonksiyon, property),
+ tum  abstract olmayan child classlarda override edilmek zorundadir.
 
  6- bir abstract class in instance olusturamayiz. open bir class ile abstract class in farki budur.
  base classlar bu yuzden abstract yapilir ki instance olusturulamasin. Projenin herhangi bir yerinde anlami degistirilmesin diye.
@@ -40,6 +40,8 @@ interface  McDonaldsService {
 
 
  */
+
+
 abstract class  MCDonaldsFranchize {
     //abstract val fridge: Fridge = Fridge()  diyemeyiz cunku biz sablon veriyoruz. Belli bir buzdolabi istemiyoruz.
     //Sadece buzdolabi olmasi gerekiyor. Franchize sozlesmesinde bir buzdolabin olsun der belli bir dolap belirtmez
@@ -63,7 +65,7 @@ abstract class  MCDonaldsFranchize {
 
 
 abstract class McDonaldsExpress : MCDonaldsFranchize(){  //bir abs diger abs class i miras alabilir fakat memberlari override etmek zorunda degildir.
-    abstract  fun sellCoffee(): McCoffee /*bazi mcdonaldslar kahvede satiyor expresse kendi abst func ile kahvesatisinida ekliyoruz.
+    abstract  fun sellCoffee(): McCoffee /*bazi mcdonaldslar kahvede satiyor expresse kendi abst func ile kahve satisinida ekliyoruz.
                                            open olarak class icinde yazmaktansa yeni bir child olusturup icinde tanimlamak onemli
                                            10 franchizeda kahve yokken birinde varsa bunu base abstracta yazmak yerine boyle yapilmali*/
      override fun clean(clock: Int) {
@@ -72,10 +74,11 @@ abstract class McDonaldsExpress : MCDonaldsFranchize(){  //bir abs diger abs cla
 
      override val fridge: Fridge   // abstract propertyleride override edebiliriz.
         get() = TODO("Not yet implemented")
+
 }
 
 
-  class McDonaldsMaltepe : MCDonaldsFranchize(), McDonaldsService { /*bir duz class abs class i inherit alabilir ama ust
+  class McDonaldsMaltepe : MCDonaldsFranchize(), McDonaldsService { /*bir duz class abs class i inherit alabilir ama abstract
                                                                       classdaki butun abstract yapilari override etmek zorundadir.*/
     override val fridge: Fridge
         get() = TODO("Not yet implemented")

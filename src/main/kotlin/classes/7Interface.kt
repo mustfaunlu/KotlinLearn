@@ -16,7 +16,7 @@ package classes
  abstract class a open function tanimlamak yerine interface ile yapilmalidir.
  bu functionu interface verip class a implement edersin daha temiz kod yazmis olursun.
 
- 6- open bir fonksyionu abstract icine , abstract icindeki bir membera ihtiyac duyoyorsa tanimlariz.
+ 6- abstract icine open bir fonksyionu  , abstract icindeki bir membera ihtiyac duyoyorsa tanimlariz.
  yani abstract class in fonksiyonu abstract classdaki herhangi bir yapiyi kullanarak override edildigi chield classda superin cagrilmasiyla
  bir is yapiyordur. fakat hicbirseye ihtiyac duymuyorsa abstract yerine interface tanimlamaliyiz. Zaten interfacelerin icine yazdigimiz
  fonksiyonlarin genelde bodysi olmaz.
