@@ -1,5 +1,11 @@
 package basics.variable_types
 
+import java.util.*
+
+fun main() {
+
+
+
 /**
  * Charlardan olusan bir dizidir aslinda.
  * Cift tirnak icinde tanimlanrlar. " "
@@ -68,6 +74,65 @@ val rawPineTree2 = """
         ||
 """.trimMargin("/")
 
+    val myJson = """
+        {
+            "name": "Aila",
+            "surname": "Kaya",
+            "age": 25
+        }
+    """.trimIndent()
 
+    println("   ".isBlank()) // true
+    println("".isEmpty()) // true
+
+    val name1 = "Aila"
+    val myString = buildString {
+        repeat(3) {
+            append("Hello, ")
+            append(name1)
+            appendLine("!")
+        }
+    }
+    println(myString)   // Hello, Aila!
+                        // Hello, Aila!
+                        // Hello, Aila!
+
+    val neverBlankString = " ".ifBlank { "Never Blank" }
+    println(neverBlankString) // Never Blank
+
+    val input = "  Aila Kaya   "
+    println(input.trim()) //Aila Kaya
+
+    val input1 = "@@Aila Kaya@@"
+    input1.removePrefix("@@") // Aila Kaya@@
+    input1.removeSuffix("@@") // @@Aila Kaya
+    input1.removeSurrounding("@@") // Aila Kaya
+
+    if ("a" < "b") println("a is less than b")
+    if ("a" > "b") println("a is greater than b")
+
+    val input2 = "QuiCk BrOwN fOx"
+    println(input2.lowercase()) // quick brown fox
+    println(input2.uppercase()) // QUICK BROWN FOX
+    input2.equals("quick brown fox", ignoreCase = true) // true
+
+    val split = "a; b; c; d; e".split("; ")
+    println(split) // [a, b, c, d, e]
+
+    val lineByline = """
+        Well this is crazy
+        I'm out of my mind
+        So split me maybe?
+    """.trimIndent()
+    println(lineByline.lines())  // [Well this is crazy, I'm out of my mind, So split me maybe?]
+
+
+
+
+
+
+
+
+}
 
 
