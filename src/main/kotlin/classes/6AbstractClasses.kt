@@ -5,10 +5,10 @@ interface  McDonaldsService {
 }
 
 /**
- 1-  abstract classlarin temel amaci sozlesmedir. abstract class sablon classlardir. kopya kagidi gibidir.
+
+ 1- Abstract classlarin temel amaci sozlesmedir. abstract class sablon classlardir. kopya kagidi gibidir.
  child classlarda yapilmasini zorunlu olarak koydugun yapilarin sablonudur..
  bu sayede child classlarda fazla kod yazmaktan bizi kurtarir.
-
 
  2- Abstract classlarin icinde; abstract property(initial default degeri almaz) ve functionlar(body si olmaz) yazilabilir.
 
@@ -38,10 +38,11 @@ interface  McDonaldsService {
  override ederse ; y classini miras alan duz bir class artik bu abstract yapilari override etmek zorunda degildir. Cunku override
  edilmis bir yapi  body almis olur.
 
+ 9- abstract classlarda yazilan abstract yapilari, implemente eden classta override ederken, yapilarin imzalari
+ birebir ayni olmak zorundadir.
+
 
  */
-
-
 abstract class  MCDonaldsFranchize {
     //abstract val fridge: Fridge = Fridge()  diyemeyiz cunku biz sablon veriyoruz. Belli bir buzdolabi istemiyoruz.
     //Sadece buzdolabi olmasi gerekiyor. Franchize sozlesmesinde bir buzdolabin olsun der belli bir dolap belirtmez
@@ -66,14 +67,15 @@ abstract class  MCDonaldsFranchize {
 
 abstract class McDonaldsExpress : MCDonaldsFranchize(){  //bir abs diger abs class i miras alabilir fakat memberlari override etmek zorunda degildir.
     abstract  fun sellCoffee(): McCoffee /*bazi mcdonaldslar kahvede satiyor expresse kendi abst func ile kahve satisinida ekliyoruz.
-                                           open olarak class icinde yazmaktansa yeni bir child olusturup icinde tanimlamak onemli
-                                           10 franchizeda kahve yokken birinde varsa bunu base abstracta yazmak yerine boyle yapilmali*/
+                                            open olarak class icinde yazmaktansa yeni bir child olusturup icinde tanimlamak onemli
+                                            10 franchizeda kahve yokken birinde varsa bunu base abstracta yazmak yerine boyle yapilmali*/
      override fun clean(clock: Int) {
         println("Clean time: $clock")
     }
 
      override val fridge: Fridge   // abstract propertyleride override edebiliriz.
         get() = TODO("Not yet implemented")
+
 
 }
 

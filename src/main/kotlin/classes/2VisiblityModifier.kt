@@ -19,7 +19,7 @@ private val z = "zu" // sadece bu dosya icinde heryerden erisilir top-level
  open class Foo(){
     private val name = "must" // sadece kendi class icinde erisilir
 
-    public var surName = "unl" // heryerde erisilebilir
+    public var surName = "unl" // heryerde erisilebilir/  kotlinde yapilar default public tir.
 
     protected val email = "cccx.2@gmail.com" // child class larda public , harici classlarda private
 

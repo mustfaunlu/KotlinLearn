@@ -28,8 +28,8 @@ package classes
  * bazen ust class i miras alindigi gibi alt classida baska bir class miras alabilir.
  * bir child class ustundeki butun atalarinin private olmayan open olan butun ozelliklerini miras alir.
  *
- *access modifier; open ve finaldir (miras alinabilir alinamazligi ve override edilip edilemezi duzenler)
- *visibility modifier; public private internal protected (encapsulation saglar)
+ * access modifier; open ve finaldir (miras alinabilir alinamazligi ve override edilip edilemezi duzenler)
+ * visibility modifier; public private internal protected (encapsulation saglar)
  *
   */
 

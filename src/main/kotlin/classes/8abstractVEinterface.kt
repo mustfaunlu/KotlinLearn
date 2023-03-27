@@ -25,23 +25,23 @@ package classes
 /**                     |=============  FARKLILIKLAR ============|
 
 
- 1 abs state var / interfacede yok(statik deger dondurmesi state anlamina gelmez)
+ 1 abstract class state tutar / interfacede tutulamaz(statik deger dondurmesi state anlamina gelmez)
 
  2 bir class bir abstract class miras alabilirken /  bir class birden fazla interface alir
    abstract classlar extends edilir / interfaceler implements edilir.
 
  3 abs bir sozlemedir alt classlarinda yapilmasi zorunlu olan seyleri tutar yapinin oz niteliklerini belirler defaultlari belirlenir /
    interfacelerin amaci ise -e bilmek anlami katar, istenilen class a yeni ozellik yetenek ekler. harici beceri seti katar.
-   hali hazirda yapabilidigi seyleri abstract classlara yazmaliyiz default olarak yapabiliyorsa abstracttadir. ama opsiyonel olarak
+   hali hazirda yapabildigi seyleri abstract classlara yazmaliyiz default olarak yapabiliyorsa abstracttadir. ama opsiyonel olarak
 beceri kazaniyorsa interface implement edilmelidir. mesela araba classinin motorunun olmasi zorunludur default olmasi gerekir o yuzden abstractta
 tanimlanir fakat arabanin sunrooflu olmasi veya turbolu olmasi interfacede tanimlanir cunku beceri seti kazanmis olur.
 
  4 interfaceler arayuz belirteci olarakda kullanilir.<> arasina yazilan belirteclerde interfacedir.
 
- 5 abstract classlar sozlesmedir, interfaceler yetenek setidir.
+ 5 abstract classlar sozlesmedir/kontratdir, interfaceler yetenek setidir.
 
-  6- interfacelerin fonksiyonlari bir yerden tetiklenir diger yerden calisti bilgisi alinir, veri tasinir,
-        abstract fonksiyonlarda ise tetiklemeye ihtiyac yok basitce call edilir.
+ 6- interfacelerin fonksiyonlari bir yerden tetiklenir diger yerden calisti bilgisi alinir, veri tasinir,
+abstract fonksiyonlarda ise tetiklemeye ihtiyac yok basitce call edilir.
 
  7 -
 
