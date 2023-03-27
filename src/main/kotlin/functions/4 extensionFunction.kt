@@ -2,15 +2,15 @@ package functions
 
 fun main() {
     /**
-     * uzerinde degisiklik yapamadigimiz (readOnly) siniflara, interfacelere ya da yapmak istemedigmiz siniflara, bu siniflarin
+     * Uzerinde degisiklik yapamadigimiz (readOnly) siniflara, interfacelere ya da degisiklik yapmak istemedigmiz siniflara, bu siniflarin
      * icerisinde yazmadan fonksiyon tanimlayabilmemizi saglar. Boylece o sinifa uye bir fonksiyon kazandirabiliriz.
      * Bunu yaparken unutmamaniz gereken; yazdiginiz extension fonksiyon aslinda o sinifin gercek bir fonksiyonu olmayacaktir.
      *
      * Reciver diye adlandiracagimiz bir sinifa gerek duyar. Receiver extension yazacagimiz sinifi ifade eder.
      *
-     * yapisal olarak;
+     * yapisal olarakljfsd
      *
-     *      fun String.extPrint(handsomeValue : HandsomeOne) : Unit {
+     *      fun Receiver.extFun(other : HandsomeOne) : AnotherOne {
      *
      *      //hangi sinifi genisletmek istiyorsak onu yazip . koyuyoruz.
      *      (String.extPrint) gibi Stringi genisletmek istemisiz.
