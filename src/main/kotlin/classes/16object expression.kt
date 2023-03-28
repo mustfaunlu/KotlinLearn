@@ -73,17 +73,19 @@ fun main() {
 
 
 
-    //  !! androidde asagidaki 2 kullanimda sikca object in expression kullanimini yapacagiz.!!
-//textView.addTextWatcher(object: TextWatcher(){
-//          before
-//          after
-//          on
-//          })
+/*
+      !! androidde asagidaki 2 kullanimda sikca object in expression kullanimini yapacagiz.!!
+textView.addTextWatcher(object: TextWatcher(){
+          before
+          after
+          on
+          })
 
-// object: CountDownTimer(10000, 1000){
-// override fun onTick(){}
-// override fun onFinish(){}
-// }
+ object: CountDownTimer(10000, 1000){
+ override fun onTick(){}
+ override fun onFinish(){}
+ }
+*/
 
 
     val instanceofC = C()
