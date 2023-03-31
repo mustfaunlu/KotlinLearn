@@ -22,15 +22,19 @@ class MyInterfacImpl : MyInterfac {
     }
 }
 
+
 class SomeClass(delegate: MyInterfac) : MyInterfac by delegate
+
 
 fun main2() {
     val delegate = MyInterfacImpl()
     val someObject = SomeClass(delegate)
     someObject.doSomething() // prints "Doing something in MyInterfaceImpl"
+
 }
 
 /*
+
 Yukarıdaki örnekte, SomeClass sınıfı MyInterface arayüzünü delegate parametresi ile alır.
 SomeClass sınıfı aynı zamanda MyInterface arayüzünü de uygular ve by delegate ifadesi ile
 MyInterface arayüzündeki işlevleri delegate nesnesine delegeler.
@@ -39,7 +43,7 @@ Bu sayede, SomeClass nesnesi MyInterfaceImpl nesnesindeki doSomething() işlevin
 MyInterfaceImpl nesnesi üzerindeki doSomething() işlevi çalışır ve Doing something in MyInterfaceImpl
 çıktısı verilir.
 
-Delegation (devir) deseni kullanarak, bir sınıfın yerine getirmesi gereken bir arayüzü uygulamak için
+Delegation (devir) patterni kullanarak, bir sınıfın yerine getirmesi gereken bir arayüzü uygulamak için
 kod tekrarını önleyebilir ve kodun yeniden kullanılabilirliğini artırabiliriz. Ayrıca, bir sınıfın
 sorumluluklarını farklı sınıflar arasında bölerek daha düzenli ve okunaklı bir kod yazabiliriz.
 
@@ -67,14 +71,16 @@ sınıflarda yeniden kullanılabilir, böylece kod tekrarı önlenir ve uygulama
  * app ayaga kalkar kalkmaz calismasi gereken bir degiskense bu kullanim yapilmamalidir.
  * mesela ilk calisacak olan init icinde bu tanimlama yapilmasi mantiksizdir.
  * mesela class ayaga kalkti ui cizildi uida birde pop up var
-oraya basilmadikca calismasini istemedigimiz degiskenleri lateinit ya da by lazy kullaniriz. pop up a basinca calismasi icin lateinit var veya by lazy{} kullanilir.
+oraya basilmadikca calismasini istemedigimiz degiskenleri mutable ise lateinit var
+seklinde ya da immutable ise by lazy seklinde kullaniriz.
  *
- * by lazy ile tanimlama yapildiginda ilk kez erisim yapildignda butun verileri alir ikinci erisimde lazy{} nin  kendi init blogunu {bu kisimm} calismaz.
+ * by lazy ile tanimlama yapildiginda ilk kez erisim yapildignda butun verileri alir ikinci erisimde lazy{} nin
+ * kendi init blogunu {bu kisimm} calismaz.
  * lazynin init blogu icindeki en son satir ilgili degiskene tip olarak atanir
- * bylazy threadsafe mode ile ayni anda iki thread ayni anda obje olusturmasin diye kullanilabilir.z
+ * by lazy(istenilen thread mod yazilir) {} threadsafe mode ile ayni anda iki thread ayni anda obje olusturmasin diye kullanilabilir.z
  *
- * lateinitte bir lazy gibi init blogu yok. lateinitte ne zaman erisim saglanacagini belirlemek icin this::user2.isInitialize seklinde kontrol
-ederek yapariz.
+ * lateinitte bir lazy gibi init blogu yok. lateinitte ne zaman erisim saglanacagini belirlemek icin
+ * this::user2.isInitialize seklinde kontrol ederek yapariz.
  * ifInitialized kontrolu yapilmazsa ikitane user2  objesi olur mantik hatasi olur. ilk nesneye erisim kaybolur yeni bir nesne olusur.
  *
  */

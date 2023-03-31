@@ -6,7 +6,7 @@ package classes
  erismek icin Outer.NestedClass() seklinde erisebiliriz.
  * Nested class in icerisine ise bir nested ya da inner fark etmeksizin class ekleyebiliriz.
  *
- * Inner class a baktigimizda ise static olarak tutulmazlar.. Bundan dolayi erismek icin
+ * Inner class a baktigimizda ise static olarak tutulmazlar. Bundan dolayi erismek icin
  Outer().InnerClass() seklinde outer class in instance'ndan erisiriz.
  * Inner class in icine yeni bir nested class eklenemez. Ancak yine inner class eklenebilir.
  */
@@ -57,7 +57,7 @@ fun main() {
     outer.getAge()
     outer.surName
 
-    Outer.NestedClass().printName()
+    Outer.NestedClass().printName() //nested'e erisim
 
     //asagidaki gibi yazarsak nested outer in bir parcasi gibi olur o yuzde instance ile erisemeyiz.
     //outer.NestedClass().printName()
@@ -67,7 +67,8 @@ fun main() {
     val outer2 = Outer2()
     outer2.surName
     outer2.getAge()
-    outer2.InnerClass().printName()
+    outer2.InnerClass().printName() // inner'a erisim
+    //outer2.InnerClass().surname disardan direkt olarak outer'in memberina inner olsada erisemeyiz. ama icerde erisir.
     Outer2().InnerClass().printName()
 
 }

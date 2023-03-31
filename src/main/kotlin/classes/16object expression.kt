@@ -100,7 +100,8 @@ property, public veya private bir inline olarak belirtilmişse, gerçek türü �
 Anonim nesnenin bildirilmiş bir üst türü yoksa, gerçek türü Any'dir.
 Eğer sadece bir bildirilmiş üst tür varsa, anonim nesnenin bildirilmiş üst türüdür.
 Birden fazla bildirilmiş üst tür varsa, açıkça bildirilen türdür.
-Bu durumlarda, anonim nesneye eklenen üyelere erişilemez. Ancak, eğer ezilmiş üyeler gerçek türde belirtilmişse erişilebilirdirler.
+Bu durumlarda, anonim nesneye eklenen üyelere erişilemez.
+Ancak, eğer override edilmis üyeler gerçek türde belirtilmişse erişilebilirdirler.
  */
 open class C {
     private var xx =  object {

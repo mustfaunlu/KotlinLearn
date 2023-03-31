@@ -10,8 +10,8 @@ package classes
 
 /**
  * parametre olarak verilecek hiyerarsiyi kisitlamak icin kullanilan mukemmel bir ozellik
- * olaya buyuk cerceveden bakmaya saglar.
- * parametre olan yerlerde kullanialbilir.
+ * olaya buyuk cerceveden bakmayi saglar.
+ * parametre olan yerlerde kullanilabilir.
  * constructorlarda, fonksiyonlarda, higher orderlarda, extensinon, inline, functionlarda
 
 
