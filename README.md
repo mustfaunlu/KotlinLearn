@@ -1,7 +1,7 @@
 ### Hi, Welcome 
 
-I'm Mustafa, I'm working on Android application development. I am sharing my projects here. I usually use the Kotlin programming language for Android projects. 
-This repository contains [Kekod Kotlin Bootcamp](https://www.youtube.com/playlist?list=PL5qUTObM_k-SThUEvdlwagNTD3zieAY7t) codes. I update the repository regularly.
+I'm Mustafa, working on Android application development, sharing my kotlin programming language notes here.
+This repository contains [Kekod Kotlin Bootcamp](https://www.youtube.com/playlist?list=PL5qUTObM_k-SThUEvdlwagNTD3zieAY7t) codes. Additionally, I am attaching the details I learned from my daily blog readings here.
 
 Thanks to [Gokhan Ozturk](https://tr.linkedin.com/in/androideduio) for the great course.
 
